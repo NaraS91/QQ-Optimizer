@@ -9,18 +9,19 @@ fn main() -> eframe::Result {
     let native_options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_inner_size([400.0, 300.0])
-            .with_min_inner_size([300.0, 220.0])
-            .with_icon(
-                // NOTE: Adding an icon is optional
-                eframe::icon_data::from_png_bytes(&include_bytes!("../assets/icon-256.png")[..])
-                    .expect("Failed to load icon"),
-            ),
+            .with_min_inner_size([300.0, 220.0]),
+        // .with_icon(
+        //     // NOTE: Adding an icon is optional
+        //     eframe::icon_data::from_png_bytes(&include_bytes!("../assets/icon-256.png")[..])
+        //         .expect("Failed to load icon"),
+        // ),
         ..Default::default()
     };
+
     eframe::run_native(
-        "eframe template",
+        "QQ Optimizer",
         native_options,
-        Box::new(|cc| Ok(Box::new(eframe_template::TemplateApp::new(cc)))),
+        Box::new(|cc| OK(Box::new(qq_optimizer::QQOptimizer::new(cc)))),
     )
 }
 
@@ -33,15 +34,13 @@ fn main() {
     let web_options = eframe::WebOptions::default();
 
     wasm_bindgen_futures::spawn_local(async {
-        let start_result = eframe::WebRunner::new()
+        eframe::WebRunner::new()
             .start(
-                "the_canvas_id",
+                "the_canvas_id", // hardcode it
                 web_options,
-                Box::new(|cc| Ok(Box::new(eframe_template::TemplateApp::new(cc)))),
+                Box::new(|cc| Ok(Box::new(qq_optimizer::QQOptimizer::new(cc)))),
             )
             .await;
-
-        // Remove the loading text and spinner:
         let loading_text = web_sys::window()
             .and_then(|w| w.document())
             .and_then(|d| d.get_element_by_id("loading_text"));
