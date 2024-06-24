@@ -1,9 +1,29 @@
-use super::{ModifierSource, Unit};
+use crate::app::hsr::units::{
+    utils::value_with_buffer, AdvancedStat, BonusDMGFlag, BuffScaling, Modifier, ModifierData,
+    ModifierTarget, Source, Stat,
+};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+use super::{ModifierOrDOT, Unit};
+
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    vec![ModifierOrDOT::Modifier(Modifier::new(
+        (unit.kind, Source::Ultimate),
+        vec![ModifierData::new(
+            ModifierTarget::Enemy,
+            Stat::Advanced(AdvancedStat::TotalDmgReceived(BonusDMGFlag::MAX)),
+            BuffScaling::Additive,
+            value_with_buffer!(|buffer: &Unit| {
+                let ult_bonus = if buffer.unique_data.eidolon >= 5 {
+                    2
+                } else {
+                    0
+                };
+                ULT_PARAMS[(buffer.unique_data.ultimate_level + ult_bonus) as usize].2
+            }),
+        )],
+        true,
+    ))]
 }
-
 
 const SKILL_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (0.6000, 1.0000, 0.2400, 1.3000, 3.0000),
@@ -23,7 +43,6 @@ const SKILL_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (1.5000, 1.0000, 0.2400, 4.2250, 3.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (1.9800, 1.0000, 0.1200, 3.0000, 2.0000),
     (2.1120, 1.0000, 0.1280, 3.0000, 2.0000),
@@ -41,7 +60,6 @@ const ULT_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (3.8280, 1.0000, 0.2320, 3.0000, 2.0000),
     (3.9600, 1.0000, 0.2400, 3.0000, 2.0000),
 ];
-
 
 const TALENT_PARAMS: [(f32, f32); 15] = [
     (1.0000, 0.6800),
@@ -61,21 +79,8 @@ const TALENT_PARAMS: [(f32, f32); 15] = [
     (1.0000, 0.9350),
 ];
 
-
-const TECH_PARAMS: [(f32, f32); 1] = [
-    (0.5000, 1.0000),
-];
-
+const TECH_PARAMS: [(f32, f32); 1] = [(0.5000, 1.0000)];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];
-

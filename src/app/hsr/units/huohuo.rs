@@ -1,9 +1,57 @@
-use super::{ModifierSource, Unit};
+use crate::app::hsr::units::utils::flat_value;
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+use super::{
+    utils::value_with_buffer, AdvancedStat, BaseStat, BonusDMGFlag, BuffScaling, Modifier,
+    ModifierData, ModifierOrDOT, ModifierTarget, Source, Stat, Unit,
+};
+
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    let mut result = vec![ModifierOrDOT::Modifier(Modifier::new(
+        (unit.kind, Source::Ultimate),
+        vec![ModifierData::new(
+            ModifierTarget::Allies,
+            Stat::Base(BaseStat::Atk),
+            BuffScaling::Multiplicative,
+            value_with_buffer!(|buffer: &Unit| {
+                let ultimate_bonus = if buffer.unique_data.eidolon >= 3 {
+                    2
+                } else {
+                    0
+                };
+                ULT_PARAMS[(buffer.unique_data.talent_level + ultimate_bonus) as usize].1
+            }),
+        )],
+        true,
+    ))];
+
+    if unit.unique_data.eidolon >= 1 {
+        result.push(ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Eidolon(1)),
+            vec![ModifierData::new(
+                ModifierTarget::Allies,
+                Stat::Base(BaseStat::Spd),
+                BuffScaling::Multiplicative,
+                flat_value!(0.12),
+            )],
+            true,
+        )));
+    }
+
+    if unit.unique_data.eidolon >= 6 {
+        result.push(ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Eidolon(6)),
+            vec![ModifierData::new(
+                ModifierTarget::Allies,
+                Stat::Advanced(AdvancedStat::TotalDmgBoost(BonusDMGFlag::MAX)),
+                BuffScaling::Additive,
+                flat_value!(0.5),
+            )],
+            true,
+        )))
+    }
+
+    result
 }
-
 
 const SKILL_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (0.1400, 140.0000, 0.1120, 112.0000, 1.0000),
@@ -23,7 +71,6 @@ const SKILL_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (0.2450, 717.5000, 0.1960, 574.0000, 1.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (0.1500, 0.2400, 2.0000),
     (0.1550, 0.2560, 2.0000),
@@ -41,7 +88,6 @@ const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (0.2200, 0.4640, 2.0000),
     (0.2250, 0.4800, 2.0000),
 ];
-
 
 const TALENT_PARAMS: [(f32, f32, f32, f32, f32, f32, f32); 15] = [
     (2.0000, 1.0000, 0.0300, 0.0000, 30.0000, 0.5000, 6.0000),
@@ -61,21 +107,8 @@ const TALENT_PARAMS: [(f32, f32, f32, f32, f32, f32, f32); 15] = [
     (2.0000, 1.0000, 0.0525, 0.0000, 153.7500, 0.5000, 6.0000),
 ];
 
-
-const TECH_PARAMS: [(f32, f32, f32, f32); 1] = [
-    (1.0000, 0.2500, 2.0000, 10.0000),
-];
-
+const TECH_PARAMS: [(f32, f32, f32, f32); 1] = [(1.0000, 0.2500, 2.0000, 10.0000)];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.2500,
-    0.3000,
-    0.3500,
-    0.4000,
-    0.4500,
-    0.5000,
-    0.5500,
-    0.6000,
-    0.6500,
+    0.2500, 0.3000, 0.3500, 0.4000, 0.4500, 0.5000, 0.5500, 0.6000, 0.6500,
 ];
-

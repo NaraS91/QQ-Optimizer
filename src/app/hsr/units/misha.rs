@@ -1,9 +1,26 @@
-use super::{ModifierSource, Unit};
+use super::{
+    utils::flat_value, BaseStat, BuffScaling, Modifier, ModifierData, ModifierOrDOT,
+    ModifierTarget, Source, Stat, Unit,
+};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    let mut result = vec![];
+
+    if unit.unique_data.eidolon >= 2 {
+        result.push(ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Ultimate),
+            vec![ModifierData::new(
+                ModifierTarget::Enemies,
+                Stat::Base(BaseStat::Def),
+                BuffScaling::Multiplicative,
+                flat_value!(-0.16),
+            )],
+            true,
+        )))
+    }
+
+    result
 }
-
 
 const SKILL_PARAMS: [(f32, f32, f32); 15] = [
     (1.0000, 0.4000, 1.0000),
@@ -23,7 +40,6 @@ const SKILL_PARAMS: [(f32, f32, f32); 15] = [
     (2.5000, 1.0000, 1.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (3.0000, 0.3600, 0.1200, 0.1800, 10.0000),
     (3.0000, 0.3840, 0.1280, 0.1920, 10.0000),
@@ -41,7 +57,6 @@ const ULT_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (3.0000, 0.6960, 0.2320, 0.3480, 10.0000),
     (3.0000, 0.7200, 0.2400, 0.3600, 10.0000),
 ];
-
 
 const TALENT_PARAMS: [(f32, f32); 15] = [
     (1.0000, 1.0000),
@@ -61,21 +76,8 @@ const TALENT_PARAMS: [(f32, f32); 15] = [
     (2.5000, 1.0000),
 ];
 
-
-const TECH_PARAMS: [(f32, f32); 1] = [
-    (15.0000, 2.0000),
-];
-
+const TECH_PARAMS: [(f32, f32); 1] = [(15.0000, 2.0000)];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];
-

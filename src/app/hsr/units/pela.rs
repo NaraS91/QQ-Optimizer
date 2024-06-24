@@ -1,9 +1,69 @@
-use super::{ModifierSource, Unit};
+use crate::app::hsr::basics::Element;
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+use super::{
+    utils::{flat_value, value_with_buffer},
+    AdvancedStat, BaseStat, BuffScaling, Modifier, ModifierData, ModifierOrDOT, ModifierTarget,
+    Source, Stat, Unit,
+};
+
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    let mut result = vec![
+        ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Ultimate),
+            vec![ModifierData::new(
+                ModifierTarget::Enemies,
+                Stat::Base(BaseStat::Def),
+                BuffScaling::Multiplicative,
+                value_with_buffer!(|buffer: &Unit| {
+                    let ult_index = (buffer.unique_data.ultimate_level
+                        + if buffer.unique_data.eidolon >= 5 {
+                            2
+                        } else {
+                            0
+                        }) as usize;
+
+                    -ULT_PARAMS[ult_index].1
+                }),
+            )],
+            true,
+        )),
+        ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Technique),
+            vec![ModifierData::new(
+                ModifierTarget::Enemies,
+                Stat::Base(BaseStat::Def),
+                BuffScaling::Multiplicative,
+                flat_value!(-0.2),
+            )],
+            true,
+        )),
+        ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Trace(2)),
+            vec![ModifierData::new(
+                ModifierTarget::Allies,
+                Stat::Advanced(AdvancedStat::EffectHitRate),
+                BuffScaling::Additive,
+                flat_value!(0.1),
+            )],
+            true,
+        )),
+    ];
+
+    if unit.unique_data.eidolon >= 4 {
+        result.push(ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Skill),
+            vec![ModifierData::new(
+                ModifierTarget::Enemy,
+                Stat::Advanced(AdvancedStat::ElemDmgRes(Element::Ice)),
+                BuffScaling::Additive,
+                flat_value!(-0.12),
+            )],
+            true,
+        )))
+    }
+
+    result
 }
-
 
 const SKILL_PARAMS: [(f32, f32); 15] = [
     (1.0500, 1.0000),
@@ -23,7 +83,6 @@ const SKILL_PARAMS: [(f32, f32); 15] = [
     (2.6250, 1.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32, f32, f32); 15] = [
     (1.0000, 0.3000, 2.0000, 0.6000),
     (1.0000, 0.3100, 2.0000, 0.6400),
@@ -42,40 +101,13 @@ const ULT_PARAMS: [(f32, f32, f32, f32); 15] = [
     (1.0000, 0.4500, 2.0000, 1.2000),
 ];
 
-
 const TALENT_PARAMS: [f32; 15] = [
-    5.0000,
-    5.5000,
-    6.0000,
-    6.5000,
-    7.0000,
-    7.5000,
-    8.1250,
-    8.7500,
-    9.3750,
-    10.0000,
-    10.5000,
-    11.0000,
-    11.5000,
-    12.0000,
-    12.5000,
+    5.0000, 5.5000, 6.0000, 6.5000, 7.0000, 7.5000, 8.1250, 8.7500, 9.3750, 10.0000, 10.5000,
+    11.0000, 11.5000, 12.0000, 12.5000,
 ];
 
-
-const TECH_PARAMS: [(f32, f32, f32, f32); 1] = [
-    (1.0000, 0.2000, 2.0000, 0.8000),
-];
-
+const TECH_PARAMS: [(f32, f32, f32, f32); 1] = [(1.0000, 0.2000, 2.0000, 0.8000)];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];
-

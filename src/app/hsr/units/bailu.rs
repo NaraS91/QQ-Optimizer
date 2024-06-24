@@ -1,9 +1,26 @@
-use super::{ModifierSource, Unit};
+use super::{
+    utils::flat_value, AdvancedStat, BonusDMGFlag, BuffScaling, Modifier, ModifierData,
+    ModifierOrDOT, ModifierTarget, Source, Stat, Unit, UnitKind,
+};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    //receive 10% less dmg
+    let mut result_vec = Vec::new();
+    if unit.unique_data.eidolon >= 4 {
+        result_vec.push(ModifierOrDOT::Modifier(Modifier::new(
+            (UnitKind::Bailu, Source::Eidolon(4)),
+            vec![ModifierData::new(
+                ModifierTarget::Team,
+                Stat::Advanced(AdvancedStat::TotalDmgBoost(BonusDMGFlag::MAX)),
+                BuffScaling::Additive,
+                flat_value!(0.1),
+            )],
+            true,
+        )))
+    }
+
+    result_vec
 }
-
 
 const SKILL_PARAMS: [(f32, f32, f32, f32); 15] = [
     (0.0780, 78.0000, 0.1500, 2.0000),
@@ -23,7 +40,6 @@ const SKILL_PARAMS: [(f32, f32, f32, f32); 15] = [
     (0.1365, 399.7500, 0.1500, 2.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (0.0900, 90.0000, 2.0000),
     (0.0956, 144.0000, 2.0000),
@@ -41,7 +57,6 @@ const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (0.1530, 441.0000, 2.0000),
     (0.1575, 461.2500, 2.0000),
 ];
-
 
 const TALENT_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (0.0360, 36.0000, 0.1200, 120.0000, 2.0000),
@@ -61,21 +76,8 @@ const TALENT_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (0.0630, 184.5000, 0.2100, 615.0000, 2.0000),
 ];
 
-
-const TECH_PARAMS: [f32; 1] = [
-    2.0000,
-];
-
+const TECH_PARAMS: [f32; 1] = [2.0000];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];
-

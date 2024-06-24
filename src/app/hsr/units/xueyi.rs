@@ -1,9 +1,8 @@
-use super::{ModifierSource, Unit};
+use super::{ModifierOrDOT, Unit};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
     vec![]
 }
-
 
 const SKILL_PARAMS: [(f32, f32); 15] = [
     (0.7000, 0.3500),
@@ -23,7 +22,6 @@ const SKILL_PARAMS: [(f32, f32); 15] = [
     (1.7500, 0.8750),
 ];
 
-
 const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (1.5000, 0.0900, 0.3600),
     (1.6000, 0.0960, 0.3840),
@@ -41,7 +39,6 @@ const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (2.9000, 0.1740, 0.6960),
     (3.0000, 0.1800, 0.7200),
 ];
-
 
 const TALENT_PARAMS: [(f32, f32, f32); 15] = [
     (8.0000, 0.4500, 1.0000),
@@ -61,21 +58,8 @@ const TALENT_PARAMS: [(f32, f32, f32); 15] = [
     (8.0000, 1.1250, 1.0000),
 ];
 
-
-const TECH_PARAMS: [f32; 1] = [
-    0.8000,
-];
-
+const TECH_PARAMS: [f32; 1] = [0.8000];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];
-

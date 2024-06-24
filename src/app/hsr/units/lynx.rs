@@ -1,9 +1,76 @@
-use super::{ModifierSource, Unit};
+use super::{
+    utils::flat_value, AdvancedStat, BaseStat, BuffScaling, Modifier, ModifierData, ModifierOrDOT,
+    ModifierTarget, Source, Stat, Unit,
+};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    let mut result = vec![ModifierOrDOT::Modifier(Modifier::new(
+        (unit.kind, Source::Skill),
+        vec![ModifierData::new(
+            ModifierTarget::Ally,
+            Stat::Base(BaseStat::Hp),
+            BuffScaling::Additive,
+            |_, buffer, _, team, light_cones_store, relics_store| {
+                let skill_index = (buffer.unique_data.skill_level
+                    + if buffer.unique_data.eidolon >= 2 {
+                        2
+                    } else {
+                        0
+                    }) as usize;
+                let lynx_hp = buffer.get_effective_base_stat(
+                    BaseStat::Hp,
+                    team,
+                    light_cones_store,
+                    relics_store,
+                );
+
+                SKILL_PARAMS[skill_index].0 * lynx_hp
+                    + SKILL_PARAMS[skill_index].1
+                    + if buffer.unique_data.eidolon >= 6 {
+                        0.06 * lynx_hp
+                    } else {
+                        0.
+                    }
+            },
+        )],
+        true,
+    ))];
+
+    if unit.unique_data.eidolon >= 4 {
+        result.push(ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Skill),
+            vec![ModifierData::new(
+                ModifierTarget::Ally,
+                Stat::Base(BaseStat::Atk),
+                BuffScaling::Additive,
+                |_, buffer, _, team, light_cones_store, relics_store| {
+                    buffer.get_effective_base_stat(
+                        BaseStat::Hp,
+                        team,
+                        light_cones_store,
+                        relics_store,
+                    ) * 0.03
+                },
+            )],
+            true,
+        )))
+    }
+
+    if unit.unique_data.eidolon >= 6 {
+        result.push(ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Skill),
+            vec![ModifierData::new(
+                ModifierTarget::Ally,
+                Stat::Advanced(AdvancedStat::EffectRes),
+                BuffScaling::Additive,
+                flat_value!(0.3),
+            )],
+            true,
+        )))
+    }
+
+    result
 }
-
 
 const SKILL_PARAMS: [(f32, f32, f32, f32, f32, f32); 15] = [
     (0.0500, 50.0000, 2.0000, 0.0800, 80.0000, 5.0000),
@@ -23,7 +90,6 @@ const SKILL_PARAMS: [(f32, f32, f32, f32, f32, f32); 15] = [
     (0.0875, 256.2500, 2.0000, 0.1400, 410.0000, 5.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (1.0000, 0.0900, 90.0000),
     (1.0000, 0.0956, 144.0000),
@@ -41,7 +107,6 @@ const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (1.0000, 0.1530, 441.0000),
     (1.0000, 0.1575, 461.2500),
 ];
-
 
 const TALENT_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (2.0000, 0.0240, 24.0000, 0.0300, 30.0000),
@@ -61,21 +126,8 @@ const TALENT_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (2.0000, 0.0420, 123.0000, 0.0525, 153.7500),
 ];
 
-
-const TECH_PARAMS: [f32; 1] = [
-    2.0000,
-];
-
+const TECH_PARAMS: [f32; 1] = [2.0000];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.2500,
-    0.3000,
-    0.3500,
-    0.4000,
-    0.4500,
-    0.5000,
-    0.5500,
-    0.6000,
-    0.6500,
+    0.2500, 0.3000, 0.3500, 0.4000, 0.4500, 0.5000, 0.5500, 0.6000, 0.6500,
 ];
-

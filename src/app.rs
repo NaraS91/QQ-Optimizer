@@ -1,24 +1,29 @@
+use std::fs;
+
 use egui::{Color32, Margin, RichText};
-use egui_extras::StripBuilder;
 use serde::{Deserialize, Serialize};
 
-use self::{light_cones_store::LightConesStore, relics_store::RelicsStore, units_store::UnitsStore};
-mod optimizer;
+use self::{
+    light_cones_store::LightConesStore, relics_store::RelicsStore, units_store::UnitsStore,
+};
 mod comboBoxImage;
+mod data_import;
 mod hsr;
+mod light_cones_store;
+mod optimizer;
 mod relics_store;
 mod units_store;
-mod light_cones_store;
 
-pub static COLOR_PALLET: ColorPallet = ColorPallet{
+pub static COLOR_PALLET: ColorPallet = ColorPallet {
     top_menu: Color32::from_rgb(57, 62, 70),
     background: Color32::from_rgb(34, 40, 49),
     card: Color32::from_rgb(52, 61, 75),
     section: Color32::from_rgb(42, 49, 60),
     text: Color32::from_rgb(238, 238, 238),
-    highlighted_text: Color32::from_rgb(0, 173, 181)
+    highlighted_text: Color32::from_rgb(0, 173, 181),
 };
 
+const STORES_FROM_CONFIG: bool = true;
 const UNITS_STORE_KEY: &str = "unit_store";
 const RELICS_STORE_KEY: &str = "relics_store";
 const LIGHT_CONES_STORE_KEY: &str = "relics_store";
@@ -31,7 +36,7 @@ pub struct QQOptimizer {
     sub_page: PageState,
     relics_store: RelicsStore,
     units_store: UnitsStore,
-    light_cones_store: LightConesStore
+    light_cones_store: LightConesStore,
 }
 
 enum PageState {
@@ -40,38 +45,38 @@ enum PageState {
 
 #[derive(Deserialize, Serialize)]
 pub struct ColorPallet {
-  top_menu: Color32,
-  background: Color32,
-  card: Color32,
-  section: Color32,
-  text: Color32,
-  highlighted_text: Color32
+    top_menu: Color32,
+    background: Color32,
+    card: Color32,
+    section: Color32,
+    text: Color32,
+    highlighted_text: Color32,
 }
 
 impl ColorPallet {
-    pub fn top_menu(&self) -> Color32{
+    pub fn top_menu(&self) -> Color32 {
         self.top_menu
     }
-    pub fn background(&self) -> Color32{
+    pub fn background(&self) -> Color32 {
         self.background
     }
-    pub fn card(&self) -> Color32{
+    pub fn card(&self) -> Color32 {
         self.card
     }
-    pub fn section(&self) -> Color32{
+    pub fn section(&self) -> Color32 {
         self.section
     }
-    pub fn text(&self) -> Color32{
+    pub fn text(&self) -> Color32 {
         self.text
     }
-    pub fn highlighted_text(&self) -> Color32{
+    pub fn highlighted_text(&self) -> Color32 {
         self.highlighted_text
     }
 }
 
 enum MenuState {
-  Units,
-  Optimizer
+    Units,
+    Optimizer,
 }
 
 impl Default for QQOptimizer {
@@ -82,7 +87,7 @@ impl Default for QQOptimizer {
             sub_page: PageState::OptimizerTab(Box::new(Default::default())),
             relics_store: Default::default(),
             units_store: Default::default(),
-            light_cones_store: Default::default()
+            light_cones_store: Default::default(),
         }
     }
 }
@@ -97,9 +102,23 @@ impl QQOptimizer {
         // Note that you must enable the `persistence` feature for this to work.
         if let Some(storage) = cc.storage {
             let mut app = Self::default();
-            app.relics_store = eframe::get_value(storage, RELICS_STORE_KEY).unwrap_or_default();
-            app.units_store = eframe::get_value(storage, UNITS_STORE_KEY).unwrap_or_default();
-            app.light_cones_store = eframe::get_value(storage, LIGHT_CONES_STORE_KEY).unwrap_or_default();
+            if STORES_FROM_CONFIG {
+                app.relics_store = RelicsStore::new();
+                app.units_store = UnitsStore::new_empty();
+                app.light_cones_store = LightConesStore::new_empty();
+                let file_content = fs::read_to_string("./data/config.json").unwrap();
+                data_import::import(
+                    &file_content,
+                    &mut app.relics_store,
+                    &mut app.light_cones_store,
+                    &mut app.units_store,
+                )
+            } else {
+                app.relics_store = eframe::get_value(storage, RELICS_STORE_KEY).unwrap_or_default();
+                app.units_store = eframe::get_value(storage, UNITS_STORE_KEY).unwrap_or_default();
+                app.light_cones_store =
+                    eframe::get_value(storage, LIGHT_CONES_STORE_KEY).unwrap_or_default();
+            }
             return app;
         }
 
@@ -120,37 +139,34 @@ impl eframe::App for QQOptimizer {
         egui_extras::install_image_loaders(ctx);
         // Put your widgets into a `SidePanel`, `TopBottomPanel`, `CentralPanel`, `Window` or `Area`.
         // For inspiration and more examples, go to https://emilk.github.io/egui
-        let top_panel = egui::TopBottomPanel::top("top_panel")
-            .exact_height(20.0);
+        let top_panel = egui::TopBottomPanel::top("top_panel").exact_height(20.0);
         let top_panel_frame = egui::containers::Frame::default().fill(COLOR_PALLET.top_menu);
         top_panel.frame(top_panel_frame).show(ctx, |ui| {
             // The top panel is often a good place for a menu bar:
 
             egui::menu::bar(ui, |ui| {
-                let optimizer_button = egui::Button::new(RichText::new("Optimizer")
-                        .color(if matches!(self.menu_state, MenuState::Optimizer) {
-                                COLOR_PALLET.highlighted_text
-                            } else {
-                                COLOR_PALLET.text
-                            }
-                        )
-                );
+                let optimizer_button = egui::Button::new(RichText::new("Optimizer").color(
+                    if matches!(self.menu_state, MenuState::Optimizer) {
+                        COLOR_PALLET.highlighted_text
+                    } else {
+                        COLOR_PALLET.text
+                    },
+                ));
 
-                let units_button = egui::Button::new(RichText::new("Units")
-                        .color(if matches!(self.menu_state, MenuState::Units) {
-                                COLOR_PALLET.highlighted_text
-                            } else {
-                                COLOR_PALLET.text
-                            }
-                        )
-                );
+                let units_button = egui::Button::new(RichText::new("Units").color(
+                    if matches!(self.menu_state, MenuState::Units) {
+                        COLOR_PALLET.highlighted_text
+                    } else {
+                        COLOR_PALLET.text
+                    },
+                ));
 
                 let optimizer_button_r = ui.add(optimizer_button);
                 let units_button_r = ui.add(units_button);
                 if optimizer_button_r.clicked() {
-                  self.menu_state = MenuState::Optimizer;
+                    self.menu_state = MenuState::Optimizer;
                 } else if units_button_r.clicked() {
-                  self.menu_state = MenuState::Units;
+                    self.menu_state = MenuState::Units;
                 }
             });
         });
@@ -159,19 +175,24 @@ impl eframe::App for QQOptimizer {
             .fill(COLOR_PALLET.background)
             .inner_margin(Margin::same(20.0));
 
-
         egui::CentralPanel::default()
             .frame(background_frame)
             .show(ctx, |ui| {
                 match &mut self.sub_page {
-                    PageState::OptimizerTab(optimizer) => optimizer::new_page(ui, optimizer, &mut self.relics_store, &mut self.units_store, &mut self.light_cones_store),
+                    PageState::OptimizerTab(optimizer) => optimizer::new_page(
+                        ui,
+                        optimizer,
+                        &mut self.relics_store,
+                        &mut self.units_store,
+                        &mut self.light_cones_store,
+                    ),
                 }
 
                 ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {
                     powered_by_egui_and_eframe(ui);
                     egui::warn_if_debug_build(ui);
                 });
-        });
+            });
     }
 }
 

@@ -1,9 +1,52 @@
-use super::{ModifierSource, Unit};
+use super::{
+    utils::flat_value, AdvancedStat, BaseStat, BonusDMGFlag, BuffScaling, Modifier, ModifierData,
+    ModifierOrDOT, ModifierTarget, Source, Stat, Unit,
+};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    let mut result = vec![];
+
+    if unit.unique_data.eidolon >= 1 {
+        result.push(ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Eidolon(1)),
+            vec![ModifierData::new(
+                ModifierTarget::Allies,
+                Stat::Base(BaseStat::Atk),
+                BuffScaling::Multiplicative,
+                flat_value!(0.2),
+            )],
+            true,
+        )))
+    }
+
+    if unit.unique_data.eidolon >= 4 {
+        result.push(ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Eidolon(4)),
+            vec![ModifierData::new(
+                ModifierTarget::Enemies,
+                Stat::Advanced(AdvancedStat::TotalDmgBoost(BonusDMGFlag::MAX)),
+                BuffScaling::Additive,
+                flat_value!(-0.12),
+            )],
+            true,
+        )))
+    }
+
+    if unit.unique_data.eidolon >= 6 {
+        result.push(ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Eidolon(6)),
+            vec![ModifierData::new(
+                ModifierTarget::Enemies,
+                Stat::Advanced(AdvancedStat::TotalResPen),
+                BuffScaling::Additive,
+                flat_value!(-0.2),
+            )],
+            true,
+        )))
+    }
+
+    result
 }
-
 
 const SKILL_PARAMS: [(f32, f32, f32, f32); 15] = [
     (0.4000, 200.0000, 0.5000, 2.0000),
@@ -23,7 +66,6 @@ const SKILL_PARAMS: [(f32, f32, f32, f32); 15] = [
     (0.7000, 1025.0000, 0.5000, 2.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32); 15] = [
     (1.2000, 1.0000),
     (1.2800, 1.0000),
@@ -41,7 +83,6 @@ const ULT_PARAMS: [(f32, f32); 15] = [
     (2.3200, 1.0000),
     (2.4000, 1.0000),
 ];
-
 
 const TALENT_PARAMS: [(f32, f32, f32, f32); 15] = [
     (2.0000, 0.1200, 2.0000, 60.0000),
@@ -61,16 +102,6 @@ const TALENT_PARAMS: [(f32, f32, f32, f32); 15] = [
     (2.0000, 0.2100, 2.0000, 307.5000),
 ];
 
-
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];
-
