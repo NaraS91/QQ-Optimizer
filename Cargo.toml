@@ -22,11 +22,15 @@ eframe = { version = "0.25.0", default-features = false, features = [
 log = "0.4"
 epaint = "0.25"
 
+itertools = "0.12.1"
+
 #enum utils (including iterators)
 strum = "0.25" 
 strum_macros = "0.25"
 
 enum-map = "2.7.3"
+
+json = "0.12.4"
 
 # You only need serde if you want app persistence:
 serde = { version = "1", features = ["derive"] }
@@ -42,6 +46,9 @@ wasm-bindgen-futures = "0.4"
 # to access the DOM (to hide the loading text)
 [target.'cfg(target_arch = "wasm32")'.dependencies.web-sys]
 version = "0.3.4"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = ["winuser"] }
 
 [profile.release]
 opt-level = 2 # fast and small wasm

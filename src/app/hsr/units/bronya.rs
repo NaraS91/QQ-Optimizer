@@ -1,74 +1,115 @@
-use super::{AdvancedStat, BaseStat, BuffScaling, BuffStat, ModifierData, ModifierSource, ModifierTarget, Unit};
+use crate::app::hsr::units::{BonusDMGFlag, Source};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    let mut skill_data: Vec<ModifierData> = vec![
-        ModifierData {
-            target: ModifierTarget::Ally,
-            stat: BuffStat::Advanced(AdvancedStat::TotalDmgBoost),
-            scaling: BuffScaling::Additive,
-            value: SKILL_PARAMS[unit.skill_level as usize].0
-        }
-    ];
-    
-    if unit.eidolon >= 2 {
-        skill_data.push(
-            ModifierData {
-                target: ModifierTarget::Ally,
-                stat: BuffStat::Base(BaseStat::Spd),
-                scaling: BuffScaling::Multiplicative,
-                value: 0.3
-            }
-        )
+use super::{
+    AdvancedStat, BaseStat, BuffScaling, Modifier, ModifierData, ModifierOrDOT, ModifierTarget,
+    Stat, Unit,
+};
+
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    let mut skill_data: Vec<ModifierData> = vec![ModifierData::new(
+        ModifierTarget::Ally,
+        Stat::Advanced(AdvancedStat::TotalDmgBoost(BonusDMGFlag::MAX)),
+        BuffScaling::Additive,
+        |_, buffer, _, _, _, _| {
+            let skill_level = buffer.unique_data.skill_level
+                + (if buffer.unique_data.eidolon >= 5 {
+                    2
+                } else {
+                    0
+                });
+            SKILL_PARAMS[skill_level as usize].0
+        },
+    )];
+
+    if unit.unique_data.eidolon >= 2 {
+        skill_data.push(ModifierData::new(
+            ModifierTarget::Ally,
+            Stat::Base(BaseStat::Spd),
+            BuffScaling::Multiplicative,
+            |_, _, _, _, _, _| 0.3,
+        ))
     }
 
-    let ult_index = unit.ultimate_level as usize;
     let ultimate_data: Vec<ModifierData> = vec![
-        ModifierData {
-            target: ModifierTarget::Team,
-            stat: BuffStat::Advanced(AdvancedStat::CritDamage),
-            scaling: BuffScaling::Additive,
-            value: ULT_PARAMS[ult_index].2 + ULT_PARAMS[ult_index].1 * unit.advanced_stats[AdvancedStat::CritDamage]
-        },
-        ModifierData {
-            target: ModifierTarget::Team,
-            stat: BuffStat::Base(BaseStat::Atk),
-            scaling: BuffScaling::Multiplicative,
-            value: ULT_PARAMS[ult_index].0
-        }
+        ModifierData::new(
+            ModifierTarget::Team,
+            Stat::Advanced(AdvancedStat::CritDamage),
+            BuffScaling::Additive,
+            |_, buffer, _, team, light_cones_store, relics_store| {
+                let ult_level = buffer.unique_data.ultimate_level as usize
+                    + (if buffer.unique_data.eidolon >= 3 {
+                        2
+                    } else {
+                        0
+                    }) as usize;
+                ULT_PARAMS[ult_level].2
+                    + ULT_PARAMS[ult_level].1
+                        * buffer.get_effective_advanced_stat(
+                            AdvancedStat::CritDamage,
+                            team,
+                            light_cones_store,
+                            relics_store,
+                        )
+            },
+        ),
+        ModifierData::new(
+            ModifierTarget::Team,
+            Stat::Base(BaseStat::Atk),
+            BuffScaling::Multiplicative,
+            |_, buffer, _, _, _, _| {
+                let ult_level = buffer.unique_data.ultimate_level as usize
+                    + (if buffer.unique_data.eidolon >= 3 {
+                        2
+                    } else {
+                        0
+                    }) as usize;
+                ULT_PARAMS[ult_level].0
+            },
+        ),
     ];
 
-    let trace2_data: Vec<ModifierData> = vec![
-        ModifierData {
-            target: ModifierTarget::Team,
-            stat: BuffStat::Base(BaseStat::Def),
-            scaling: BuffScaling::Multiplicative,
-            value: 0.2
-        }
-    ];
+    let trace2_data: Vec<ModifierData> = vec![ModifierData::new(
+        ModifierTarget::Team,
+        Stat::Base(BaseStat::Def),
+        BuffScaling::Multiplicative,
+        |_, _, _, _, _, _| 0.2,
+    )];
 
-    let trace3_data: Vec<ModifierData> = vec![
-        ModifierData {
-            target: ModifierTarget::Team,
-            stat: BuffStat::Advanced(AdvancedStat::TotalDmgBoost),
-            scaling: BuffScaling::Additive,
-            value: 0.1
-        }
-    ];
-    let technique_data: Vec<ModifierData> = vec![
-        ModifierData {
-            target: ModifierTarget::Team,
-            stat: BuffStat::Base(BaseStat::Atk),
-            scaling: BuffScaling::Multiplicative,
-            value: 0.15
-        }
-    ];
+    let trace3_data: Vec<ModifierData> = vec![ModifierData::new(
+        ModifierTarget::Team,
+        Stat::Advanced(AdvancedStat::TotalDmgBoost(BonusDMGFlag::MAX)),
+        BuffScaling::Additive,
+        |_, _, _, _, _, _| 0.1,
+    )];
+    let technique_data: Vec<ModifierData> = vec![ModifierData::new(
+        ModifierTarget::Team,
+        Stat::Base(BaseStat::Atk),
+        BuffScaling::Multiplicative,
+        |_, _, _, _, _, _| 0.15,
+    )];
 
     vec![
-        ModifierSource::Skill(skill_data),
-        ModifierSource::Ultimate(ultimate_data),
-        ModifierSource::Trace(2, trace2_data),
-        ModifierSource::Trace(3, trace3_data),
-        ModifierSource::Technique(technique_data)
+        ModifierOrDOT::Modifier(Modifier::new((unit.kind, Source::Skill), skill_data, true)),
+        ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Ultimate),
+            ultimate_data,
+            true,
+        )),
+        ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Trace(1)),
+            trace2_data,
+            true,
+        )),
+        ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Trace(2)),
+            trace3_data,
+            true,
+        )),
+        ModifierOrDOT::Modifier(Modifier::new(
+            (unit.kind, Source::Technique),
+            technique_data,
+            true,
+        )),
     ]
 }
 
@@ -90,7 +131,6 @@ const SKILL_PARAMS: [(f32, f32, f32, f32); 15] = [
     (0.8250, 0.0000, 1.0000, 1.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32, f32, f32); 15] = [
     (0.3300, 0.1200, 0.1200, 2.0000),
     (0.3520, 0.1240, 0.1280, 2.0000),
@@ -109,39 +149,13 @@ const ULT_PARAMS: [(f32, f32, f32, f32); 15] = [
     (0.6600, 0.1800, 0.2400, 2.0000),
 ];
 
-
 const TALENT_PARAMS: [f32; 15] = [
-    0.1500,
-    0.1650,
-    0.1800,
-    0.1950,
-    0.2100,
-    0.2250,
-    0.2437,
-    0.2625,
-    0.2812,
-    0.3000,
-    0.3150,
-    0.3300,
-    0.3450,
-    0.3600,
-    0.3750,
+    0.1500, 0.1650, 0.1800, 0.1950, 0.2100, 0.2250, 0.2437, 0.2625, 0.2812, 0.3000, 0.3150, 0.3300,
+    0.3450, 0.3600, 0.3750,
 ];
 
-
-const TECH_PARAMS: [(f32, f32); 1] = [
-    (0.1500, 2.0000),
-];
-
+const TECH_PARAMS: [(f32, f32); 1] = [(0.1500, 2.0000)];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];

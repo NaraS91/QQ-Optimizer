@@ -1,9 +1,45 @@
-use super::{ModifierSource, Unit};
+use crate::app::hsr::{
+    basics::Element,
+    units::{
+        AdvancedStat, BuffScaling, ConfigType, DOTKind, Modifier, ModifierConfig, ModifierData,
+        ModifierTarget, Source, Stat, UnitKind,
+    },
+};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+use super::{ModifierOrDOT, Unit};
+
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    vec![
+        ModifierOrDOT::DOT(DOTKind::Standard(
+            Element::Fire,
+            SKILL_PARAMS[(unit.unique_data.skill_level
+                + if unit.unique_data.eidolon >= 2 { 2 } else { 0 })
+                as usize]
+                .3,
+        )),
+        ModifierOrDOT::Modifier(Modifier::new_with_config(
+            (UnitKind::Guinaifen, Source::Talent),
+            vec![ModifierData::new(
+                ModifierTarget::Enemy,
+                Stat::Advanced(AdvancedStat::Vulnerability),
+                BuffScaling::Additive,
+                |_, buffer, config_data, _, _, _| {
+                    let talent_bonus = if buffer.unique_data.eidolon >= 5 {
+                        2
+                    } else {
+                        0
+                    };
+                    config_data
+                        .and_then(|config| Some(config.get_index() as f32))
+                        .unwrap_or(0.)
+                        * TALENT_PARAMS[(buffer.unique_data.talent_level + talent_bonus) as usize].3
+                },
+            )],
+            Some(ModifierConfig::new(ConfigType::Stacks(3))),
+            true,
+        )),
+    ]
 }
-
 
 const SKILL_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (0.6000, 0.2000, 1.0000, 0.8390, 2.0000),
@@ -23,7 +59,6 @@ const SKILL_PARAMS: [(f32, f32, f32, f32, f32); 15] = [
     (1.5000, 0.5000, 1.0000, 2.7277, 2.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32); 15] = [
     (0.7200, 0.7200),
     (0.7680, 0.7400),
@@ -41,7 +76,6 @@ const ULT_PARAMS: [(f32, f32); 15] = [
     (1.3920, 1.0000),
     (1.4400, 1.0200),
 ];
-
 
 const TALENT_PARAMS: [(f32, f32, f32, f32, f32, f32); 15] = [
     (1.0000, 0.0000, 0.0000, 0.0400, 3.0000, 3.0000),
@@ -61,21 +95,8 @@ const TALENT_PARAMS: [(f32, f32, f32, f32, f32, f32); 15] = [
     (1.0000, 0.0000, 0.0000, 0.0850, 3.0000, 3.0000),
 ];
 
-
-const TECH_PARAMS: [(f32, f32, f32); 1] = [
-    (0.5000, 4.0000, 1.0000),
-];
-
+const TECH_PARAMS: [(f32, f32, f32); 1] = [(0.5000, 4.0000, 1.0000)];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];
-

@@ -1,9 +1,25 @@
-use super::{ModifierSource, Unit};
+use crate::app::hsr::{
+    basics::Element,
+    units::{
+        utils::flat_value, AdvancedStat, BuffScaling, Modifier, ModifierData, ModifierTarget,
+        Source, Stat,
+    },
+};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+use super::{ModifierOrDOT, Unit};
+
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    vec![ModifierOrDOT::Modifier(Modifier::new(
+        (unit.kind, Source::Dimension),
+        vec![ModifierData::new(
+            ModifierTarget::Enemies,
+            Stat::Advanced(AdvancedStat::ElemDmgReceived(Element::Fire)),
+            BuffScaling::Additive,
+            flat_value!(0.1),
+        )],
+        true,
+    ))]
 }
-
 
 const SKILL_PARAMS: [(f32, f32); 15] = [
     (1.0000, 0.4000),
@@ -23,7 +39,6 @@ const SKILL_PARAMS: [(f32, f32); 15] = [
     (2.5000, 1.0000),
 ];
 
-
 const ULT_PARAMS: [(f32, f32); 15] = [
     (1.3800, 5.0000),
     (1.4720, 5.0000),
@@ -41,7 +56,6 @@ const ULT_PARAMS: [(f32, f32); 15] = [
     (2.6680, 5.0000),
     (2.7600, 5.0000),
 ];
-
 
 const TALENT_PARAMS: [(f32, f32); 15] = [
     (0.7000, 3.0000),
@@ -61,21 +75,8 @@ const TALENT_PARAMS: [(f32, f32); 15] = [
     (1.7500, 3.0000),
 ];
 
-
-const TECH_PARAMS: [(f32, f32, f32, f32); 1] = [
-    (1.0000, 0.1000, 2.0000, 15.0000),
-];
-
+const TECH_PARAMS: [(f32, f32, f32, f32); 1] = [(1.0000, 0.1000, 2.0000, 15.0000)];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];
-

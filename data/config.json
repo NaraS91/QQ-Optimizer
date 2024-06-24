@@ -1,0 +1,5369 @@
+{
+    "source": "HSR-Scanner",
+    "build": "v0.6.2",
+    "version": 3,
+    "metadata": {
+        "uid": null,
+        "trailblazer": "Stelle"
+    },
+    "light_cones": [
+        {
+            "key": "In the Night",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 1,
+            "location": "Seele",
+            "lock": false,
+            "_id": "light_cone_2"
+        },
+        {
+            "key": "Good Night and Sleep Well",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 5,
+            "location": "",
+            "lock": true,
+            "_id": "light_cone_16"
+        },
+        {
+            "key": "On the Fall of an Aeon",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 5,
+            "location": "Hook",
+            "lock": true,
+            "_id": "light_cone_1"
+        },
+        {
+            "key": "But the Battle Isn't Over",
+            "level": 70,
+            "ascension": 5,
+            "superimposition": 1,
+            "location": "Bronya",
+            "lock": true,
+            "_id": "light_cone_17"
+        },
+        {
+            "key": "Texture of Memories",
+            "level": 70,
+            "ascension": 5,
+            "superimposition": 5,
+            "location": "TrailblazerPreservation",
+            "lock": true,
+            "_id": "light_cone_18"
+        },
+        {
+            "key": "The Seriousness of Breakfast",
+            "level": 70,
+            "ascension": 5,
+            "superimposition": 5,
+            "location": "Himeko",
+            "lock": true,
+            "_id": "light_cone_19"
+        },
+        {
+            "key": "Planetary Rendezvous",
+            "level": 70,
+            "ascension": 5,
+            "superimposition": 3,
+            "location": "Asta",
+            "lock": true,
+            "_id": "light_cone_20"
+        },
+        {
+            "key": "Trend of the Universal Market",
+            "level": 70,
+            "ascension": 5,
+            "superimposition": 5,
+            "location": "March 7th",
+            "lock": true,
+            "_id": "light_cone_21"
+        },
+        {
+            "key": "Incessant Rain",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 1,
+            "location": "Silver Wolf",
+            "lock": true,
+            "_id": "light_cone_3"
+        },
+        {
+            "key": "Warmth Shortens Cold Nights",
+            "level": 70,
+            "ascension": 5,
+            "superimposition": 1,
+            "location": "Lynx",
+            "lock": true,
+            "_id": "light_cone_22"
+        },
+        {
+            "key": "Under the Blue Sky",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 5,
+            "location": "Xueyi",
+            "lock": true,
+            "_id": "light_cone_7"
+        },
+        {
+            "key": "Swordplay",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 5,
+            "location": "Sushang",
+            "lock": true,
+            "_id": "light_cone_8"
+        },
+        {
+            "key": "Moment of Victory",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 2,
+            "location": "Gepard",
+            "lock": true,
+            "_id": "light_cone_5"
+        },
+        {
+            "key": "Time Waits for No One",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 1,
+            "location": "Luocha",
+            "lock": true,
+            "_id": "light_cone_6"
+        },
+        {
+            "key": "She Already Shut Her Eyes",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 3,
+            "location": "Fu Xuan",
+            "lock": true,
+            "_id": "light_cone_4"
+        },
+        {
+            "key": "The Day The Cosmos Fell",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 5,
+            "location": "Herta",
+            "lock": true,
+            "_id": "light_cone_9"
+        },
+        {
+            "key": "Today Is Another Peaceful Day",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 5,
+            "location": "Qingque",
+            "lock": true,
+            "_id": "light_cone_10"
+        },
+        {
+            "key": "The Seriousness of Breakfast",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 5,
+            "location": "Serval",
+            "lock": true,
+            "_id": "light_cone_11"
+        },
+        {
+            "key": "Dance! Dance! Dance!",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 4,
+            "location": "Tingyun",
+            "lock": true,
+            "_id": "light_cone_12"
+        },
+        {
+            "key": "Memories of the Past",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 5,
+            "location": "Ruan Mei",
+            "lock": true,
+            "_id": "light_cone_13"
+        },
+        {
+            "key": "Before the Tutorial Mission Starts",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 5,
+            "location": "Pela",
+            "lock": true,
+            "_id": "light_cone_14"
+        },
+        {
+            "key": "The Birth of the Self",
+            "level": 80,
+            "ascension": 6,
+            "superimposition": 1,
+            "location": "",
+            "lock": true,
+            "_id": "light_cone_15"
+        }
+    ],
+    "relics": [
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 19
+                },
+                {
+                    "key": "DEF",
+                    "value": 59
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 7.3
+                }
+            ],
+            "location": "Bronya",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_75"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 55
+                },
+                {
+                    "key": "ATK_",
+                    "value": 3.4
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 12.3
+                }
+            ],
+            "location": "Bronya",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_76"
+        },
+        {
+            "set": "Hunter of Glacial Forest",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 16
+                },
+                {
+                    "key": "ATK_",
+                    "value": 8.2
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.4
+                }
+            ],
+            "location": "Herta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_77"
+        },
+        {
+            "set": "Inert Salsotto",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Ice DMG Boost",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 105
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.1
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.1
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 7.3
+                }
+            ],
+            "location": "Herta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_78"
+        },
+        {
+            "set": "Hunter of Glacial Forest",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 33
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.8
+                },
+                {
+                    "key": "SPD",
+                    "value": 7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.1
+                }
+            ],
+            "location": "Herta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_79"
+        },
+        {
+            "set": "Inert Salsotto",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 18.1
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 7.3
+                }
+            ],
+            "location": "Herta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_80"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 3.4
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.4
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 18.1
+                }
+            ],
+            "location": "Xueyi",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_12"
+        },
+        {
+            "set": "Hunter of Glacial Forest",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 7.3
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.3
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.8
+                }
+            ],
+            "location": "Herta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_81"
+        },
+        {
+            "set": "Fleet of the Ageless",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 11.6
+                },
+                {
+                    "key": "DEF_",
+                    "value": 5.4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 17.4
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.1
+                }
+            ],
+            "location": "Fu Xuan",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_13"
+        },
+        {
+            "set": "Hunter of Glacial Forest",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 33
+                },
+                {
+                    "key": "ATK_",
+                    "value": 7.3
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 12.9
+                }
+            ],
+            "location": "Herta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_82"
+        },
+        {
+            "set": "Firesmith of Lava-Forging",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 16
+                },
+                {
+                    "key": "ATK_",
+                    "value": 4.3
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 11.9
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.2
+                }
+            ],
+            "location": "Asta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_83"
+        },
+        {
+            "set": "Longevous Disciple",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 8.2
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 3.2
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 16.8
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 7.3
+                }
+            ],
+            "location": "Fu Xuan",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_14"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.1
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.0
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_145"
+        },
+        {
+            "set": "Longevous Disciple",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 19
+                },
+                {
+                    "key": "ATK_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 6.4
+                }
+            ],
+            "location": "Fu Xuan",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_15"
+        },
+        {
+            "set": "Guard of Wuthering Snow",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 38
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.8
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 10.3
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.6
+                }
+            ],
+            "location": "",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_146"
+        },
+        {
+            "set": "Fleet of the Ageless",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF_",
+                    "value": 10.8
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.6
+                }
+            ],
+            "location": "Fu Xuan",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_16"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Fire DMG Boost",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 16
+                },
+                {
+                    "key": "ATK_",
+                    "value": 11.6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.3
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.6
+                }
+            ],
+            "location": "Asta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_84"
+        },
+        {
+            "set": "Longevous Disciple",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 33
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.4
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 6.4
+                }
+            ],
+            "location": "Fu Xuan",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_17"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 21
+                },
+                {
+                    "key": "ATK_",
+                    "value": 15.5
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 3.2
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                }
+            ],
+            "location": "",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_144"
+        },
+        {
+            "set": "Longevous Disciple",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 12.0
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.8
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.5
+                }
+            ],
+            "location": "Fu Xuan",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_18"
+        },
+        {
+            "set": "Firesmith of Lava-Forging",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT Rate",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 40
+                },
+                {
+                    "key": "ATK_",
+                    "value": 7.7
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 11.6
+                }
+            ],
+            "location": "Asta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_85"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Physical DMG Boost",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 59
+                },
+                {
+                    "key": "ATK_",
+                    "value": 3.8
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.1
+                }
+            ],
+            "location": "Sushang",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_19"
+        },
+        {
+            "set": "Firesmith of Lava-Forging",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 118
+                },
+                {
+                    "key": "HP_",
+                    "value": 15.9
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.8
+                }
+            ],
+            "location": "Asta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_86"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "CRIT Rate_",
+                    "value": 3.2
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 18.1
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 12.0
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 4.3
+                }
+            ],
+            "location": "Sushang",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_20"
+        },
+        {
+            "set": "Firesmith of Lava-Forging",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 8.2
+                },
+                {
+                    "key": "ATK_",
+                    "value": 3.8
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.3
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 8.2
+                }
+            ],
+            "location": "Asta",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_87"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT Rate",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 59
+                },
+                {
+                    "key": "HP_",
+                    "value": 4.3
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 12.5
+                }
+            ],
+            "location": "Sushang",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_21"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 16
+                },
+                {
+                    "key": "ATK_",
+                    "value": 4.3
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 22.6
+                }
+            ],
+            "location": "Silver Wolf",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_88"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 42
+                },
+                {
+                    "key": "ATK_",
+                    "value": 10.3
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.3
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                }
+            ],
+            "location": "Sushang",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_22"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 3.2
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 18.1
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 7.3
+                }
+            ],
+            "location": "Silver Wolf",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_89"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 7.3
+                },
+                {
+                    "key": "DEF_",
+                    "value": 15.1
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.5
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.1
+                }
+            ],
+            "location": "Sushang",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_23"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 21.3
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 4.3
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 10.3
+                }
+            ],
+            "location": "Silver Wolf",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_90"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.6
+                }
+            ],
+            "location": "Sushang",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_24"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 21
+                },
+                {
+                    "key": "DEF_",
+                    "value": 5.4
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 7.7
+                }
+            ],
+            "location": "Silver Wolf",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_91"
+        },
+        {
+            "set": "Space Sealing Station",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 105
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.3
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.1
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.0
+                }
+            ],
+            "location": "Luocha",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_25"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 67
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.0
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 10.3
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 8.2
+                }
+            ],
+            "location": "Silver Wolf",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_92"
+        },
+        {
+            "set": "Space Sealing Station",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 42
+                },
+                {
+                    "key": "HP_",
+                    "value": 6.9
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.9
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 23.9
+                }
+            ],
+            "location": "Luocha",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_26"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT Rate",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 7.7
+                },
+                {
+                    "key": "DEF_",
+                    "value": 14.0
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.0
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 3.4
+                }
+            ],
+            "location": "Silver Wolf",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_93"
+        },
+        {
+            "set": "Musketeer of Wild Wheat",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 67
+                },
+                {
+                    "key": "DEF",
+                    "value": 19
+                },
+                {
+                    "key": "HP_",
+                    "value": 11.2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 10.3
+                }
+            ],
+            "location": "Luocha",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_27"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Fire DMG Boost",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 33
+                },
+                {
+                    "key": "HP_",
+                    "value": 3.8
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.3
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 12.3
+                }
+            ],
+            "location": "Himeko",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_94"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 84
+                },
+                {
+                    "key": "SPD",
+                    "value": 10
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.9
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 3.4
+                }
+            ],
+            "location": "Tingyun",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_28"
+        },
+        {
+            "set": "Firesmith of Lava-Forging",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 3.8
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 11.9
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.1
+                }
+            ],
+            "location": "Himeko",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_95"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 6.9
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.8
+                }
+            ],
+            "location": "Tingyun",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_29"
+        },
+        {
+            "set": "Firesmith of Lava-Forging",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 3.4
+                },
+                {
+                    "key": "DEF_",
+                    "value": 14.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 25.2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 6.4
+                }
+            ],
+            "location": "Himeko",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_96"
+        },
+        {
+            "set": "Broken Keel",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 76
+                },
+                {
+                    "key": "ATK",
+                    "value": 57
+                },
+                {
+                    "key": "ATK_",
+                    "value": 3.8
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                }
+            ],
+            "location": "Tingyun",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_30"
+        },
+        {
+            "set": "Firesmith of Lava-Forging",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT Rate",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 38
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.0
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 6.9
+                }
+            ],
+            "location": "Himeko",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_97"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 38
+                },
+                {
+                    "key": "ATK_",
+                    "value": 11.6
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.8
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 7.3
+                }
+            ],
+            "location": "Tingyun",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_31"
+        },
+        {
+            "set": "Firesmith of Lava-Forging",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 38
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 4.3
+                }
+            ],
+            "location": "Himeko",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_98"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 12.0
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.1
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 3.8
+                }
+            ],
+            "location": "Tingyun",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_32"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 76
+                },
+                {
+                    "key": "HP_",
+                    "value": 3.8
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 23.3
+                }
+            ],
+            "location": "Himeko",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_99"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 11.0
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 7.3
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.8
+                }
+            ],
+            "location": "Qingque",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_33"
+        },
+        {
+            "set": "Belobog of the Architects",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "DEF",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 10.8
+                },
+                {
+                    "key": "ATK_",
+                    "value": 4.3
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.8
+                }
+            ],
+            "location": "March 7th",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_100"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 19
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.1
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 22.6
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 3.4
+                }
+            ],
+            "location": "Qingque",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_34"
+        },
+        {
+            "set": "Belobog of the Architects",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 19
+                },
+                {
+                    "key": "DEF",
+                    "value": 63
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 10.3
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 11.2
+                }
+            ],
+            "location": "March 7th",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_101"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 76
+                },
+                {
+                    "key": "HP_",
+                    "value": 8.2
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.3
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 3.8
+                }
+            ],
+            "location": "Qingque",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_35"
+        },
+        {
+            "set": "Guard of Wuthering Snow",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 8.2
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.8
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 15.1
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.8
+                }
+            ],
+            "location": "March 7th",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_102"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 33
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 12.6
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 12.3
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.8
+                }
+            ],
+            "location": "Qingque",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_36"
+        },
+        {
+            "set": "Penacony, Land of the Dreams",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 21
+                },
+                {
+                    "key": "ATK_",
+                    "value": 6.9
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 11.6
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_103"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "SPD",
+                    "value": 7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.5
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 6.4
+                }
+            ],
+            "location": "Qingque",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_37"
+        },
+        {
+            "set": "Penacony, Land of the Dreams",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 76
+                },
+                {
+                    "key": "HP_",
+                    "value": 6.9
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 3.8
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_104"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 33
+                },
+                {
+                    "key": "ATK",
+                    "value": 57
+                },
+                {
+                    "key": "DEF",
+                    "value": 19
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.3
+                }
+            ],
+            "location": "Qingque",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_38"
+        },
+        {
+            "set": "Penacony, Land of the Dreams",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 95
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 7.7
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 4.3
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_105"
+        },
+        {
+            "set": "Passerby of Wandering Cloud",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Outgoing Healing Boost",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 33
+                },
+                {
+                    "key": "HP_",
+                    "value": 8.2
+                },
+                {
+                    "key": "ATK_",
+                    "value": 12.9
+                },
+                {
+                    "key": "DEF_",
+                    "value": 8.6
+                }
+            ],
+            "location": "Lynx",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_39"
+        },
+        {
+            "set": "Penacony, Land of the Dreams",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "DEF",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 7.7
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 12.5
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_106"
+        },
+        {
+            "set": "Passerby of Wandering Cloud",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 61
+                },
+                {
+                    "key": "HP_",
+                    "value": 8.2
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.9
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.2
+                }
+            ],
+            "location": "Lynx",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_40"
+        },
+        {
+            "set": "Penacony, Land of the Dreams",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Physical DMG Boost",
+            "substats": [
+                {
+                    "key": "DEF_",
+                    "value": 5.4
+                },
+                {
+                    "key": "SPD",
+                    "value": 9
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.1
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 12.3
+                }
+            ],
+            "location": "",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_107"
+        },
+        {
+            "set": "Longevous Disciple",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 42
+                },
+                {
+                    "key": "HP_",
+                    "value": 8.2
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 24.6
+                }
+            ],
+            "location": "Lynx",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_41"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 152
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.8
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.8
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.2
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_108"
+        },
+        {
+            "set": "Fleet of the Ageless",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 71
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.1
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.6
+                }
+            ],
+            "location": "Lynx",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_42"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 52
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 12.3
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 3.8
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_109"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 42
+                },
+                {
+                    "key": "HP_",
+                    "value": 3.4
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.1
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 17.4
+                }
+            ],
+            "location": "Hook",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_43"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 3.8
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.5
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 3.8
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 29.1
+                }
+            ],
+            "location": "",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_110"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 67
+                },
+                {
+                    "key": "ATK_",
+                    "value": 11.6
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.1
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.6
+                }
+            ],
+            "location": "Hook",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_44"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 10.8
+                },
+                {
+                    "key": "ATK_",
+                    "value": 8.2
+                },
+                {
+                    "key": "DEF_",
+                    "value": 10.2
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 3.2
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_111"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 19
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 15.5
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 7.7
+                }
+            ],
+            "location": "Hook",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_45"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 33
+                },
+                {
+                    "key": "HP_",
+                    "value": 3.8
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 12.9
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 12.5
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_112"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Fire DMG Boost",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 42
+                },
+                {
+                    "key": "ATK_",
+                    "value": 11.2
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.1
+                }
+            ],
+            "location": "Hook",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_46"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 4.3
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.0
+                }
+            ],
+            "location": "Ruan Mei",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_3"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 35
+                },
+                {
+                    "key": "HP_",
+                    "value": 12.9
+                },
+                {
+                    "key": "ATK_",
+                    "value": 4.3
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.1
+                }
+            ],
+            "location": "Hook",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_47"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Ice DMG Boost",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 7.3
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.8
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 17.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 4.3
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_113"
+        },
+        {
+            "set": "Firmament Frontline: Glamoth",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 16
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 15.5
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 12.3
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_114"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 38
+                },
+                {
+                    "key": "DEF_",
+                    "value": 15.6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.7
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 3.4
+                }
+            ],
+            "location": "Hook",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_48"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 19
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 11.6
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_115"
+        },
+        {
+            "set": "Fleet of the Ageless",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 38
+                },
+                {
+                    "key": "DEF",
+                    "value": 59
+                },
+                {
+                    "key": "DEF_",
+                    "value": 8.6
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                }
+            ],
+            "location": "Pela",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_49"
+        },
+        {
+            "set": "Inert Salsotto",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Break Effect",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 55
+                },
+                {
+                    "key": "ATK_",
+                    "value": 8.6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.1
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_116"
+        },
+        {
+            "set": "Musketeer of Wild Wheat",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 4.3
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.8
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.8
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 15.1
+                }
+            ],
+            "location": "Pela",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_50"
+        },
+        {
+            "set": "Inert Salsotto",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 84
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.7
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.0
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_117"
+        },
+        {
+            "set": "Hunter of Glacial Forest",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT Rate",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 52
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 12.3
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 11.2
+                }
+            ],
+            "location": "Pela",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_51"
+        },
+        {
+            "set": "Pan-Cosmic Commercial Enterprise",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 76
+                },
+                {
+                    "key": "DEF",
+                    "value": 40
+                },
+                {
+                    "key": "HP_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.4
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_118"
+        },
+        {
+            "set": "Hunter of Glacial Forest",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 38
+                },
+                {
+                    "key": "HP_",
+                    "value": 3.8
+                },
+                {
+                    "key": "DEF_",
+                    "value": 15.6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.1
+                }
+            ],
+            "location": "Pela",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_52"
+        },
+        {
+            "set": "Pan-Cosmic Commercial Enterprise",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 59
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 3.2
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 12.0
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 3.4
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_119"
+        },
+        {
+            "set": "Musketeer of Wild Wheat",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 3.4
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 15.5
+                }
+            ],
+            "location": "Pela",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_53"
+        },
+        {
+            "set": "Fleet of the Ageless",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 33
+                },
+                {
+                    "key": "HP_",
+                    "value": 15.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.6
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_120"
+        },
+        {
+            "set": "Guard of Wuthering Snow",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 55
+                },
+                {
+                    "key": "HP_",
+                    "value": 3.4
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 16.2
+                }
+            ],
+            "location": "Natasha",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_54"
+        },
+        {
+            "set": "Fleet of the Ageless",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Fire DMG Boost",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 4.3
+                },
+                {
+                    "key": "ATK_",
+                    "value": 11.6
+                },
+                {
+                    "key": "DEF_",
+                    "value": 8.6
+                },
+                {
+                    "key": "SPD",
+                    "value": 7
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_121"
+        },
+        {
+            "set": "Guard of Wuthering Snow",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 12.3
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 11.2
+                }
+            ],
+            "location": "Gepard",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_55"
+        },
+        {
+            "set": "Space Sealing Station",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Physical DMG Boost",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 21
+                },
+                {
+                    "key": "DEF_",
+                    "value": 15.6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 3.2
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 18.1
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_122"
+        },
+        {
+            "set": "Guard of Wuthering Snow",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "DEF",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 38
+                },
+                {
+                    "key": "ATK_",
+                    "value": 3.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 4.3
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 19.4
+                }
+            ],
+            "location": "Gepard",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_56"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 101
+                },
+                {
+                    "key": "ATK",
+                    "value": 59
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 7.7
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_123"
+        },
+        {
+            "set": "Guard of Wuthering Snow",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 114
+                },
+                {
+                    "key": "DEF",
+                    "value": 40
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 4.3
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.6
+                }
+            ],
+            "location": "Gepard",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_57"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 80
+                },
+                {
+                    "key": "ATK",
+                    "value": 40
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 11.2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.8
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_124"
+        },
+        {
+            "set": "Broken Keel",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 76
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 4.3
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.2
+                }
+            ],
+            "location": "Gepard",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_58"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 71
+                },
+                {
+                    "key": "ATK",
+                    "value": 57
+                },
+                {
+                    "key": "HP_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_125"
+        },
+        {
+            "set": "Guard of Wuthering Snow",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 11.2
+                },
+                {
+                    "key": "DEF_",
+                    "value": 5.4
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 4.3
+                }
+            ],
+            "location": "Gepard",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_59"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 33
+                },
+                {
+                    "key": "DEF",
+                    "value": 52
+                },
+                {
+                    "key": "HP_",
+                    "value": 11.6
+                },
+                {
+                    "key": "DEF_",
+                    "value": 5.4
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_126"
+        },
+        {
+            "set": "Musketeer of Wild Wheat",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 42
+                },
+                {
+                    "key": "HP_",
+                    "value": 15.9
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.0
+                }
+            ],
+            "location": "Serval",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_60"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 19
+                },
+                {
+                    "key": "DEF",
+                    "value": 38
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 8.6
+                }
+            ],
+            "location": "",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_127"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT Rate",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 61
+                },
+                {
+                    "key": "HP_",
+                    "value": 7.7
+                },
+                {
+                    "key": "ATK_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.1
+                }
+            ],
+            "location": "Serval",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_61"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 19
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.1
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_128"
+        },
+        {
+            "set": "Musketeer of Wild Wheat",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 33
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.1
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 8.2
+                }
+            ],
+            "location": "Serval",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_62"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 105
+                },
+                {
+                    "key": "SPD",
+                    "value": 7
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.8
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 4.3
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_129"
+        },
+        {
+            "set": "Space Sealing Station",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Lightning DMG Boost",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 71
+                },
+                {
+                    "key": "HP_",
+                    "value": 3.4
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 11.3
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.8
+                }
+            ],
+            "location": "Serval",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_63"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 11.6
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 6.4
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_130"
+        },
+        {
+            "set": "Space Sealing Station",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 33
+                },
+                {
+                    "key": "HP_",
+                    "value": 11.2
+                },
+                {
+                    "key": "ATK_",
+                    "value": 7.7
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 7.3
+                }
+            ],
+            "location": "Serval",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_64"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 3.4
+                },
+                {
+                    "key": "DEF_",
+                    "value": 14.5
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 16.8
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_131"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 4.3
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 23.3
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 12.9
+                }
+            ],
+            "location": "Serval",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_65"
+        },
+        {
+            "set": "Longevous Disciple",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 19
+                },
+                {
+                    "key": "ATK_",
+                    "value": 7.7
+                },
+                {
+                    "key": "DEF_",
+                    "value": 15.1
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_132"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Quantum DMG Boost",
+            "substats": [
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 4.3
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 22.4
+                }
+            ],
+            "location": "Seele",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_66"
+        },
+        {
+            "set": "Longevous Disciple",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 21
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.8
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 11.6
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_133"
+        },
+        {
+            "set": "Rutilant Arena",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 101
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.8
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.0
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 3.4
+                }
+            ],
+            "location": "Seele",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_67"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 61
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.1
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 16.2
+                }
+            ],
+            "location": "Ruan Mei",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_2"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 71
+                },
+                {
+                    "key": "DEF",
+                    "value": 19
+                },
+                {
+                    "key": "SPD",
+                    "value": 6
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.1
+                }
+            ],
+            "location": "Seele",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_68"
+        },
+        {
+            "set": "Thief of Shooting Meteor",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 76
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 8.2
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 16.2
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_134"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 52
+                },
+                {
+                    "key": "ATK_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.8
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.6
+                }
+            ],
+            "location": "Xueyi",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_11"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 8.2
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 9.0
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.1
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 11.6
+                }
+            ],
+            "location": "Seele",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_69"
+        },
+        {
+            "set": "Thief of Shooting Meteor",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 40
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 6.4
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 18.7
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_135"
+        },
+        {
+            "set": "Sprightly Vonwacq",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 71
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.8
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 23.9
+                }
+            ],
+            "location": "Ruan Mei",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_1"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 3.8
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.1
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 10.3
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 6.9
+                }
+            ],
+            "location": "Seele",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_70"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 55
+                },
+                {
+                    "key": "DEF",
+                    "value": 19
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 16.2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.6
+                }
+            ],
+            "location": "",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_136"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.4
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 8.2
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 3.8
+                }
+            ],
+            "location": "Xueyi",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_8"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 33
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.8
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 12.0
+                }
+            ],
+            "location": "Seele",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_71"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 16
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 18.7
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 12.5
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.2
+                }
+            ],
+            "location": "",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_137"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 38
+                },
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 12.3
+                }
+            ],
+            "location": "Xueyi",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_9"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 21
+                },
+                {
+                    "key": "ATK_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 11.2
+                }
+            ],
+            "location": "Bronya",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_72"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 4.3
+                },
+                {
+                    "key": "DEF_",
+                    "value": 18.9
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 5.5
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.1
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_138"
+        },
+        {
+            "set": "Inert Salsotto",
+            "slot": "Planar Sphere",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 59
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 6.1
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 16.8
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.8
+                }
+            ],
+            "location": "Xueyi",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_7"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "SPD",
+                    "value": 7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.9
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 12.3
+                }
+            ],
+            "location": "Bronya",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_73"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Feet",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "SPD",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 16
+                },
+                {
+                    "key": "HP_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 12.3
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 12.5
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_139"
+        },
+        {
+            "set": "Inert Salsotto",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Break Effect",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 7.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 8.4
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 11.6
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 3.4
+                }
+            ],
+            "location": "Xueyi",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_10"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 40
+                },
+                {
+                    "key": "HP_",
+                    "value": 6.9
+                },
+                {
+                    "key": "DEF_",
+                    "value": 14.5
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.5
+                }
+            ],
+            "location": "",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_140"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "DEF",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 59
+                },
+                {
+                    "key": "SPD",
+                    "value": 5
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 6.9
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 12.3
+                }
+            ],
+            "location": "Ruan Mei",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_6"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT Rate",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 12.0
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 8.2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 5.1
+                }
+            ],
+            "location": "",
+            "lock": true,
+            "discard": false,
+            "_id": "relic_141"
+        },
+        {
+            "set": "Sprightly Vonwacq",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "HP",
+                    "value": 71
+                },
+                {
+                    "key": "ATK",
+                    "value": 40
+                },
+                {
+                    "key": "ATK_",
+                    "value": 11.6
+                },
+                {
+                    "key": "DEF_",
+                    "value": 10.8
+                }
+            ],
+            "location": "Ruan Mei",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_4"
+        },
+        {
+            "set": "Sprightly Vonwacq",
+            "slot": "Link Rope",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "Energy Regeneration Rate",
+            "substats": [
+                {
+                    "key": "ATK",
+                    "value": 21
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.8
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 23.3
+                },
+                {
+                    "key": "Effect RES_",
+                    "value": 7.7
+                }
+            ],
+            "location": "Bronya",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_74"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "HP_",
+                    "value": 7.3
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.9
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 16.2
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 7.7
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_142"
+        },
+        {
+            "set": "Messenger Traversing Hackerspace",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 57
+                },
+                {
+                    "key": "HP_",
+                    "value": 7.3
+                },
+                {
+                    "key": "SPD",
+                    "value": 4
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 6.4
+                }
+            ],
+            "location": "Ruan Mei",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_5"
+        },
+        {
+            "set": "Genius of Brilliant Stars",
+            "slot": "Hands",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "ATK",
+            "substats": [
+                {
+                    "key": "DEF",
+                    "value": 40
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 5.8
+                },
+                {
+                    "key": "Effect Hit Rate_",
+                    "value": 15.9
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 6.4
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_143"
+        },
+        {
+            "set": "Hunter of Glacial Forest",
+            "slot": "Head",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "HP",
+            "substats": [
+                {
+                    "key": "DEF_",
+                    "value": 9.7
+                },
+                {
+                    "key": "CRIT Rate_",
+                    "value": 2.5
+                },
+                {
+                    "key": "CRIT DMG_",
+                    "value": 17.4
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 12.3
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_147"
+        },
+        {
+            "set": "Musketeer of Wild Wheat",
+            "slot": "Body",
+            "rarity": 5,
+            "level": 15,
+            "mainstat": "CRIT DMG",
+            "substats": [
+                {
+                    "key": "ATK_",
+                    "value": 19.8
+                },
+                {
+                    "key": "DEF_",
+                    "value": 4.3
+                },
+                {
+                    "key": "SPD",
+                    "value": 2
+                },
+                {
+                    "key": "Break Effect_",
+                    "value": 11.0
+                }
+            ],
+            "location": "",
+            "lock": false,
+            "discard": false,
+            "_id": "relic_148"
+        }
+    ],
+    "characters": [
+        {
+            "key": "Yukong",
+            "level": 40,
+            "ascension": 3,
+            "eidolon": 4,
+            "skills": {
+                "basic": 1,
+                "skill": 1,
+                "ult": 1,
+                "talent": 1
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": false,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Bronya",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 3,
+            "skills": {
+                "basic": 4,
+                "skill": 9,
+                "ult": 9,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": true,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Pela",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 5,
+                "skill": 8,
+                "ult": 9,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Bailu",
+            "level": 60,
+            "ascension": 5,
+            "eidolon": 1,
+            "skills": {
+                "basic": 1,
+                "skill": 2,
+                "ult": 2,
+                "talent": 2
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": true,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Luocha",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 0,
+            "skills": {
+                "basic": 5,
+                "skill": 8,
+                "ult": 7,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": true,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Seele",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 1,
+            "skills": {
+                "basic": 6,
+                "skill": 10,
+                "ult": 10,
+                "talent": 10
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": true,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Sampo",
+            "level": 40,
+            "ascension": 3,
+            "eidolon": 5,
+            "skills": {
+                "basic": 1,
+                "skill": 1,
+                "ult": 1,
+                "talent": 1
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": false,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Himeko",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 2,
+            "skills": {
+                "basic": 5,
+                "skill": 9,
+                "ult": 9,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": false,
+                "stat_9": true,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Tingyun",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 4,
+                "skill": 9,
+                "ult": 9,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": false,
+                "stat_7": true,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Luka",
+            "level": 40,
+            "ascension": 3,
+            "eidolon": 2,
+            "skills": {
+                "basic": 1,
+                "skill": 1,
+                "ult": 1,
+                "talent": 1
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": false,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Qingque",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 0,
+            "skills": {
+                "basic": 6,
+                "skill": 10,
+                "ult": 10,
+                "talent": 10
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": true,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Serval",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 5,
+            "skills": {
+                "basic": 5,
+                "skill": 7,
+                "ult": 5,
+                "talent": 5
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": false,
+                "stat_7": true,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Guinaifen",
+            "level": 40,
+            "ascension": 3,
+            "eidolon": 0,
+            "skills": {
+                "basic": 1,
+                "skill": 1,
+                "ult": 1,
+                "talent": 1
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": false,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Gepard",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 2,
+            "skills": {
+                "basic": 4,
+                "skill": 7,
+                "ult": 9,
+                "talent": 6
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": true,
+                "stat_9": true,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Herta",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 5,
+                "skill": 8,
+                "ult": 8,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": false,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Asta",
+            "level": 75,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 4,
+                "skill": 7,
+                "ult": 7,
+                "talent": 7
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": false,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Xueyi",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 4,
+                "skill": 9,
+                "ult": 9,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": false,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Ruan Mei",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 3,
+            "skills": {
+                "basic": 2,
+                "skill": 9,
+                "ult": 9,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": false,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Welt",
+            "level": 70,
+            "ascension": 5,
+            "eidolon": 0,
+            "skills": {
+                "basic": 1,
+                "skill": 1,
+                "ult": 1,
+                "talent": 1
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": false,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "TrailblazerPreservation",
+            "level": 75,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 4,
+                "skill": 7,
+                "ult": 6,
+                "talent": 8
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": false,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Sushang",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 5,
+                "skill": 10,
+                "ult": 10,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": true,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Misha",
+            "level": 40,
+            "ascension": 3,
+            "eidolon": 0,
+            "skills": {
+                "basic": 1,
+                "skill": 1,
+                "ult": 1,
+                "talent": 1
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": false,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Hook",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 6,
+                "skill": 9,
+                "ult": 9,
+                "talent": 9
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": true,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "March 7th",
+            "level": 71,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 5,
+                "skill": 7,
+                "ult": 7,
+                "talent": 6
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Lynx",
+            "level": 73,
+            "ascension": 6,
+            "eidolon": 6,
+            "skills": {
+                "basic": 4,
+                "skill": 6,
+                "ult": 6,
+                "talent": 6
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Natasha",
+            "level": 74,
+            "ascension": 6,
+            "eidolon": 3,
+            "skills": {
+                "basic": 2,
+                "skill": 4,
+                "ult": 5,
+                "talent": 4
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": false,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Silver Wolf",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 2,
+            "skills": {
+                "basic": 6,
+                "skill": 10,
+                "ult": 10,
+                "talent": 10
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": true,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Hanya",
+            "level": 50,
+            "ascension": 3,
+            "eidolon": 3,
+            "skills": {
+                "basic": 1,
+                "skill": 1,
+                "ult": 1,
+                "talent": 1
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": false,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Fu Xuan",
+            "level": 80,
+            "ascension": 6,
+            "eidolon": 2,
+            "skills": {
+                "basic": 6,
+                "skill": 10,
+                "ult": 10,
+                "talent": 10
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": true,
+                "ability_3": true,
+                "stat_1": true,
+                "stat_2": true,
+                "stat_3": true,
+                "stat_4": true,
+                "stat_5": true,
+                "stat_6": true,
+                "stat_7": true,
+                "stat_8": true,
+                "stat_9": true,
+                "stat_10": true
+            }
+        },
+        {
+            "key": "Arlan",
+            "level": 50,
+            "ascension": 4,
+            "eidolon": 1,
+            "skills": {
+                "basic": 1,
+                "skill": 1,
+                "ult": 1,
+                "talent": 1
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": false,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Dr. Ratio",
+            "level": 40,
+            "ascension": 3,
+            "eidolon": 0,
+            "skills": {
+                "basic": 1,
+                "skill": 1,
+                "ult": 1,
+                "talent": 1
+            },
+            "traces": {
+                "ability_1": false,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": false,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        },
+        {
+            "key": "Dan Heng",
+            "level": 50,
+            "ascension": 3,
+            "eidolon": 1,
+            "skills": {
+                "basic": 1,
+                "skill": 2,
+                "ult": 2,
+                "talent": 2
+            },
+            "traces": {
+                "ability_1": true,
+                "ability_2": false,
+                "ability_3": false,
+                "stat_1": true,
+                "stat_2": false,
+                "stat_3": false,
+                "stat_4": false,
+                "stat_5": false,
+                "stat_6": false,
+                "stat_7": false,
+                "stat_8": false,
+                "stat_9": false,
+                "stat_10": false
+            }
+        }
+    ]
+}

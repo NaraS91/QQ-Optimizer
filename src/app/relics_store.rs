@@ -1,7 +1,10 @@
-use std::collections::VecDeque;
 use serde::{Deserialize, Serialize};
+use std::collections::VecDeque;
 
-use super::hsr::{relics::Relic, units::UnitKind};
+use super::hsr::{
+    relics::{Relic, RelicPart},
+    units::UnitKind,
+};
 
 #[derive(Serialize, Deserialize)]
 pub struct RelicsStore {
@@ -21,19 +24,45 @@ impl RelicsStore {
         RelicsStore {
             relics: Vec::new(),
             reusable_ids: VecDeque::new(),
-            next_new_id: 0
+            next_new_id: 0,
         }
     }
 
-    pub fn add(&mut self, relic: &mut Relic) {
+    pub fn add(&mut self, mut relic: Relic) -> usize {
         if let Some(id) = self.reusable_ids.pop_back() {
             relic.id = id;
-            self.relics[id] = Some(*relic);
+            self.relics[id] = Some(relic);
+            id
         } else {
             relic.id = self.next_new_id;
-            self.relics.push(Some(*relic));
+            self.relics.push(Some(relic));
             self.next_new_id += 1;
+            relic.id
         }
+    }
+
+    pub fn get_all_by_parts(&self) -> [Vec<Relic>; 6] {
+        let (mut head, mut hands, mut body, mut feet, mut sphere, mut rope) = (
+            Vec::new(),
+            Vec::new(),
+            Vec::new(),
+            Vec::new(),
+            Vec::new(),
+            Vec::new(),
+        );
+        self.relics
+            .iter()
+            .filter_map(|op| *op)
+            .for_each(|relic| match relic.part {
+                RelicPart::Head => head.push(relic),
+                RelicPart::Hands => hands.push(relic),
+                RelicPart::Body => body.push(relic),
+                RelicPart::Feet => feet.push(relic),
+                RelicPart::Rope => rope.push(relic),
+                RelicPart::Sphere => sphere.push(relic),
+            });
+
+        [head, hands, body, feet, sphere, rope]
     }
 
     pub fn update(&mut self, relic: Relic) -> bool {

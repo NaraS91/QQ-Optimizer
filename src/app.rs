@@ -1,11 +1,13 @@
+use std::fs;
+
 use egui::{Color32, Margin, RichText};
-use egui_extras::StripBuilder;
 use serde::{Deserialize, Serialize};
 
 use self::{
     light_cones_store::LightConesStore, relics_store::RelicsStore, units_store::UnitsStore,
 };
 mod comboBoxImage;
+mod data_import;
 mod hsr;
 mod light_cones_store;
 mod optimizer;
@@ -21,6 +23,7 @@ pub static COLOR_PALLET: ColorPallet = ColorPallet {
     highlighted_text: Color32::from_rgb(0, 173, 181),
 };
 
+const STORES_FROM_CONFIG: bool = true;
 const UNITS_STORE_KEY: &str = "unit_store";
 const RELICS_STORE_KEY: &str = "relics_store";
 const LIGHT_CONES_STORE_KEY: &str = "relics_store";
@@ -99,10 +102,23 @@ impl QQOptimizer {
         // Note that you must enable the `persistence` feature for this to work.
         if let Some(storage) = cc.storage {
             let mut app = Self::default();
-            app.relics_store = eframe::get_value(storage, RELICS_STORE_KEY).unwrap_or_default();
-            app.units_store = eframe::get_value(storage, UNITS_STORE_KEY).unwrap_or_default();
-            app.light_cones_store =
-                eframe::get_value(storage, LIGHT_CONES_STORE_KEY).unwrap_or_default();
+            if STORES_FROM_CONFIG {
+                app.relics_store = RelicsStore::new();
+                app.units_store = UnitsStore::new_empty();
+                app.light_cones_store = LightConesStore::new_empty();
+                let file_content = fs::read_to_string("./data/config.json").unwrap();
+                data_import::import(
+                    &file_content,
+                    &mut app.relics_store,
+                    &mut app.light_cones_store,
+                    &mut app.units_store,
+                )
+            } else {
+                app.relics_store = eframe::get_value(storage, RELICS_STORE_KEY).unwrap_or_default();
+                app.units_store = eframe::get_value(storage, UNITS_STORE_KEY).unwrap_or_default();
+                app.light_cones_store =
+                    eframe::get_value(storage, LIGHT_CONES_STORE_KEY).unwrap_or_default();
+            }
             return app;
         }
 

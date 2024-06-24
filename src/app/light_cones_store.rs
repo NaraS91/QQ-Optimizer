@@ -25,12 +25,21 @@ impl LightConesStore {
         }
     }
 
+    pub fn new_empty() -> Self {
+        LightConesStore {
+            light_cones: Vec::new(),
+            reusable_ids: VecDeque::new(),
+            next_new_id: 0
+        }
+    }
+
     pub fn add(&mut self, light_cone: &mut LightCone) {
         if let Some(id) = self.reusable_ids.pop_back() {
             light_cone.id = id;
             self.light_cones[id] = Some(*light_cone);
         } else {
             self.light_cones.push(Some(*light_cone));
+            light_cone.id = self.next_new_id;
             self.next_new_id += 1;
         }
     }

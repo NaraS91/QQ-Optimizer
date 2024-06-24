@@ -1,28 +1,26 @@
-use super::{ModifierSource, Unit};
+use crate::app::hsr::units::{
+    utils::flat_value, BaseStat, BuffScaling, Modifier, ModifierData, ModifierTarget, Source, Stat,
+};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierSource>{
-    vec![]
+use super::{ModifierOrDOT, Unit};
+
+pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+    vec![ModifierOrDOT::Modifier(Modifier::new(
+        (unit.kind, Source::Trace(3)),
+        vec![ModifierData::new(
+            ModifierTarget::Caster,
+            Stat::Base(BaseStat::Spd),
+            BuffScaling::Multiplicative,
+            flat_value!(0.1),
+        )],
+        true,
+    ))]
 }
 
-
 const SKILL_PARAMS: [f32; 15] = [
-    1.1000,
-    1.2100,
-    1.3200,
-    1.4300,
-    1.5400,
-    1.6500,
-    1.7875,
-    1.9250,
-    2.0625,
-    2.2000,
-    2.3100,
-    2.4200,
-    2.5300,
-    2.6400,
-    2.7500,
+    1.1000, 1.2100, 1.3200, 1.4300, 1.5400, 1.6500, 1.7875, 1.9250, 2.0625, 2.2000, 2.3100, 2.4200,
+    2.5300, 2.6400, 2.7500,
 ];
-
 
 const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (0.6000, 0.3000, 2.1000),
@@ -42,7 +40,6 @@ const ULT_PARAMS: [(f32, f32, f32); 15] = [
     (0.6000, 0.6000, 4.2000),
 ];
 
-
 const TALENT_PARAMS: [(f32, f32, f32, f32, f32, f32); 15] = [
     (0.1500, 0.1500, 0.5000, 0.2500, 0.2500, 0.6500),
     (0.1550, 0.1650, 0.5100, 0.2750, 0.2750, 0.6500),
@@ -61,21 +58,8 @@ const TALENT_PARAMS: [(f32, f32, f32, f32, f32, f32); 15] = [
     (0.2250, 0.3750, 0.6500, 0.6250, 0.6250, 0.6500),
 ];
 
-
-const TECH_PARAMS: [(f32, f32, f32); 1] = [
-    (0.5000, 0.3000, 2.0000),
-];
-
+const TECH_PARAMS: [(f32, f32, f32); 1] = [(0.5000, 0.3000, 2.0000)];
 
 const BASIC_PARAMS: [f32; 9] = [
-    0.5000,
-    0.6000,
-    0.7000,
-    0.8000,
-    0.9000,
-    1.0000,
-    1.1000,
-    1.2000,
-    1.3000,
+    0.5000, 0.6000, 0.7000, 0.8000, 0.9000, 1.0000, 1.1000, 1.2000, 1.3000,
 ];
-
