@@ -1,5 +1,6 @@
+use crate::app::hsr::utils::{flat_value, value_with_buffer};
+
 use super::{
-    utils::{flat_value, value_with_buffer},
     AdvancedStat, BaseStat, BonusDMGFlag, BuffScaling, Modifier, ModifierData, ModifierOrDOT,
     ModifierTarget, Source, Stat, Unit,
 };

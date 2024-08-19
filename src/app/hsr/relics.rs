@@ -7,7 +7,37 @@ use super::{
 use enum_map::Enum;
 use serde::{Deserialize, Serialize};
 
+mod band_of_sizzling_thunder;
+mod belobog_of_the_architects;
+mod broken_keel;
 pub mod buffs;
+mod celestial_differentiator;
+mod champion_of_streetwise_boxing;
+mod eagle_of_twilight_line;
+mod firesmith_of_lavaforging;
+mod firmament_frontline_glamoth;
+mod fleet_of_the_ageless;
+mod genius_of_brilliant_stars;
+mod guard_of_wuthering_snow;
+mod hunter_of_glacial_forest;
+mod inert_salsotto;
+mod knight_of_purity_palace;
+mod longevous_disciple;
+mod messenger_traversing_hackerspace;
+mod musketeer_of_wild_wheat;
+mod pancosmic_commercial_enterprise;
+mod passerby_of_wandering_cloud;
+mod penacony_land_of_the_dreams;
+mod pioneer_diver_of_dead_waters;
+mod prisoner_in_deep_confinement;
+mod rutilant_arena;
+mod space_sealing_station;
+mod sprightly_vonwacq;
+mod talia_kingdom_of_banditry;
+mod the_ashblazing_grand_duke;
+mod thief_of_shooting_meteor;
+mod wastelander_of_banditry_desert;
+mod watchmaker_master_of_dream_machinations;
 
 const RELIC_MAIN_STAT_GROWTH: [(RelicStat, f32, f32); 17] = [
     (RelicStat::Hp, 112.896, 39.5136),

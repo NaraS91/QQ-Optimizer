@@ -5,14 +5,13 @@ use egui::WidgetText;
 use enum_map::{enum_map, Enum};
 use serde::{Deserialize, Serialize};
 use strum_macros::EnumIter;
-use winapi::shared::rpcndr::boolean;
 
 use self::statistics::CHARACTER_INFO;
 
 use super::{
     basics::{self, Element, Path},
     light_cones,
-    relics::{Relic, RelicPart, RelicStat},
+    relics::{Relic, RelicPart},
 };
 
 mod argenti;
@@ -56,7 +55,6 @@ mod tingyun;
 mod topaz;
 mod trailblazer_f;
 mod trailblazer_p;
-mod utils;
 mod welt;
 mod xueyi;
 mod yanqing;
@@ -247,12 +245,13 @@ pub enum BaseStat {
     Spd,
 }
 
-type BonusDMGFlag = u8;
+pub type BonusDMGFlag = u8;
 
 #[derive(Enum, Clone, Copy, Serialize, Deserialize)]
 pub enum AdvancedStat {
     CritRate,
     CritDamage,
+    CritDamageCond(BonusDMGFlag),
     CritDamageReceived(BonusDMGFlag),
     BreakEffect,
     OutgoingHealingBoost,
@@ -361,9 +360,10 @@ fn default_optimize_relics() -> [Option<Relic>; 6] {
 }
 
 #[derive(Clone, Copy)]
-enum ConfigType {
+pub enum ConfigType {
     Stacks(u32),
     StacksWithFlag(u32),
+    Flag,
 }
 
 impl ConfigType {
@@ -371,6 +371,7 @@ impl ConfigType {
         match self {
             Self::Stacks(x) => ConfigUI::NumberField(0, *x),
             Self::StacksWithFlag(x) => ConfigUI::TickBoxWithNumberField(0, *x),
+            Self::Flag => ConfigUI::TickBox,
         }
     }
 }
@@ -379,6 +380,7 @@ impl ConfigType {
 enum ConfigValue {
     Number(usize),
     NumberWithBool(usize, bool),
+    Bool(bool),
 }
 
 #[derive(Clone, Copy)]
@@ -396,22 +398,24 @@ enum ConfigUI {
 
 impl ModifierConfig {
     pub fn new(config_type: ConfigType) -> Self {
+        //TODO: proper config values etc
         ModifierConfig {
             config_type,
             config_value: ConfigValue::Number(0),
         }
     }
 
-    fn get_options(&self) -> ConfigUI {
+    pub fn get_options(&self) -> ConfigUI {
         self.config_type.get_options()
     }
-    fn get_config(&self) -> ConfigType {
+    pub fn get_config(&self) -> ConfigType {
         self.config_type
     }
-    fn get_index(&self) -> usize {
+    pub fn get_index(&self) -> usize {
         match self.config_value {
             ConfigValue::Number(x) => x,
             ConfigValue::NumberWithBool(x, _) => x,
+            _ => panic!("ModifierConfig::get_index cmon bruh"),
         }
     }
 
@@ -423,7 +427,15 @@ impl ModifierConfig {
         }
     }
 
-    fn set_value(&mut self, value: ConfigValue) {
+    pub fn get_bool(&self) -> bool {
+        match self.config_value {
+            ConfigValue::Bool(b) => b,
+            ConfigValue::NumberWithBool(_, b) => b,
+            _ => panic!("ModifierConfig::get_bool zzzzzz"),
+        }
+    }
+
+    pub fn set_value(&mut self, value: ConfigValue) {
         self.config_value = value;
     }
 }
@@ -488,6 +500,8 @@ pub enum Source {
     LightCone,
     Talent,
     Dimension,
+    Relic2p,
+    Relic4p,
 }
 
 enum ModifierOrDOT {
@@ -876,7 +890,7 @@ impl Unit {
             modifier
                 .data
                 .iter()
-                .filter(|data| matches!(data.stat, Stat::Base(stat)))
+                .filter(|data| matches!(data.stat, Stat::Base(_)))
                 .for_each(|data| {
                     let buffer = team
                         .iter()
@@ -942,7 +956,7 @@ impl Unit {
             })
             .for_each(|relic| {
                 let (main_stat, flat) = relic.main_stat.0.to_buff_stat();
-                if matches!(main_stat, Stat::Base(stat)) {
+                if matches!(main_stat, Stat::Base(_)) {
                     if flat {
                         effective_stat += relic.main_stat.1;
                     } else {
@@ -957,7 +971,7 @@ impl Unit {
                         stat_o.and_then(|stat| Some((stat.1, stat.0.to_buff_stat())))
                     })
                     .for_each(|(value, (stat, flat))| {
-                        if matches!(stat, Stat::Base(stat)) {
+                        if matches!(stat, Stat::Base(_)) {
                             if flat {
                                 effective_stat += value;
                             } else {
@@ -971,7 +985,7 @@ impl Unit {
             modifier
                 .data
                 .iter()
-                .filter(|data| matches!(data.stat, Stat::Base(stat)))
+                .filter(|data| matches!(data.stat, Stat::Base(_)))
                 .for_each(|data| {
                     let buffer = team
                         .iter()
@@ -1028,7 +1042,7 @@ impl Unit {
             modifier
                 .data
                 .iter()
-                .filter(|data| matches!(data.stat, Stat::Advanced(stat)))
+                .filter(|data| matches!(data.stat, Stat::Advanced(_)))
                 .for_each(|data| {
                     let buffer = team
                         .iter()
@@ -1083,7 +1097,7 @@ impl Unit {
             })
             .for_each(|relic| {
                 let (main_stat, _) = relic.main_stat.0.to_buff_stat();
-                if matches!(main_stat, Stat::Advanced(stat)) {
+                if matches!(main_stat, Stat::Advanced(_)) {
                     effective_stat += relic.main_stat.1;
                 }
 
@@ -1094,7 +1108,7 @@ impl Unit {
                         stat_o.and_then(|stat| Some((stat.1, stat.0.to_buff_stat())))
                     })
                     .for_each(|(value, (stat, _))| {
-                        if matches!(stat, Stat::Advanced(stat)) {
+                        if matches!(stat, Stat::Advanced(_)) {
                             effective_stat += value;
                         }
                     })
@@ -1104,7 +1118,7 @@ impl Unit {
             modifier
                 .data
                 .iter()
-                .filter(|data| matches!(data.stat, Stat::Advanced(stat)))
+                .filter(|data| matches!(data.stat, Stat::Advanced(_)))
                 .for_each(|data| {
                     let buffer = team
                         .iter()

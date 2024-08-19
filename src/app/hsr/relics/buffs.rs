@@ -3,7 +3,7 @@ use crate::app::hsr::{
     units::{AdvancedStat, BaseStat, BuffScaling, ModifierData, ModifierTarget, Stat},
 };
 
-use super::{CavernSet, PlanarSet, RelicSet};
+use super::{CavernSet, PlanarSet};
 
 pub fn get_cavern_set_effects(cavern_set: CavernSet, full_set: bool) -> Vec<ModifierData> {
     match cavern_set {

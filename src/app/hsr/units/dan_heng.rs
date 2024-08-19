@@ -1,6 +1,8 @@
-use crate::app::hsr::units::{
-    utils::value_with_buffer, BaseStat, BuffScaling, Modifier, ModifierData, ModifierTarget,
-    Source, Stat, UnitKind,
+use crate::app::hsr::{
+    units::{
+        BaseStat, BuffScaling, Modifier, ModifierData, ModifierTarget, Source, Stat, UnitKind,
+    },
+    utils::value_with_buffer,
 };
 
 use super::{ModifierOrDOT, Unit};

@@ -1,9 +1,7 @@
 use crate::app::hsr::{
     basics::Element,
-    units::{
-        utils::flat_value, AdvancedStat, BuffScaling, Modifier, ModifierData, ModifierTarget,
-        Source, Stat,
-    },
+    units::{AdvancedStat, BuffScaling, Modifier, ModifierData, ModifierTarget, Source, Stat},
+    utils::flat_value,
 };
 
 use super::{ModifierOrDOT, Unit};

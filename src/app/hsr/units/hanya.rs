@@ -1,7 +1,9 @@
-use crate::app::hsr::units::{
+use crate::app::hsr::{
+    units::{
+        AdvancedStat, BaseStat, BuffScaling, Modifier, ModifierData, ModifierTarget, Source, Stat,
+        UnitKind,
+    },
     utils::{flat_value, value_with_buffer},
-    AdvancedStat, BaseStat, BuffScaling, Modifier, ModifierData, ModifierTarget, Source, Stat,
-    UnitKind,
 };
 
 use super::{ModifierOrDOT, Unit};

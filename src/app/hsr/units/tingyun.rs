@@ -1,9 +1,9 @@
-use crate::app::hsr::units::{Modifier, ModifierData, ModifierTarget};
-
-use super::{
-    utils::flat_value, AdvancedStat, BaseStat, BonusDMGFlag, BuffScaling, ModifierOrDOT, Source,
-    Stat, Unit,
+use crate::app::hsr::{
+    units::{Modifier, ModifierData, ModifierTarget},
+    utils::flat_value,
 };
+
+use super::{AdvancedStat, BaseStat, BonusDMGFlag, BuffScaling, ModifierOrDOT, Source, Stat, Unit};
 
 pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
     let mut result = vec![

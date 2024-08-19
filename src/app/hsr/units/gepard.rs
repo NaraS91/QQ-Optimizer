@@ -1,6 +1,8 @@
+use crate::app::hsr::utils::flat_value;
+
 use super::{
-    utils::flat_value, AdvancedStat, BaseStat, BuffScaling, Modifier, ModifierData, ModifierOrDOT,
-    ModifierTarget, Source, Stat, Unit, UnitKind,
+    AdvancedStat, BaseStat, BuffScaling, Modifier, ModifierData, ModifierOrDOT, ModifierTarget,
+    Source, Stat, Unit, UnitKind,
 };
 
 pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {

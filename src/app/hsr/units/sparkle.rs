@@ -1,6 +1,7 @@
 use crate::app::hsr::{
     basics::Element,
-    units::{utils::flat_value, BonusDMGFlag, ConfigType, ModifierConfig},
+    units::{BonusDMGFlag, ConfigType, ModifierConfig},
+    utils::flat_value,
 };
 
 use super::{

@@ -1,6 +1,9 @@
-use crate::app::hsr::units::{
-    utils::value_with_buffer, AdvancedStat, BonusDMGFlag, BuffScaling, Modifier, ModifierData,
-    ModifierTarget, Source, Stat,
+use crate::app::hsr::{
+    units::{
+        AdvancedStat, BonusDMGFlag, BuffScaling, Modifier, ModifierData, ModifierTarget, Source,
+        Stat,
+    },
+    utils::value_with_buffer,
 };
 
 use super::{ModifierOrDOT, Unit};

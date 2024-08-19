@@ -1,7 +1,9 @@
-use crate::app::hsr::basics::Element;
+use crate::app::hsr::{
+    basics::Element,
+    utils::{flat_value, value_with_buffer},
+};
 
 use super::{
-    utils::{flat_value, value_with_buffer},
     AdvancedStat, BaseStat, BuffScaling, Modifier, ModifierData, ModifierOrDOT, ModifierTarget,
     Source, Stat, Unit,
 };
