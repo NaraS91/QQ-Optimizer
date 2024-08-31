@@ -10,16 +10,20 @@ all-features = true
 targets = ["x86_64-unknown-linux-gnu", "wasm32-unknown-unknown"]
 
 [dependencies]
-egui = "0.28.0"
-egui_extras = { version = "0.28.1", features = ["all_loaders"] }
+egui = "0.28"
+egui_extras = { version = "0.28", features = ["all_loaders"] }
 image = { version = "0.25", features = ["webp"] }
-eframe = { version = "0.28.0", default-features = false, features = [
+eframe = { version = "0.28", default-features = false, features = [
     "accesskit",     # Make egui comptaible with screen readers. NOTE: adds a lot of dependencies.
     "default_fonts", # Embed the default egui fonts.
     "glow",          # Use the glow rendering backend. Alternative: "wgpu".
     "persistence",   # Enable restoring app state when restarting the app.
 ] }
 log = "0.4"
+
+#conflicts
+#ravif = "=0.11.5"
+#bitstream-io = "=2.3.0"
 
 itertools = "0.12.1"
 
@@ -44,7 +48,7 @@ wasm-bindgen-futures = "0.4"
 
 # to access the DOM (to hide the loading text)
 [target.'cfg(target_arch = "wasm32")'.dependencies.web-sys]
-version = "0.3.4"
+version = "=0.3.66"
 
 [target.'cfg(windows)'.dependencies]
 winapi = { version = "0.3.9", features = ["winuser"] }
