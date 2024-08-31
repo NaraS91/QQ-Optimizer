@@ -104,28 +104,28 @@ impl RelicsStatsFilter {
 
     pub fn show_ui(&mut self, ui: &mut egui::Ui) {
         ui.vertical(|ui| {
-            ui.horizontal(|ui| {
+            ui.horizontal_wrapped(|ui| {
                 ui.add(egui::Image::new("file://assets/relics/head.webp"));
                 ui.label("Hp");
             });
-            ui.horizontal(|ui| {
+            ui.horizontal_wrapped(|ui| {
                 ui.add(egui::Image::new("file://assets/relics/hand.webp"));
                 ui.label("Atk");
             });
-            ui.horizontal(|ui| {
+            ui.horizontal_wrapped(|ui| {
                 ui.add(egui::Image::new("file://assets/relics/body.webp"));
                 Self::add_labels(ui, 0, &mut self.body);
             });
-            ui.horizontal(|ui| {
+            ui.horizontal_wrapped(|ui| {
                 ui.add(egui::Image::new("file://assets/relics/feet.webp"));
                 Self::add_labels(ui, 1, &mut self.feet);
             });
-            ui.horizontal(|ui| {
+            ui.horizontal_wrapped(|ui| {
                 ui.add(egui::Image::new("file://assets/relics/sphere.webp"));
                 Self::add_labels(ui, 2, &mut self.sphere);
             });
 
-            ui.horizontal(|ui| {
+            ui.horizontal_wrapped(|ui| {
                 ui.add(egui::Image::new("file://assets/relics/rope.webp"));
                 Self::add_labels(ui, 3, &mut self.rope);
             });

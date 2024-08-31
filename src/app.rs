@@ -6,7 +6,6 @@ use serde::{Deserialize, Serialize};
 use self::{
     light_cones_store::LightConesStore, relics_store::RelicsStore, units_store::UnitsStore,
 };
-mod comboBoxImage;
 mod data_import;
 mod hsr;
 mod light_cones_store;
@@ -23,7 +22,7 @@ pub static COLOR_PALLET: ColorPallet = ColorPallet {
     highlighted_text: Color32::from_rgb(0, 173, 181),
 };
 
-const STORES_FROM_CONFIG: bool = true;
+const STORES_FROM_CONFIG: bool = false;
 const UNITS_STORE_KEY: &str = "unit_store";
 const RELICS_STORE_KEY: &str = "relics_store";
 const LIGHT_CONES_STORE_KEY: &str = "relics_store";

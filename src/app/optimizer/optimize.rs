@@ -44,8 +44,6 @@ impl Optimize {
     }
 
     pub fn show_ui(&mut self, ui: &mut egui::Ui, relics_store: &mut RelicsStore, units_store: &mut UnitsStore, light_cones_store: &LightConesStore){
-        let width = ui.available_size().x;
-
         let top_card = egui::containers::Frame::default()
             .outer_margin(Margin{left: 0., right: 0., top: 10., bottom: 0.});
 
@@ -53,7 +51,7 @@ impl Optimize {
             .frame(top_card)
             .resizable(false)
             .show_separator_line(false)
-            .show_inside(ui, |ui| self.show_in_top_panel(ui, width, relics_store, units_store, light_cones_store));
+            .show_inside(ui, |ui| self.show_in_top_panel(ui, relics_store, units_store, light_cones_store));
 
         let bottom_card = egui::containers::Frame::default()
             .outer_margin(Margin{left: 0., right: 0., top: 10., bottom: 0.});
@@ -62,10 +60,10 @@ impl Optimize {
             .frame(bottom_card)
             .resizable(false)
             .show_separator_line(false)
-            .show_inside(ui, |ui| self.show_in_bottom_panel(ui, width, relics_store, units_store, light_cones_store));
+            .show_inside(ui, |ui| self.show_in_bottom_panel(ui, relics_store, units_store, light_cones_store));
     }
 
-    fn show_in_bottom_panel(&mut self, ui: &mut Ui, width: f32, relics_store: &mut RelicsStore, units_store: &mut UnitsStore, light_cones_store: &LightConesStore) {
+    fn show_in_bottom_panel(&mut self, ui: &mut Ui, relics_store: &mut RelicsStore, units_store: &mut UnitsStore, light_cones_store: &LightConesStore) {
         if ui.button("Optimize!").clicked() {
             self.optimize(ui, relics_store, units_store, light_cones_store)
         }
@@ -260,9 +258,11 @@ impl Optimize {
         }).collect()
     }
 
-    fn show_in_top_panel(&mut self, ui: &mut Ui, width: f32, relics_store: &mut RelicsStore, units_store: &mut UnitsStore, light_cones_store: &LightConesStore) {
+    fn show_in_top_panel(&mut self, ui: &mut Ui, relics_store: &mut RelicsStore, units_store: &mut UnitsStore, light_cones_store: &LightConesStore) {
+        let width = ui.available_width();
         let card_width = width * 0.32;
         let card_spacing = width * 0.02;
+        //print!("{}",width);
         let unit_card = egui::containers::Frame::default()
             .fill(COLOR_PALLET.card())
             .rounding(egui::Rounding::same(5.0))

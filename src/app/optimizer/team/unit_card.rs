@@ -1,8 +1,8 @@
 use std::collections::VecDeque;
 
 use crate::app::{hsr::units::Unit, relics_store::RelicsStore, units_store::UnitsStore};
+use egui::vec2;
 use egui::{CentralPanel, ComboBox, Frame, Label, Margin};
-use epaint::vec2;
 
 use super::super::super::hsr::units::UnitKind;
 use strum::IntoEnumIterator;

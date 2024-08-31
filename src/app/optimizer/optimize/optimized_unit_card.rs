@@ -36,8 +36,12 @@ impl OptimizedUnit {
                 "file://assets/characters/icon/{}.webp",
                 self.unit.file_name()
             );
-            ui.add(egui::Image::new(unit_img_path).fit_to_original_size(1.0));
-            ui.horizontal(|ui| {
+            ui.add(
+                egui::Image::new(unit_img_path)
+                    //.fit_to_original_size(1.0)
+                    .max_width(f32::min(ui.available_width(), 160.)),
+            );
+            ui.horizontal_wrapped(|ui| {
                 for i in 0..unit_data.relics.len() {
                     let part = match i {
                         0 => "head",
@@ -65,7 +69,7 @@ impl OptimizedUnit {
                     ui.add(egui::Image::new(path + part + ".webp").fit_to_original_size(scale));
                 }
             });
-            ui.horizontal(|ui| {
+            ui.horizontal_wrapped(|ui| {
                 let lc = light_cones_store
                     .get(unit_data.light_cone.unwrap_or(0))
                     .expect("TODO: placeholder");

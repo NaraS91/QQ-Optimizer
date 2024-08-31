@@ -1,6 +1,7 @@
 #![warn(clippy::all, rust_2018_idioms)]
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")] // hide console window on Windows in release
-#[macro_use] extern crate itertools;
+#[macro_use]
+extern crate itertools;
 
 // When compiling natively:
 #[cfg(not(target_arch = "wasm32"))]
@@ -22,7 +23,7 @@ fn main() -> eframe::Result {
     eframe::run_native(
         "QQ Optimizer",
         native_options,
-        Box::new(|cc| OK(Box::new(qq_optimizer::QQOptimizer::new(cc)))),
+        Box::new(|cc| Ok(Box::new(qq_optimizer::QQOptimizer::new(cc)))),
     )
 }
 
@@ -35,13 +36,15 @@ fn main() {
     let web_options = eframe::WebOptions::default();
 
     wasm_bindgen_futures::spawn_local(async {
-        eframe::WebRunner::new()
+        let start_result = eframe::WebRunner::new()
             .start(
-                "the_canvas_id", // hardcode it
+                "the_canvas_id",
                 web_options,
                 Box::new(|cc| Ok(Box::new(qq_optimizer::QQOptimizer::new(cc)))),
             )
             .await;
+
+        // Remove the loading text and spinner:
         let loading_text = web_sys::window()
             .and_then(|w| w.document())
             .and_then(|d| d.get_element_by_id("loading_text"));

@@ -3,7 +3,7 @@ name = "qq_optimizer"
 version = "0.1.0"
 authors = ["Maciej Kaszlewicz <m.kaszlewicz@gmail.com>"]
 edition = "2021"
-rust-version = "1.76"
+rust-version = "1.79"
 
 [package.metadata.docs.rs]
 all-features = true
@@ -12,15 +12,14 @@ targets = ["x86_64-unknown-linux-gnu", "wasm32-unknown-unknown"]
 [dependencies]
 egui = "0.28.0"
 egui_extras = { version = "0.28.0", features = ["all_loaders"] }
-image = { version = "0.28", features = ["webp"] }
-eframe = { version = "0.25.0", default-features = false, features = [
+image = { version = "0.25", features = ["webp"] }
+eframe = { version = "0.28.0", default-features = false, features = [
     "accesskit",     # Make egui comptaible with screen readers. NOTE: adds a lot of dependencies.
     "default_fonts", # Embed the default egui fonts.
     "glow",          # Use the glow rendering backend. Alternative: "wgpu".
     "persistence",   # Enable restoring app state when restarting the app.
 ] }
 log = "0.4"
-epaint = "0.25"
 
 itertools = "0.12.1"
 
