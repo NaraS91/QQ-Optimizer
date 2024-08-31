@@ -1,7 +1,10 @@
-use std::collections::VecDeque;
 use serde::{Deserialize, Serialize};
+use std::collections::VecDeque;
 
-use super::hsr::{light_cones::{LightCone, LightConeKind}, units::UnitKind};
+use super::hsr::{
+    light_cones::{LightCone, LightConeKind},
+    units::UnitKind,
+};
 
 #[derive(Serialize, Deserialize)]
 pub struct LightConesStore {
@@ -19,9 +22,15 @@ impl Default for LightConesStore {
 impl LightConesStore {
     pub fn new() -> Self {
         LightConesStore {
-            light_cones: vec![Some(LightCone::new(LightConeKind::Today_Is_Another_Peaceful_Day, 80, 6, 5, 0))],
+            light_cones: vec![Some(LightCone::new(
+                LightConeKind::Today_Is_Another_Peaceful_Day,
+                80,
+                6,
+                5,
+                0,
+            ))],
             reusable_ids: VecDeque::new(),
-            next_new_id: 1
+            next_new_id: 1,
         }
     }
 
@@ -29,7 +38,7 @@ impl LightConesStore {
         LightConesStore {
             light_cones: Vec::new(),
             reusable_ids: VecDeque::new(),
-            next_new_id: 0
+            next_new_id: 0,
         }
     }
 

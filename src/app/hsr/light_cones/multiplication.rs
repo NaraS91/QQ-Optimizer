@@ -4,11 +4,4 @@ pub fn modifiers(wearer: &Unit) -> Vec<Modifier> {
     vec![]
 }
 
-const SKILL_PARAMS: [f32; 5] = [
-    0.1200,
-    0.1400,
-    0.1600,
-    0.1800,
-    0.2000,
-];
-
+const SKILL_PARAMS: [f32; 5] = [0.1200, 0.1400, 0.1600, 0.1800, 0.2000];

@@ -2,7 +2,10 @@ use enum_map::{enum_map, EnumMap};
 use serde::{Deserialize, Serialize};
 use strum::IntoEnumIterator;
 
-use super::hsr::{relics::RelicPart, units::{UniqueData, Unit, UnitKind}};
+use super::hsr::{
+    relics::RelicPart,
+    units::{UniqueData, Unit, UnitKind},
+};
 
 #[derive(Serialize, Deserialize)]
 pub struct UnitsStore {
@@ -26,13 +29,13 @@ impl UnitsStore {
         }
 
         UnitsStore {
-            units: Box::new(units)
+            units: Box::new(units),
         }
     }
 
     pub fn new_empty() -> Self {
         UnitsStore {
-            units: Box::new(enum_map! { _ => None})
+            units: Box::new(enum_map! { _ => None}),
         }
     }
 
@@ -49,9 +52,11 @@ impl UnitsStore {
     }
 
     pub fn get_all_kinds(&self) -> Vec<UnitKind> {
-        self.units.iter()
-            .filter(|(_, op)| {op.is_some()})
-            .map(|(uk, _)| { uk }).collect()
+        self.units
+            .iter()
+            .filter(|(_, op)| op.is_some())
+            .map(|(uk, _)| uk)
+            .collect()
     }
 
     pub fn equip_light_cone(&mut self, unit_kind: UnitKind, light_cone_id: usize) -> bool {
@@ -73,7 +78,12 @@ impl UnitsStore {
         }
     }
 
-    pub fn equip_relic(&mut self, unit_kind: UnitKind, relic_id: usize, relic_part: RelicPart) -> bool {
+    pub fn equip_relic(
+        &mut self,
+        unit_kind: UnitKind,
+        relic_id: usize,
+        relic_part: RelicPart,
+    ) -> bool {
         if let Some(ref mut unit) = self.units[unit_kind] {
             unit.update_relics(relic_id, relic_part);
             true
@@ -91,7 +101,12 @@ impl UnitsStore {
         }
     }
 
-    pub fn update_team_mate(&mut self, main_unit: UnitKind, new_team_mate: Option<UnitKind>, id: usize) -> bool{
+    pub fn update_team_mate(
+        &mut self,
+        main_unit: UnitKind,
+        new_team_mate: Option<UnitKind>,
+        id: usize,
+    ) -> bool {
         if let Some(ref mut unit) = self.units[main_unit] {
             unit.team[id] = new_team_mate;
             true

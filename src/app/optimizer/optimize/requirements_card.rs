@@ -1,10 +1,9 @@
 #[derive(serde::Deserialize, serde::Serialize)]
-pub struct Requirements {
-}
+pub struct Requirements {}
 
 impl Requirements {
     pub fn new() -> Self {
-        Requirements {  }
+        Requirements {}
     }
 
     pub fn show_ui(&mut self, ui: &mut egui::Ui) {
