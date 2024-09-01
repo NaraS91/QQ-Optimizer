@@ -69,7 +69,7 @@ macro_rules! qq_enhanced_auto {
     }};
 }
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+pub fn modifiers(_unit: &Unit) -> Vec<ModifierOrDOT> {
     vec![]
 }
 

@@ -344,7 +344,7 @@ impl LightCone {
         id: usize,
     ) -> LightCone {
         let info = LIGHT_CONE_INFO[kind as usize];
-        if !matches!(info.0, kind) {
+        if !matches!(info.0, _kind) {
             panic!("light cone info formatted incorrectly!")
         }
 

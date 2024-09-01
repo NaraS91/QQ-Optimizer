@@ -45,7 +45,7 @@ pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
         ModifierTarget::Ally,
         Stat::Advanced(AdvancedStat::TotalDmgBoost(BonusDMGFlag::MAX)),
         BuffScaling::Additive,
-        |target, buffer, _, team, lc_store, relic_store| {
+        |_target, buffer, _, _team, _lc_store, _relic_store| {
             let ult_level = (buffer.unique_data.ultimate_level
                 + if buffer.unique_data.eidolon >= 3 {
                     2

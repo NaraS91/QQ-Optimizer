@@ -15,7 +15,7 @@ fn modifiers(wearer: &Unit) -> Vec<Modifier> {
                     AdvancedStat::create_dmg_bonus_flag(0, 1, 0, 0, 1),
                 )),
                 BuffScaling::Additive,
-                |unit, _, config, team, lc_store, relics_store| {
+                |unit, _, _config, team, lc_store, relics_store| {
                     let cr = unit.get_effective_advanced_stat(
                         AdvancedStat::CritRate,
                         team,

@@ -1,8 +1,8 @@
-use std::collections::VecDeque;
+
 
 use crate::app::assets_loader::UnitImageFormat;
 use crate::app::ASSETS_LOADER;
-use crate::app::{hsr::units::Unit, relics_store::RelicsStore, units_store::UnitsStore};
+use crate::app::{relics_store::RelicsStore, units_store::UnitsStore};
 use egui::vec2;
 use egui::{CentralPanel, ComboBox, Frame, Label, Margin};
 
@@ -61,7 +61,7 @@ impl UnitSelector {
         id: &String,
         all_units: &Vec<UnitKind>,
         main_unit: UnitKind,
-        relics_store: &RelicsStore,
+        _relics_store: &RelicsStore,
         units_store: &mut UnitsStore,
     ) {
         let team = units_store

@@ -13,7 +13,7 @@ fn modifiers(wearer: &Unit) -> Vec<Modifier> {
                 ModifierTarget::Allies,
                 Stat::Advanced(AdvancedStat::CritDamage),
                 BuffScaling::Additive,
-                |_, buffer, config, team, lc_store, relics_store| {
+                |_, buffer, _config, team, lc_store, relics_store| {
                     let eres = buffer.get_effective_advanced_stat(
                         AdvancedStat::EffectRes,
                         team,

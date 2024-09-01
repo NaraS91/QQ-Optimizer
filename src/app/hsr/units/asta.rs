@@ -8,7 +8,7 @@ use crate::app::hsr::{
 
 use super::{BaseStat, ConfigType, ModifierConfig, ModifierOrDOT, Unit};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+pub fn modifiers(_unit: &Unit) -> Vec<ModifierOrDOT> {
     //TODO: implement astas auto burn
 
     vec![

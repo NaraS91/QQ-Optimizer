@@ -39,7 +39,7 @@ impl Team {
         relics_store: &RelicsStore,
         units_store: &mut UnitsStore,
     ) {
-        let main_unit = units_store
+        let _main_unit = units_store
             .get_unit(self.main_unit)
             .as_ref()
             .expect("store should always have the main unit");

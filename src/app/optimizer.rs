@@ -4,9 +4,9 @@ use egui::{self, Margin, Rounding};
 use self::{optimize::Optimize, team::Team};
 
 use super::{
-    light_cones_store::{self, LightConesStore},
-    relics_store::{self, RelicsStore},
-    units_store::{self, UnitsStore},
+    light_cones_store::{LightConesStore},
+    relics_store::{RelicsStore},
+    units_store::{UnitsStore},
 };
 
 mod menu;

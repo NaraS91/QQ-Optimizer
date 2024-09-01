@@ -12,7 +12,7 @@ pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
                 AdvancedStat::create_dmg_bonus_flag(0, 0, 0, 0, 1),
             )),
             BuffScaling::Additive,
-            |target, buffer, _, team, lc_store, relic_store| {
+            |_target, buffer, _, _team, _lc_store, _relic_store| {
                 let skill_level = (buffer.unique_data.skill_level
                     + if buffer.unique_data.eidolon >= 3 {
                         2

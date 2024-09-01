@@ -10,7 +10,7 @@ use super::{
 };
 
 pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
-    let mut skill_data: Vec<ModifierData> = vec![ModifierData::new(
+    let skill_data: Vec<ModifierData> = vec![ModifierData::new(
         if unit.unique_data.eidolon >= 6 {
             ModifierTarget::Team
         } else {

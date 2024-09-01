@@ -7,7 +7,7 @@ use crate::app::hsr::{
 
 use super::{ModifierOrDOT, Unit};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+pub fn modifiers(_unit: &Unit) -> Vec<ModifierOrDOT> {
     vec![ModifierOrDOT::Modifier(Modifier::new(
         (UnitKind::Dr_Ratio, Source::Trace(4)),
         vec![ModifierData::new(

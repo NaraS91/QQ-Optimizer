@@ -4,9 +4,7 @@ use crate::app::{
     hsr::{
         basics::Element,
         relics::{RelicPart, RelicStat},
-        units::Unit,
-    },
-    ColorPallet, ASSETS_LOADER,
+    }, ASSETS_LOADER,
 };
 
 #[derive(serde::Deserialize, serde::Serialize)]

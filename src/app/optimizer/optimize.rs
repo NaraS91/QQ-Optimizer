@@ -16,8 +16,7 @@ use crate::app::{
         },
         units::{Modifier, Unit, UnitKind},
     },
-    light_cones_store::{self, LightConesStore},
-    optimizer::team,
+    light_cones_store::{LightConesStore},
     relics_store::RelicsStore,
     units_store::UnitsStore,
     COLOR_PALLET,
@@ -110,7 +109,7 @@ impl Optimize {
 
     fn optimize(
         &mut self,
-        ui: &mut Ui,
+        _ui: &mut Ui,
         relics_store: &mut RelicsStore,
         units_store: &mut UnitsStore,
         light_cones_store: &LightConesStore,
@@ -149,7 +148,7 @@ impl Optimize {
         relics[4] = Self::filter_parts(&relics[4], self.relics_stat_filter.sphere);
         relics[5] = Self::filter_parts(&relics[5], self.relics_stat_filter.rope);
 
-        let cavern_relics_by_set = (0..4)
+        let _cavern_relics_by_set = (0..4)
             .map(|relic_part| {
                 let mut relics_by_set: Vec<Vec<Relic>> = Vec::new();
                 for set in CavernSet::iter() {
@@ -170,7 +169,7 @@ impl Optimize {
             })
             .collect::<Vec<Vec<Vec<Relic>>>>();
 
-        let planar_relics_by_set = (4..6)
+        let _planar_relics_by_set = (4..6)
             .map(|relic_part| {
                 let mut relics_by_set: Vec<Vec<Relic>> = Vec::new();
                 for set in PlanarSet::iter() {
@@ -208,13 +207,13 @@ impl Optimize {
             }
         }
 
-        let cavern_sets = CavernSet::iter().map(|cs| *cs).collect::<Vec<CavernSet>>();
-        let planar_sets = PlanarSet::iter().map(|ps| *ps).collect::<Vec<PlanarSet>>();
+        let _cavern_sets = CavernSet::iter().map(|cs| *cs).collect::<Vec<CavernSet>>();
+        let _planar_sets = PlanarSet::iter().map(|ps| *ps).collect::<Vec<PlanarSet>>();
 
         let mut best_relic_sets: Vec<([Option<Relic>; 6], u32)> = Vec::new();
         let sets_num = 5;
 
-        for i in 0..sets_num {
+        for _i in 0..sets_num {
             best_relic_sets.push(([None; 6], 0));
         }
 
@@ -259,15 +258,15 @@ impl Optimize {
     }
 
     fn optimize_configs(
-        best_relic_sets: &mut Vec<([Option<Relic>; 6], u32)>,
-        sets_num: usize,
+        _best_relic_sets: &mut Vec<([Option<Relic>; 6], u32)>,
+        _sets_num: usize,
         main_unit: &mut Unit,
-        team: &[Option<Unit>; 3],
+        _team: &[Option<Unit>; 3],
         cavern_relics_by_set: &Vec<Vec<Vec<Relic>>>,
         planar_relics_by_set: &Vec<Vec<Vec<Relic>>>,
         configs: Vec<[usize; 6]>,
-        relics_store: &RelicsStore,
-        lc_store: &LightConesStore,
+        _relics_store: &RelicsStore,
+        _lc_store: &LightConesStore,
     ) {
         configs.iter().for_each(|config| {
             Self::update_set_effects(main_unit, config);

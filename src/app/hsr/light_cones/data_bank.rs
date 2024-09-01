@@ -1,9 +1,9 @@
 use crate::app::hsr::{
     units::{
-        AdvancedStat, BaseStat, BonusDMGFlag, BuffScaling, Modifier, ModifierData, ModifierTarget,
+        AdvancedStat, BuffScaling, Modifier, ModifierData, ModifierTarget,
         Source, Stat, Unit,
     },
-    utils::{lc_superimposition, value_with_lc_s},
+    utils::{value_with_lc_s},
 };
 
 pub fn modifiers(wearer: &Unit) -> Vec<Modifier> {

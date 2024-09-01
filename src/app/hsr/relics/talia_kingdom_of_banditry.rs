@@ -14,7 +14,7 @@ fn modifiers(wearer: &Unit) -> Vec<Modifier> {
                 ModifierTarget::Caster,
                 Stat::Advanced(AdvancedStat::BreakEffect),
                 BuffScaling::Additive,
-                |unit, _, config, team, lc_store, relics_store| {
+                |unit, _, _config, team, lc_store, relics_store| {
                     let spd =
                         unit.get_effective_base_stat(BaseStat::Spd, team, lc_store, relics_store);
                     if spd >= 145. {

@@ -1,6 +1,6 @@
 use crate::app::hsr::{
     units::{
-        AdvancedStat, BaseStat, BonusDMGFlag, BuffScaling, ConfigType, Modifier, ModifierConfig,
+        BaseStat, BuffScaling, Modifier,
         ModifierData, ModifierTarget, Source, Stat, Unit,
     },
     utils::value_with_lc_s,

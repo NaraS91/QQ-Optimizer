@@ -1,6 +1,6 @@
 use super::{ModifierOrDOT, Unit};
 
-pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
+pub fn modifiers(_unit: &Unit) -> Vec<ModifierOrDOT> {
     vec![]
 }
 
