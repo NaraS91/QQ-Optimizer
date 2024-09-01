@@ -203,6 +203,17 @@ impl RelicPart {
             Self::Rope => "Rope".to_owned(),
         }
     }
+
+    pub fn file_name(&self) -> String {
+        match self {
+            Self::Head => "head".to_owned(),
+            Self::Hands => "hand".to_owned(),
+            Self::Body => "body".to_owned(),
+            Self::Feet => "feet".to_owned(),
+            Self::Sphere => "sphere".to_owned(),
+            Self::Rope => "rope".to_owned(),
+        }
+    }
 }
 
 #[allow(non_camel_case_types)]

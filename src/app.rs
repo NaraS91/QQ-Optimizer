@@ -1,11 +1,13 @@
 use std::fs;
 
+use assets_loader::AssetsLoader;
 use egui::{Color32, Margin, RichText};
 use serde::{Deserialize, Serialize};
 
 use self::{
     light_cones_store::LightConesStore, relics_store::RelicsStore, units_store::UnitsStore,
 };
+pub mod assets_loader;
 mod data_import;
 mod hsr;
 mod light_cones_store;
@@ -26,6 +28,15 @@ const STORES_FROM_CONFIG: bool = false;
 const UNITS_STORE_KEY: &str = "unit_store";
 const RELICS_STORE_KEY: &str = "relics_store";
 const LIGHT_CONES_STORE_KEY: &str = "relics_store";
+pub const ASSETS_LOADER: AssetsLoader<'static> = if cfg!(not(target_arch = "wasm32")) {
+    AssetsLoader {
+        loader_prefix: "file:/",
+    }
+} else {
+    AssetsLoader {
+        loader_prefix: "https://naras91.github.io/QQ-Optimizer",
+    }
+};
 
 /// We derive Deserialize/Serialize so we can persist app state on shutdown.
 // if we add new fields, give them default values when deserializing old state

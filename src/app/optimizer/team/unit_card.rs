@@ -1,5 +1,7 @@
 use std::collections::VecDeque;
 
+use crate::app::assets_loader::UnitImageFormat;
+use crate::app::ASSETS_LOADER;
 use crate::app::{hsr::units::Unit, relics_store::RelicsStore, units_store::UnitsStore};
 use egui::vec2;
 use egui::{CentralPanel, ComboBox, Frame, Label, Margin};
@@ -100,11 +102,11 @@ impl UnitSelector {
             let frame = Frame::default().inner_margin(Margin::symmetric(10., 10.));
             CentralPanel::default().frame(frame).show_inside(ui, |ui| {
                 ui.horizontal(|ui| {
-                    let img_path = &format!(
-                        "file://assets/characters/icon/{}.webp",
-                        selected_unit.file_name()
+                    ui.add(
+                        ASSETS_LOADER
+                            .get_unit_image(selected_unit, UnitImageFormat::Icon)
+                            .fit_to_original_size(1.0),
                     );
-                    ui.add(egui::Image::new(img_path).fit_to_original_size(1.0));
 
                     ui.vertical_centered(|ui| {
                         let y = ui.available_height() / 4.;
@@ -141,15 +143,21 @@ impl UnitSelector {
                         ui.columns(3, |columns| {
                             columns[0].add_sized(
                                 vec2(x / 3.0, y),
-                                egui::Image::new(img_path).fit_to_original_size(0.1),
+                                ASSETS_LOADER
+                                    .get_unit_image(selected_unit, UnitImageFormat::Icon)
+                                    .fit_to_original_size(0.1),
                             );
                             columns[1].add_sized(
                                 vec2(x / 3.0, y),
-                                egui::Image::new(img_path).fit_to_original_size(0.1),
+                                ASSETS_LOADER
+                                    .get_unit_image(selected_unit, UnitImageFormat::Icon)
+                                    .fit_to_original_size(0.1),
                             );
                             columns[2].add_sized(
                                 vec2(x / 3.0, y),
-                                egui::Image::new(img_path).fit_to_original_size(0.1),
+                                ASSETS_LOADER
+                                    .get_unit_image(selected_unit, UnitImageFormat::Icon)
+                                    .fit_to_original_size(0.1),
                             );
                         });
                     })

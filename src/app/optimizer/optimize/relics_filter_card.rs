@@ -6,7 +6,7 @@ use crate::app::{
         relics::{RelicPart, RelicStat},
         units::Unit,
     },
-    ColorPallet,
+    ColorPallet, ASSETS_LOADER,
 };
 
 #[derive(serde::Deserialize, serde::Serialize)]
@@ -105,28 +105,28 @@ impl RelicsStatsFilter {
     pub fn show_ui(&mut self, ui: &mut egui::Ui) {
         ui.vertical(|ui| {
             ui.horizontal_wrapped(|ui| {
-                ui.add(egui::Image::new("file://assets/relics/head.webp"));
+                ui.add(ASSETS_LOADER.get_relic_part_placeholder(RelicPart::Head));
                 ui.label("Hp");
             });
             ui.horizontal_wrapped(|ui| {
-                ui.add(egui::Image::new("file://assets/relics/hand.webp"));
+                ui.add(ASSETS_LOADER.get_relic_part_placeholder(RelicPart::Hands));
                 ui.label("Atk");
             });
             ui.horizontal_wrapped(|ui| {
-                ui.add(egui::Image::new("file://assets/relics/body.webp"));
+                ui.add(ASSETS_LOADER.get_relic_part_placeholder(RelicPart::Body));
                 Self::add_labels(ui, 0, &mut self.body);
             });
             ui.horizontal_wrapped(|ui| {
-                ui.add(egui::Image::new("file://assets/relics/feet.webp"));
+                ui.add(ASSETS_LOADER.get_relic_part_placeholder(RelicPart::Feet));
                 Self::add_labels(ui, 1, &mut self.feet);
             });
             ui.horizontal_wrapped(|ui| {
-                ui.add(egui::Image::new("file://assets/relics/sphere.webp"));
+                ui.add(ASSETS_LOADER.get_relic_part_placeholder(RelicPart::Sphere));
                 Self::add_labels(ui, 2, &mut self.sphere);
             });
 
             ui.horizontal_wrapped(|ui| {
-                ui.add(egui::Image::new("file://assets/relics/rope.webp"));
+                ui.add(ASSETS_LOADER.get_relic_part_placeholder(RelicPart::Rope));
                 Self::add_labels(ui, 3, &mut self.rope);
             });
         });

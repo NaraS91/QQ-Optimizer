@@ -1,13 +1,12 @@
 use egui::{Rounding, Ui};
 
 use crate::app::{
-    hsr::{
-        relics::RelicPart,
-        units::{UniqueData, UnitKind},
-    },
-    light_cones_store::{self, LightConesStore},
+    assets_loader::{LightConeImageFormat, UnitImageFormat},
+    hsr::{relics::RelicPart, units::UnitKind},
+    light_cones_store::LightConesStore,
     relics_store::RelicsStore,
     units_store::UnitsStore,
+    ASSETS_LOADER,
 };
 
 #[derive(serde::Deserialize, serde::Serialize)]
@@ -32,27 +31,24 @@ impl OptimizedUnit {
             .expect("optimized unit should be in the store");
 
         ui.vertical(|ui| {
-            let unit_img_path = &format!(
-                "file://assets/characters/icon/{}.webp",
-                self.unit.file_name()
-            );
             ui.add(
-                egui::Image::new(unit_img_path)
+                ASSETS_LOADER
+                    .get_unit_image(self.unit, UnitImageFormat::Icon)
                     //.fit_to_original_size(1.0)
                     .max_width(f32::min(ui.available_width(), 160.)),
             );
             ui.horizontal_wrapped(|ui| {
                 for i in 0..unit_data.relics.len() {
                     let part = match i {
-                        0 => "head",
-                        1 => "hand",
-                        2 => "body",
-                        3 => "feet",
-                        4 => "sphere",
-                        5 => "rope",
+                        0 => RelicPart::Head,
+                        1 => RelicPart::Hands,
+                        2 => RelicPart::Body,
+                        3 => RelicPart::Feet,
+                        4 => RelicPart::Sphere,
+                        5 => RelicPart::Rope,
                         _ => panic!("i cannot be more than 6"),
                     };
-                    let mut path = "file://assets/relics/".to_owned();
+                    let mut found = false;
                     let mut scale = 1.0;
                     if let Some(relic_id) = unit_data.relics[i] {
                         if let Some(relic) = relics_store.get_relic(relic_id) {
@@ -62,11 +58,22 @@ impl OptimizedUnit {
                                 scale = 0.25;
                             }
 
-                            path = path + &relic.set.file_name()[..] + "_";
+                            ui.add(
+                                ASSETS_LOADER
+                                    .get_relic_image(relic.set, relic.part)
+                                    .fit_to_original_size(scale),
+                            );
+                            found = true;
                         }
                     }
 
-                    ui.add(egui::Image::new(path + part + ".webp").fit_to_original_size(scale));
+                    if !found {
+                        ui.add(
+                            ASSETS_LOADER
+                                .get_relic_part_placeholder(part)
+                                .fit_to_original_size(scale),
+                        );
+                    }
                 }
             });
             ui.horizontal_wrapped(|ui| {
@@ -74,29 +81,22 @@ impl OptimizedUnit {
                     .get(unit_data.light_cone.unwrap_or(0))
                     .expect("TODO: placeholder");
 
-                let mut lc_path: String;
-                if let Some(lc_id) = unit_data.light_cone {
+                let image = if let Some(lc_id) = unit_data.light_cone {
                     light_cones_store
                         .get(lc_id)
                         .expect("equiped lc should be in the store");
 
-                    lc_path = format!(
-                        "file://assets/light_cones/resized/{}.webp",
-                        lc.kind.file_name()
-                    )
+                    ASSETS_LOADER.get_light_cone_image(lc.kind, LightConeImageFormat::Resized)
                 } else {
-                    lc_path = "file://assets/light_cones/resized/placeholder.webp".to_string();
-                }
+                    ASSETS_LOADER.get_light_cone_placeholder(LightConeImageFormat::Resized)
+                };
 
-                let response = ui.add(
-                    egui::Image::new(lc_path)
-                        .fit_to_original_size(1.)
-                        .rounding(Rounding::same(13.)),
-                );
+                let response = ui.add(image.fit_to_original_size(1.).rounding(Rounding::same(13.)));
 
                 ui.put(
                     response.rect,
-                    egui::Image::new("file://assets/light_cones/resized/frame.webp")
+                    ASSETS_LOADER
+                        .get_light_cone_frame(LightConeImageFormat::Resized)
                         .fit_to_original_size(1.),
                 );
 
@@ -108,24 +108,17 @@ impl OptimizedUnit {
     }
 
     fn unit_image(ui: &mut Ui, kind_op: Option<UnitKind>) {
-        let path = if let Some(kind) = kind_op {
-            format!(
-                "file://assets/characters/icon_scaled/{}.webp",
-                kind.file_name()
-            )
+        let image = if let Some(kind) = kind_op {
+            ASSETS_LOADER.get_unit_image(kind, UnitImageFormat::IconScaled)
         } else {
-            "file://assets/characters/placeholder.webp".to_string()
+            ASSETS_LOADER.get_unit_placeholder()
         };
 
-        let response = ui.add(
-            egui::Image::new(path)
-                .fit_to_original_size(1.)
-                .rounding(Rounding::same(13.)),
-        );
+        let response = ui.add(image.fit_to_original_size(1.).rounding(Rounding::same(13.)));
 
         ui.put(
             response.rect,
-            egui::Image::new("file://assets/characters/frame.webp").fit_to_original_size(1.),
+            ASSETS_LOADER.get_unit_frame().fit_to_original_size(1.),
         );
     }
 }

@@ -9,7 +9,6 @@ use super::{
     units_store::{self, UnitsStore},
 };
 
-mod assets_loader;
 mod menu;
 mod optimize;
 mod team;
