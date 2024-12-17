@@ -42,6 +42,8 @@ fn import_units(units: &JsonValue, units_store: &mut UnitsStore) {
                     unit_data["eidolon"].as_u8().unwrap(),
                 ),
             )
+        } else {
+            println!("???? {}", unit_data["key"].as_str().unwrap());
         }
     }
 }

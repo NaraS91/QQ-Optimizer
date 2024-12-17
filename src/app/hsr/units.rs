@@ -156,6 +156,7 @@ impl UnitKind {
         match self {
             Self::Trailblazer_F => "Trailblazer_F_F".to_owned(),
             Self::Trailblazer_P => "Trailblazer_F_P".to_owned(),
+            Self::Trailblazer_I => "Trailblazer_F_I".to_owned(),
             _ => self.to_string().replace(" ", "_"),
         }
     }
@@ -193,6 +194,9 @@ impl UnitKind {
             "pela" => Some(Self::Pela),
             "trailblazer_P" => Some(Self::Trailblazer_P),
             "trailblazer_F" => Some(Self::Trailblazer_F),
+            "trailblazerdestruction" => Some(Self::Trailblazer_P),
+            "trailblazerpreservation" => Some(Self::Trailblazer_F),
+            "trailblazerharmony" => Some(Self::Trailblazer_I),
             "qingque" => Some(Self::Qingque),
             "ruan mei" => Some(Self::Ruan_Mei),
             "sampo" => Some(Self::Sampo),
@@ -201,6 +205,7 @@ impl UnitKind {
             "silver wolf" => Some(Self::Silver_Wolf),
             "sparkle" => Some(Self::Sparkle),
             "sushang" => Some(Self::Sushang),
+            "tingyun" => Some(Self::Tingyun),
             "yingyun" => Some(Self::Tingyun),
             "yopaz" => Some(Self::Topaz),
             "welt" => Some(Self::Welt),
