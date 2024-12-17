@@ -1,0 +1,206 @@
+10
+Trilateral Wiltcross
+0
+Deals Lightning DMG equal to #1[i]% of Acheron's ATK to a single target enemy.
+Single_Target
+Basic ATK
+30
+0
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Octobolt Flash
+1
+Gains #3[i] point(s) of Slashed Dream. Inflicts #3[i] stack(s) of Crimson Knot on a single target enemy, dealing Lightning DMG equal to #1[i]% of Acheron's ATK to this target, as well as Lightning DMG equal to #2[i]% of Acheron's ATK to adjacent targets.
+Blast
+Skill
+60 + 30/adjacent
+0
+0
+15 3
+0.8000 0.3000 1.0000
+0.8800 0.3300 1.0000
+0.9600 0.3600 1.0000
+1.0400 0.3900 1.0000
+1.1200 0.4200 1.0000
+1.2000 0.4500 1.0000
+1.3000 0.4875 1.0000
+1.4000 0.5250 1.0000
+1.5000 0.5625 1.0000
+1.6000 0.6000 1.0000
+1.6800 0.6300 1.0000
+1.7600 0.6600 1.0000
+1.8400 0.6900 1.0000
+1.9200 0.7200 1.0000
+2.0000 0.7500 1.0000
+Slashed Dream Cries in Red
+2
+Sequentially unleash Rainblade 3 times and Stygian Resurge 1 time, dealing Lightning DMG up to #6[i]% of Acheron's ATK to a single target enemy, as well as Lightning DMG up to #7[i]% of Acheron's ATK to other targets.Rainblade: Deals Lightning DMG equal to #1[f1]% of Acheron's ATK to a single target enemy and removes up to 3 stacks of Crimson Knot from the target. When Crimson Knot is removed, immediately deals Lightning DMG equal to #2[f1]% of Acheron's ATK to all enemies. For every stack of Crimson Knot removed, this DMG Multiplier is additionally increased, up to a maximum of #5[f1]%.Stygian Resurge: Deals Lightning DMG equal to #3[i]% of Acheron's ATK to all enemies and remove all Crimson Knots.Crimson Knot cannot be applied to enemies during the Ultimate.
+AoE
+Ultimate
+15/hit
+0
+9
+15 7
+0.1440 0.0900 0.7200 9.0000 0.3600 2.2320 1.8000
+0.1536 0.0960 0.7680 9.0000 0.3840 2.3808 1.9200
+0.1632 0.1020 0.8160 9.0000 0.4080 2.5296 2.0400
+0.1728 0.1080 0.8640 9.0000 0.4320 2.6784 2.1600
+0.1824 0.1140 0.9120 9.0000 0.4560 2.8272 2.2800
+0.1920 0.1200 0.9600 9.0000 0.4800 2.9760 2.4000
+0.2040 0.1275 1.0200 9.0000 0.5100 3.1620 2.5500
+0.2160 0.1350 1.0800 9.0000 0.5400 3.3480 2.7000
+0.2280 0.1425 1.1400 9.0000 0.5700 3.5340 2.8500
+0.2400 0.1500 1.2000 9.0000 0.6000 3.7200 3.0000
+0.2496 0.1560 1.2480 9.0000 0.6240 3.8688 3.1200
+0.2592 0.1620 1.2960 9.0000 0.6480 4.0176 3.2400
+0.2688 0.1680 1.3440 9.0000 0.6720 4.1664 3.3600
+0.2784 0.1740 1.3920 9.0000 0.6960 4.3152 3.4800
+0.2880 0.1800 1.4400 9.0000 0.7200 4.4640 3.6000
+Atop Rainleaf Hangs Oneness
+3
+When Slashed Dream reaches #1[i] point(s), the Ultimate can be activated. During the Ultimate, reduces enemies' Toughness regardless of Weakness Types and reduces all enemies' All-Type RES by #2[i]%, lasting until the end of the Ultimate.When any unit inflicts debuffs on an enemy target while using their ability, Acheron gains 1 point of Slashed Dream and inflicts 1 stack of Crimson Knot on a target. If debuffs are inflicted on multiple targets, then the 1 stack of Crimson Knot will be inflicted on the enemy target with the most Crimson Knot stacks. This effect can only trigger once for every ability use.After an enemy target exits the field or gets defeated by any unit while Acheron is on the field, their Crimson Knot stacks will be transferred to the enemy target with the most Crimson Knot stacks on the whole field.
+Enhance
+Talent
+0
+0
+0
+15 2
+9.0000 0.1000
+9.0000 0.1100
+9.0000 0.1200
+9.0000 0.1300
+9.0000 0.1400
+9.0000 0.1500
+9.0000 0.1625
+9.0000 0.1750
+9.0000 0.1875
+9.0000 0.2000
+9.0000 0.2100
+9.0000 0.2200
+9.0000 0.2300
+9.0000 0.2400
+9.0000 0.2500
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Quadrivalent Ascendance
+4
+Immediately attacks the enemy. At the start of each wave, gains Quadrivalent Ascendance, dealing Lightning DMG equal to #1[i]% of Acheron's ATK to all enemies and reducing Toughness of all enemies irrespective of Weakness Types. When breaking Weaknesses, triggers the Lightning Weakness Break effect.Quadrivalent Ascendance: After using the Ultimate, Acheron gains #2[i] point(s) of Slashed Dream and inflicts #2[i] stack(s) of Crimson Knot on a single random enemy.If attacking a normal enemy, immediately defeats them without entering combat. When not hitting enemies, no Technique Points are consumed.
+
+Technique
+60
+0
+0
+1 2
+2.0000 1.0000
+Rainblade
+2
+
+AoE
+Ultimate
+15/hit
+0
+0
+15 3
+0.1440 0.0900 0.7200
+0.1536 0.0960 0.7680
+0.1632 0.1020 0.8160
+0.1728 0.1080 0.8640
+0.1824 0.1140 0.9120
+0.1920 0.1200 0.9600
+0.2040 0.1275 1.0200
+0.2160 0.1350 1.0800
+0.2280 0.1425 1.1400
+0.2400 0.1500 1.2000
+0.2496 0.1560 1.2480
+0.2592 0.1620 1.2960
+0.2688 0.1680 1.3440
+0.2784 0.1740 1.3920
+0.2880 0.1800 1.4400
+Rainblade
+2
+
+AoE
+Ultimate
+15/hit
+0
+0
+15 3
+0.1440 0.0900 0.7200
+0.1536 0.0960 0.7680
+0.1632 0.1020 0.8160
+0.1728 0.1080 0.8640
+0.1824 0.1140 0.9120
+0.1920 0.1200 0.9600
+0.2040 0.1275 1.0200
+0.2160 0.1350 1.0800
+0.2280 0.1425 1.1400
+0.2400 0.1500 1.2000
+0.2496 0.1560 1.2480
+0.2592 0.1620 1.2960
+0.2688 0.1680 1.3440
+0.2784 0.1740 1.3920
+0.2880 0.1800 1.4400
+Rainblade
+2
+
+AoE
+Ultimate
+15/hit
+0
+0
+15 3
+0.1440 0.0900 0.7200
+0.1536 0.0960 0.7680
+0.1632 0.1020 0.8160
+0.1728 0.1080 0.8640
+0.1824 0.1140 0.9120
+0.1920 0.1200 0.9600
+0.2040 0.1275 1.0200
+0.2160 0.1350 1.0800
+0.2280 0.1425 1.1400
+0.2400 0.1500 1.2000
+0.2496 0.1560 1.2480
+0.2592 0.1620 1.2960
+0.2688 0.1680 1.3440
+0.2784 0.1740 1.3920
+0.2880 0.1800 1.4400
+Stygian Resurge
+2
+
+AoE
+Ultimate
+15/hit
+0
+0
+15 1
+0.7200
+0.7680
+0.8160
+0.8640
+0.9120
+0.9600
+1.0200
+1.0800
+1.1400
+1.2000
+1.2480
+1.2960
+1.3440
+1.3920
+1.4400

@@ -1,0 +1,229 @@
+Feixiao
+The Hunt
+5
+142.5600
+81.8400
+52.8000
+112.0000
+199.5840
+114.5760
+73.9200
+112.0000
+256.6080
+147.3120
+95.0400
+112.0000
+313.6320
+180.0480
+116.1600
+112.0000
+370.6560
+212.7840
+137.2800
+112.0000
+427.6800
+245.5200
+158.4000
+112.0000
+484.7040
+278.2560
+179.5200
+112.0000
+7.1280
+4.0920
+2.6400
+0.0000
+ATK 0.0600
+DEF 0.0600
+ATK 0.0600
+DEF 0.0600
+ATK 0.0600
+CRITRate 0.0600
+ATK 0.0600
+CRITRate 0.0600
+CRITRate 0.0600
+ATK 0.0600
+3
+Boltcatch
+7
+When using Skill, increases ATK by #1[i]%, lasting for #2[i] turn(s).
+2
+0.4800 3.0000
+Formshift
+8
+When using Ultimate to deal DMG to an enemy target, it is considered as a follow-up attack. Follow-up attacks' CRIT DMG increases by #1[i]%.
+1
+0.3600
+Heavenpath
+9
+When the battle starts, gains #1[i] point(s) of "Flying Aureus."At the start of a turn, if no follow-up attack was launched via Talent in the previous turn, then this counts as 1 toward the number of attacks required to gain "Flying Aureus."
+1
+3.0000
+
+9
+Boltsunder
+0
+Deals Wind DMG equal to #1[i]% of Feixiao's ATK to a single target enemy.
+Single_Target
+Basic ATK
+30
+0
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Waraxe
+1
+Deals Wind DMG equal to #1[i]% of Feixiao's ATK to a target enemy. Then, immediately launches 1 instance of Talent's follow-up attack against the target.
+Single_Target
+Skill
+60
+0
+0
+15 1
+1.0000
+1.1000
+1.2000
+1.3000
+1.4000
+1.5000
+1.6250
+1.7500
+1.8750
+2.0000
+2.1000
+2.2000
+2.3000
+2.4000
+2.5000
+Terrasplit
+2
+Deals Wind DMG to a single target enemy, up to #4[i]% of Feixiao's ATK. During this time, can ignore Weakness Type to reduce the target's Toughness. When the target is not Weakness Broken, Feixiao's Weakness Break Efficiency increases by #2[i]%.During the attack, Feixiao first launches "Boltsunder Blitz" or "Waraxe Skyward" on the target, for a total of #3[i] time(s).At the end, deals Wind DMG equal to #1[i]% of Feixiao's ATK to the target.
+Single_Target
+Ultimate
+90
+0
+6
+15 4
+0.9600 1.0000 6.0000 4.0200
+1.0240 1.0000 6.0000 4.3180
+1.0880 1.0000 6.0000 4.6160
+1.1520 1.0000 6.0000 4.9140
+1.2160 1.0000 6.0000 5.2120
+1.2800 1.0000 6.0000 5.5100
+1.3600 1.0000 6.0000 5.8825
+1.4400 1.0000 6.0000 6.2550
+1.5200 1.0000 6.0000 6.6275
+1.6000 1.0000 6.0000 7.0000
+1.6640 1.0000 6.0000 7.2980
+1.7280 1.0000 6.0000 7.5960
+1.7920 1.0000 6.0000 7.8940
+1.8560 1.0000 6.0000 8.1920
+1.9200 1.0000 6.0000 8.4900
+Thunderhunt
+3
+Can activate Ultimate when "Flying Aureus" reaches #3[i] points, accumulating up to #4[i] points. Feixiao gains 1 point of "Flying Aureus" for every #2[i] attacks by ally targets. Feixiao's Ultimate attacks do not count towards this number.After Feixiao's teammates attack an enemy target, Feixiao immediately launches follow-up attack against the primary target, dealing Wind DMG equal to #1[i]% of Feixiao's ATK. If there is no primary target available to attack, Feixiao attacks a single random enemy instead. This effect can only trigger once per turn and the trigger count resets at the start of Feixiao's turn. When using this attack, increases DMG dealt by this unit by #5[i]%, lasting for #6[i] turn(s).
+Single_Target
+Talent
+15
+0
+0
+15 6
+0.5500 2.0000 6.0000 12.0000 0.3000 2.0000
+0.6050 2.0000 6.0000 12.0000 0.3300 2.0000
+0.6600 2.0000 6.0000 12.0000 0.3600 2.0000
+0.7150 2.0000 6.0000 12.0000 0.3900 2.0000
+0.7700 2.0000 6.0000 12.0000 0.4200 2.0000
+0.8250 2.0000 6.0000 12.0000 0.4500 2.0000
+0.8938 2.0000 6.0000 12.0000 0.4875 2.0000
+0.9625 2.0000 6.0000 12.0000 0.5250 2.0000
+1.0312 2.0000 6.0000 12.0000 0.5625 2.0000
+1.1000 2.0000 6.0000 12.0000 0.6000 2.0000
+1.1550 2.0000 6.0000 12.0000 0.6300 2.0000
+1.2100 2.0000 6.0000 12.0000 0.6600 2.0000
+1.2650 2.0000 6.0000 12.0000 0.6900 2.0000
+1.3200 2.0000 6.0000 12.0000 0.7200 2.0000
+1.3750 2.0000 6.0000 12.0000 0.7500 2.0000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Stormborn
+4
+After using Technique, enters the "Onrush" state, lasting for #1[i] seconds. While in "Onrush," pulls in enemies within a certain range, and increases this unit's movement speed by #2[i]%. After entering battle, gains #4[i] point(s) of "Flying Aureus."While in "Onrush," actively attacking will start battle with all pulled enemies. After entering battle, deals Wind DMG equal to #3[i]% of Feixiao's ATK to all enemies at the start of each wave. This DMG is guaranteed to CRIT. If more than 1 enemy is pulled in, increases the multiplier of this DMG by #5[i]% for each additional enemy pulled in, up to a maximum of #6[i]%.
+Enhance
+Technique
+0
+0
+0
+1 6
+20.0000 0.5000 2.0000 1.0000 1.0000 10.0000
+Boltsunder Blitz
+5
+Deals Wind DMG equal to #1[i]% of Feixiao's ATK to the chosen target. If the target is Weakness Broken, the DMG multiplier increases by #2[i]%.
+Single_Target
+Ultimate
+15
+0
+0
+15 2
+0.3600 0.1500
+0.3840 0.1650
+0.4080 0.1800
+0.4320 0.1950
+0.4560 0.2100
+0.4800 0.2250
+0.5100 0.2437
+0.5400 0.2625
+0.5700 0.2812
+0.6000 0.3000
+0.6240 0.3150
+0.6480 0.3300
+0.6720 0.3450
+0.6960 0.3600
+0.7200 0.3750
+Waraxe Skyward
+6
+Deals Wind DMG equal to #1[i]% of Feixiao's ATK to the chosen target. If the target is not Weakness Broken, the DMG multiplier increases by #2[i]%.
+Single_Target
+Ultimate
+15
+0
+0
+15 2
+0.3600 0.1500
+0.3840 0.1650
+0.4080 0.1800
+0.4320 0.1950
+0.4560 0.2100
+0.4800 0.2250
+0.5100 0.2437
+0.5400 0.2625
+0.5700 0.2812
+0.6000 0.3000
+0.6240 0.3150
+0.6480 0.3300
+0.6720 0.3450
+0.6960 0.3600
+0.7200 0.3750
+Terrasplit
+2
+
+Single_Target
+Ultimate
+0
+0
+0
+0 0

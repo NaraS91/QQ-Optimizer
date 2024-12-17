@@ -1,0 +1,152 @@
+8
+Order: Flare Propulsion
+0
+Deals Fire DMG equal to #1[i]% of SAM's ATK to a single target enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Order: Aerial Bombardment
+1
+Consumes HP equal to #2[i]% of this unit's Max HP and regenerates a fixed amount of Energy equal to #3[i]% of this unit's Max Energy. Deals Fire DMG equal to #1[i]% of SAM's ATK to a single target enemy. If the current HP is not sufficient, reduces SAM's HP to 1 when using this Skill. Advances this unit's next Action by #4[i]%.
+Single_Target
+Skill
+60
+0
+0
+15 4
+1.0000 0.4000 0.5000 0.2500
+1.1000 0.4000 0.5100 0.2500
+1.2000 0.4000 0.5200 0.2500
+1.3000 0.4000 0.5300 0.2500
+1.4000 0.4000 0.5400 0.2500
+1.5000 0.4000 0.5500 0.2500
+1.6250 0.4000 0.5625 0.2500
+1.7500 0.4000 0.5750 0.2500
+1.8750 0.4000 0.5875 0.2500
+2.0000 0.4000 0.6000 0.2500
+2.1000 0.4000 0.6100 0.2500
+2.2000 0.4000 0.6200 0.2500
+2.3000 0.4000 0.6300 0.2500
+2.4000 0.4000 0.6400 0.2500
+2.5000 0.4000 0.6500 0.2500
+Fyrefly Type-IV: Complete Combustion
+2
+Enters the Complete Combustion state, advances this unit's Action by 100%, and gains Enhanced Basic ATK and Enhanced Skill. While in Complete Combustion, increases SPD by #3[i], and when using the Enhanced Basic ATK or Enhanced Skill, increases this unit's Weakness Break Efficiency by #2[i]% and the Break DMG dealt by SAM to the enemy targets by #1[f1]%, lasting until this current attack ends.A countdown timer for the Complete Combustion state appears on the Action Order. When the countdown timer's turn starts, SAM exits the Complete Combustion state. The countdown timer has a fixed SPD of #4[i].SAM cannot use Ultimate while in Complete Combustion.
+Enhance
+Ultimate
+0
+5
+240
+15 4
+0.1000 0.5000 30.0000 70.0000
+0.1100 0.5000 33.0000 70.0000
+0.1200 0.5000 36.0000 70.0000
+0.1300 0.5000 39.0000 70.0000
+0.1400 0.5000 42.0000 70.0000
+0.1500 0.5000 45.0000 70.0000
+0.1625 0.5000 48.7500 70.0000
+0.1750 0.5000 52.5000 70.0000
+0.1875 0.5000 56.2500 70.0000
+0.2000 0.5000 60.0000 70.0000
+0.2100 0.5000 63.0000 70.0000
+0.2200 0.5000 66.0000 70.0000
+0.2300 0.5000 69.0000 70.0000
+0.2400 0.5000 72.0000 70.0000
+0.2500 0.5000 75.0000 70.0000
+Chrysalid Pyronexus
+3
+The lower the HP, the less DMG received. When HP is #3[i]% or lower, the DMG Reduction reaches its maximum effect, reducing up to #1[i]%. During the Complete Combustion, the DMG Reduction remains at its maximum effect, and the Effect RES increases by #4[i]%.If Energy is lower than #2[i]% when the battle starts, regenerates Energy to #2[i]%. Once Energy is regenerated to its maximum, dispels all debuffs on this unit.
+Defense
+Talent
+0
+0
+0
+15 4
+0.2000 0.5000 0.2000 0.1000
+0.2200 0.5000 0.2000 0.1200
+0.2400 0.5000 0.2000 0.1400
+0.2600 0.5000 0.2000 0.1600
+0.2800 0.5000 0.2000 0.1800
+0.3000 0.5000 0.2000 0.2000
+0.3250 0.5000 0.2000 0.2250
+0.3500 0.5000 0.2000 0.2500
+0.3750 0.5000 0.2000 0.2750
+0.4000 0.5000 0.2000 0.3000
+0.4200 0.5000 0.2000 0.3200
+0.4400 0.5000 0.2000 0.3400
+0.4600 0.5000 0.2000 0.3600
+0.4800 0.5000 0.2000 0.3800
+0.5000 0.5000 0.2000 0.4000
+Attack
+4
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Δ Order: Meteoric Incineration
+5
+Leaps into the air and moves about freely for #1[i] seconds, which can be ended early by launching a plunging attack. When the duration ends, plunges and immediately attacks all enemies within a set area. At the start of each wave, applies a Fire Weakness to all enemies, lasting for #3[i] turn(s). Then, deals Fire DMG equal to #2[i]% of SAM's ATK to all enemies.
+
+Technique
+60
+0
+0
+1 3
+5.0000 2.0000 2.0000
+Fyrefly Type-IV: Pyrogenic Decimation
+4
+Restores HP by an amount equal to #2[i]% of this unit's Max HP. Deals Fire DMG equal to #1[i]% of SAM's ATK to a single target enemy.
+Single_Target
+Basic ATK
+45
+0
+0
+9 2
+1.0000 0.2000
+1.2000 0.2000
+1.4000 0.2000
+1.6000 0.2000
+1.8000 0.2000
+2.0000 0.2000
+2.2000 0.2000
+2.4000 0.2000
+2.6000 0.2000
+Fyrefly Type-IV: Deathstar Overload
+6
+Restores HP by an amount equal to #3[i]% of this unit's Max HP. Applies Fire Weakness to a single target enemy, lasting for #4[i] turn(s). Deals Fire DMG equal to (#5[f1] × Break Effect + #1[f1]%) of SAM's ATK to this target. At the same time, deals Fire DMG equal to (#6[f1] × Break Effect + #2[f1]%) of SAM's ATK to adjacent targets. The Break Effect taken into the calculation is capped at #7[i]%.
+Blast
+Skill
+90 + 45/adjacent
+0
+0
+15 7
+1.0000 0.5000 0.2500 2.0000 0.2000 0.1000 3.6000
+1.1000 0.5500 0.2500 2.0000 0.2000 0.1000 3.6000
+1.2000 0.6000 0.2500 2.0000 0.2000 0.1000 3.6000
+1.3000 0.6500 0.2500 2.0000 0.2000 0.1000 3.6000
+1.4000 0.7000 0.2500 2.0000 0.2000 0.1000 3.6000
+1.5000 0.7500 0.2500 2.0000 0.2000 0.1000 3.6000
+1.6250 0.8125 0.2500 2.0000 0.2000 0.1000 3.6000
+1.7500 0.8750 0.2500 2.0000 0.2000 0.1000 3.6000
+1.8750 0.9375 0.2500 2.0000 0.2000 0.1000 3.6000
+2.0000 1.0000 0.2500 2.0000 0.2000 0.1000 3.6000
+2.1000 1.0500 0.2500 2.0000 0.2000 0.1000 3.6000
+2.2000 1.1000 0.2500 2.0000 0.2000 0.1000 3.6000
+2.3000 1.1500 0.2500 2.0000 0.2000 0.1000 3.6000
+2.4000 1.2000 0.2500 2.0000 0.2000 0.1000 3.6000
+2.5000 1.2500 0.2500 2.0000 0.2000 0.1000 3.6000

@@ -1,0 +1,196 @@
+Jingliu
+Destruction
+5
+195.3600
+92.4000
+66.0000
+96.0000
+273.5040
+129.3600
+92.4000
+96.0000
+351.6480
+166.3200
+118.8000
+96.0000
+429.7920
+203.2800
+145.2000
+96.0000
+507.9360
+240.2400
+171.6000
+96.0000
+586.0800
+277.2000
+198.0000
+96.0000
+664.2240
+314.1600
+224.4000
+96.0000
+9.7680
+4.6200
+3.3000
+0.0000
+CRITDMG 0.0530
+HP 0.0530
+CRITDMG 0.0530
+SPD 0.0530
+CRITDMG 0.0530
+SPD 0.0530
+CRITDMG 0.0530
+SPD 0.0530
+CRITDMG 0.0530
+HP 0.0530
+3
+Frost Wraith
+6
+While in the Spectral Transmigration state, increases DMG dealt by Ultimate by #1[i]%.
+1
+0.2000
+Sword Champion
+7
+After using Transcendent Flash, the next action will be Advanced Forward by #1[i]%.
+1
+0.1000
+Deathrealm
+8
+While in the Spectral Transmigration state, increases Effect RES by #1[i]%.
+1
+0.3500
+
+7
+Lucent Moonglow
+0
+Deals Ice DMG equal to #1[i]% of Jingliu's ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Transcendent Flash
+1
+Deals Ice DMG equal to #1[i]% of Jingliu's ATK to a single enemy and obtains #2[i] stack(s) of Syzygy.
+Single_Target
+Skill
+60
+20
+0
+15 2
+1.0000 1.0000
+1.1000 1.0000
+1.2000 1.0000
+1.3000 1.0000
+1.4000 1.0000
+1.5000 1.0000
+1.6250 1.0000
+1.7500 1.0000
+1.8750 1.0000
+2.0000 1.0000
+2.1000 1.0000
+2.2000 1.0000
+2.3000 1.0000
+2.4000 1.0000
+2.5000 1.0000
+Florephemeral Dreamflux
+2
+Deals Ice DMG equal to #1[i]% of Jingliu's ATK to a single enemy, and deals Ice DMG equal to #3[i]% of Jingliu's ATK to any adjacent enemies. Gains #2[i] stack(s) of Syzygy after attack ends.
+Blast
+Ultimate
+60/hit
+5
+140
+15 4
+1.8000 1.0000 0.9000 1.0000
+1.9200 1.0000 0.9600 1.0000
+2.0400 1.0000 1.0200 1.0000
+2.1600 1.0000 1.0800 1.0000
+2.2800 1.0000 1.1400 1.0000
+2.4000 1.0000 1.2000 1.0000
+2.5500 1.0000 1.2750 1.0000
+2.7000 1.0000 1.3500 1.0000
+2.8500 1.0000 1.4250 1.0000
+3.0000 1.0000 1.5000 1.0000
+3.1200 1.0000 1.5600 1.0000
+3.2400 1.0000 1.6200 1.0000
+3.3600 1.0000 1.6800 1.0000
+3.4800 1.0000 1.7400 1.0000
+3.6000 1.0000 1.8000 1.0000
+Crescent Transmigration
+3
+When Jingliu has #5[i] stack(s) of Syzygy, she enters the Spectral Transmigration state with her Action Advanced by #6[i]% and her CRIT Rate increases by #7[i]%. Then, Jingliu's Skill "Transcendent Flash" is enhanced to "Moon On Glacial River," and only this enhanced Skill is available for use in battle. When Jingliu uses an attack in the Spectral Transmigration state, she consumes HP from all other allies equal to #2[i]% of their respective Max HP (this cannot reduce allies' HP to lower than 1). Jingliu's ATK increases by #3[i]% of the total HP consumed from all allies in this attack, capped at #4[i]% of her base ATK, lasting until the current attack ends. Jingliu cannot enter the Spectral Transmigration state again until the current Spectral Transmigration state ends. Syzygy can stack up to 3 times. When Syzygy stacks become 0, Jingliu will exit the Spectral Transmigration state.
+Enhance
+Talent
+0
+0
+0
+15 7
+0.3000 0.0400 5.4000 0.9000 2.0000 1.0000 0.4000
+0.3000 0.0400 5.4000 0.9900 2.0000 1.0000 0.4100
+0.3000 0.0400 5.4000 1.0800 2.0000 1.0000 0.4200
+0.3000 0.0400 5.4000 1.1700 2.0000 1.0000 0.4300
+0.3000 0.0400 5.4000 1.2600 2.0000 1.0000 0.4400
+0.3000 0.0400 5.4000 1.3500 2.0000 1.0000 0.4500
+0.3000 0.0400 5.4000 1.4625 2.0000 1.0000 0.4625
+0.3000 0.0400 5.4000 1.5750 2.0000 1.0000 0.4750
+0.3000 0.0400 5.4000 1.6875 2.0000 1.0000 0.4875
+0.3000 0.0400 5.4000 1.8000 2.0000 1.0000 0.5000
+0.3000 0.0400 5.4000 1.8900 2.0000 1.0000 0.5100
+0.3000 0.0400 5.4000 1.9800 2.0000 1.0000 0.5200
+0.3000 0.0400 5.4000 2.0700 2.0000 1.0000 0.5300
+0.3000 0.0400 5.4000 2.1600 2.0000 1.0000 0.5400
+0.3000 0.0400 5.4000 2.2500 2.0000 1.0000 0.5500
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Shine of Truth
+4
+After using this Technique, creates a Special Dimension around Jingliu that lasts for #3[i] seconds, and all enemies in this Special Dimension will become Frozen. After entering combat with enemies in the Special Dimension, Jingliu immediately regenerates #6[i] Energy and obtains #1[i] stack(s) of Syzygy, with a #2[i]% base chance of Freezing enemy targets for #4[i] turn(s). While Frozen, enemy targets cannot take action, and receive Ice Additional DMG equal to #5[i]% of Jingliu's ATK at the start of every turn. Only 1 dimension created by allies can exist at the same time.
+Impair
+Technique
+0
+0
+0
+1 6
+1.0000 1.0000 20.0000 1.0000 0.8000 15.0000
+Moon On Glacial River
+5
+Deals Ice DMG equal to #1[i]% of Jingliu's ATK to a single enemy, and deals Ice DMG equal to #3[i]% of Jingliu's ATK to adjacent enemies. Consumes #2[i] stack(s) of Syzygy. Using this ability does not consume Skill Points.
+Blast
+Skill
+60 + 30/adjacent
+30
+0
+15 3
+1.2500 1.0000 0.6250
+1.3750 1.0000 0.6875
+1.5000 1.0000 0.7500
+1.6250 1.0000 0.8125
+1.7500 1.0000 0.8750
+1.8750 1.0000 0.9375
+2.0312 1.0000 1.0156
+2.1875 1.0000 1.0938
+2.3438 1.0000 1.1719
+2.5000 1.0000 1.2500
+2.6250 1.0000 1.3125
+2.7500 1.0000 1.3750
+2.8750 1.0000 1.4375
+3.0000 1.0000 1.5000
+3.1250 1.0000 1.5625

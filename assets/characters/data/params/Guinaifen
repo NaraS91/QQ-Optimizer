@@ -1,0 +1,110 @@
+6
+Standing Ovation
+0
+Deals Fire DMG equal to #1[i]% of Guinaifen's ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Blazing Welcome
+1
+Deals Fire DMG equal to #1[i]% of Guinaifen's ATK to a single enemy and Fire DMG equal to #2[i]% of Guinaifen's ATK to any adjacent enemies, with a #3[i]% base chance to Burn the target and adjacent targets. When Burned, enemies will take a Fire DoT equal to #4[i]% of Guinaifen's ATK at the beginning of each turn, lasting for #5[i] turn(s).
+Blast
+Skill
+60 + 30/adjacent
+30
+0
+15 5
+0.6000 0.2000 1.0000 0.8390 2.0000
+0.6600 0.2200 1.0000 0.9230 2.0000
+0.7200 0.2400 1.0000 1.0069 2.0000
+0.7800 0.2600 1.0000 1.0909 2.0000
+0.8400 0.2800 1.0000 1.1748 2.0000
+0.9000 0.3000 1.0000 1.3007 2.0000
+0.9750 0.3250 1.0000 1.4686 2.0000
+1.0500 0.3500 1.0000 1.6784 2.0000
+1.1250 0.3750 1.0000 1.9303 2.0000
+1.2000 0.4000 1.0000 2.1821 2.0000
+1.2600 0.4200 1.0000 2.2912 2.0000
+1.3200 0.4400 1.0000 2.4003 2.0000
+1.3800 0.4600 1.0000 2.5094 2.0000
+1.4400 0.4800 1.0000 2.6186 2.0000
+1.5000 0.5000 1.0000 2.7277 2.0000
+Watch This Showstopper
+2
+Deals Fire DMG equal to #1[f1]% of Guinaifen's ATK to all enemies. If the target enemy is currently inflicted with Burn, then their Burn status immediately produces DMG equal to #2[i]% of their original DMG.
+AoE
+Ultimate
+60/hit
+5
+120
+15 2
+0.7200 0.7200
+0.7680 0.7400
+0.8160 0.7600
+0.8640 0.7800
+0.9120 0.8000
+0.9600 0.8200
+1.0200 0.8450
+1.0800 0.8700
+1.1400 0.8950
+1.2000 0.9200
+1.2480 0.9400
+1.2960 0.9600
+1.3440 0.9800
+1.3920 1.0000
+1.4400 1.0200
+PatrAeon Benefits
+3
+When Guinaifen is on the field, there is a #1[i]% base chance to apply Firekiss to an enemy after their Burn status causes DMG. While inflicted with Firekiss, the enemy receives #4[f1]% increased DMG, which lasts for #5[i] turn(s) and can stack up to #6[i] time(s).
+Impair
+Talent
+0
+0
+0
+15 6
+1.0000 0.0000 0.0000 0.0400 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0430 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0460 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0490 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0520 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0550 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0587 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0625 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0663 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0700 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0730 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0760 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0790 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0820 3.0000 3.0000
+1.0000 0.0000 0.0000 0.0850 3.0000 3.0000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Skill Showcase
+4
+Immediately attacks the enemy. After entering battle, deals DMG for #2[i] time(s), dealing Fire DMG equal to #1[i]% of Guinaifen's ATK to a random single enemy target each time, with a #3[i]% base chance of inflicting Firekiss on them.
+
+Technique
+60
+0
+0
+1 3
+0.5000 4.0000 1.0000

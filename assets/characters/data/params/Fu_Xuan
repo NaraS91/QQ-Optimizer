@@ -1,0 +1,110 @@
+6
+Novaburst
+0
+Deals Quantum DMG equal to #1[i]% of Fu Xuan's Max HP to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.2500
+0.3000
+0.3500
+0.4000
+0.4500
+0.5000
+0.5500
+0.6000
+0.6500
+Known by Stars, Shown by Hearts
+1
+Activates Matrix of Prescience, via which other team members will Distribute #1[i]% of the DMG they receive (before this DMG is mitigated by any Shields) to Fu Xuan for #3[i] turn(s).While affected by Matrix of Prescience, all team members gain the Knowledge effect, which increases their respective Max HP by #4[f1]% of Fu Xuan's Max HP, and increases CRIT Rate by #5[f1]%.When Fu Xuan is knocked down, the Matrix of Prescience will be dispelled.
+Defense
+Skill
+0
+30
+0
+15 5
+0.6500 0.0000 3.0000 0.0300 0.0600
+0.6500 0.0000 3.0000 0.0330 0.0660
+0.6500 0.0000 3.0000 0.0360 0.0720
+0.6500 0.0000 3.0000 0.0390 0.0780
+0.6500 0.0000 3.0000 0.0420 0.0840
+0.6500 0.0000 3.0000 0.0450 0.0900
+0.6500 0.0000 3.0000 0.0488 0.0975
+0.6500 0.0000 3.0000 0.0525 0.1050
+0.6500 0.0000 3.0000 0.0563 0.1125
+0.6500 0.0000 3.0000 0.0600 0.1200
+0.6500 0.0000 3.0000 0.0630 0.1260
+0.6500 0.0000 3.0000 0.0660 0.1320
+0.6500 0.0000 3.0000 0.0690 0.1380
+0.6500 0.0000 3.0000 0.0720 0.1440
+0.6500 0.0000 3.0000 0.0750 0.1500
+Woes of Many Morphed to One
+2
+Deals Quantum DMG equal to #1[i]% of Fu Xuan's Max HP to all enemies and obtains 1 trigger count for the HP Restore effect granted by Fu Xuan's Talent.
+AoE
+Ultimate
+60/hit
+5
+135
+15 1
+0.6000
+0.6400
+0.6800
+0.7200
+0.7600
+0.8000
+0.8500
+0.9000
+0.9500
+1.0000
+1.0400
+1.0800
+1.1200
+1.1600
+1.2000
+Bleak Breeds Bliss
+3
+While Fu Xuan is still active in battle, Misfortune Avoidance is applied to the entire team. With Misfortune Avoidance, allies take #1[f1]% less DMG.When Fu Xuan's current HP percentage falls to #2[i]% of her Max HP or less, HP Restore will be triggered for Fu Xuan, restoring her HP by #3[i]% of the amount of HP she is currently missing. This effect cannot be triggered if she receives a killing blow. This effect has 1 trigger count by default and can hold up to a maximum of 2 trigger counts.
+Restore
+Talent
+0
+0
+0
+15 3
+0.1000 0.5000 0.8000
+0.1080 0.5000 0.8100
+0.1160 0.5000 0.8200
+0.1240 0.5000 0.8300
+0.1320 0.5000 0.8400
+0.1400 0.5000 0.8500
+0.1500 0.5000 0.8625
+0.1600 0.5000 0.8750
+0.1700 0.5000 0.8875
+0.1800 0.5000 0.9000
+0.1880 0.5000 0.9100
+0.1960 0.5000 0.9200
+0.2040 0.5000 0.9300
+0.2120 0.5000 0.9400
+0.2200 0.5000 0.9500
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Of Fortune Comes Fate
+4
+After the Technique is used, all team members receive a Barrier, lasting for #1[i] seconds. This Barrier can block all enemy attacks, and the team will not enter battle when attacked. Entering battle while the Barrier is active will have Fu Xuan automatically activate Matrix of Prescience at the start of the battle, lasting for #2[i] turn(s).
+Defense
+Technique
+0
+0
+0
+1 2
+20.0000 2.0000

@@ -1,0 +1,172 @@
+Lingsha
+Abundance
+5
+184.8000
+92.4000
+59.4000
+98.0000
+258.7200
+129.3600
+83.1600
+98.0000
+332.6400
+166.3200
+106.9200
+98.0000
+406.5600
+203.2800
+130.6800
+98.0000
+480.4800
+240.2400
+154.4400
+98.0000
+554.4000
+277.2000
+178.2000
+98.0000
+628.3200
+314.1600
+201.9600
+98.0000
+9.2400
+4.6200
+2.9700
+0.0000
+Break 0.1070
+Break 0.1070
+HP 0.1070
+ATK 0.1070
+Break 0.1070
+HP 0.1070
+Break 0.1070
+HP 0.1070
+Break 0.1070
+ATK 0.1070
+3
+Ember's Echo
+5
+When Fuyuan is on the field and any ally character takes DMG or consumes HP, if a character in the team has their current HP percentage lower than or equal to #1[i]%, Fuyuan will immediately launch the Talent's follow-up attack. This does not consume Fuyuan's action count. This effect can trigger again after #2[i] turn(s).
+2
+0.6000 2.0000
+Sylvan Smoke
+6
+When using Basic ATK, additionally regenerates #1[i] Energy.
+1
+10.0000
+Vermilion Waft
+7
+Increases this unit's ATK or Outgoing Healing by an amount equal to #1[i]%/#2[i]% of Break Effect, up to a maximum increase of #3[i]%/#4[i]% respectively.
+4
+0.2500 0.1000 0.5000 0.2000
+
+6
+Votive Incense
+0
+Deals Fire DMG equal to #1[i]% of Lingsha's ATK to a single target enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Smoke and Splendor
+1
+Deals Fire DMG equal to #1[i]% of Lingsha's ATK to all enemies and at the same time, restores HP equal to #2[f1]% of Lingsha's ATK plus #3[i] for all allies. Fuyuan's action advances by #4[i]%.
+AoE
+Skill
+30/hit
+30
+0
+15 4
+0.4000 0.1000 105.0000 0.2000
+0.4400 0.1050 168.0000 0.2000
+0.4800 0.1100 215.2500 0.2000
+0.5200 0.1150 262.5000 0.2000
+0.5600 0.1200 294.0000 0.2000
+0.6000 0.1240 325.5000 0.2000
+0.6500 0.1280 349.1250 0.2000
+0.7000 0.1320 372.7500 0.2000
+0.7500 0.1360 396.3750 0.2000
+0.8000 0.1400 420.0000 0.2000
+0.8400 0.1440 443.6250 0.2000
+0.8800 0.1480 467.2500 0.2000
+0.9200 0.1520 490.8750 0.2000
+0.9600 0.1560 514.5000 0.2000
+1.0000 0.1600 538.1250 0.2000
+Dripping Mistscape
+2
+Inflicts "Befog" on all enemies. While in "Befog," targets receive #4[i]% increased Break DMG, lasting for #5[i] turn(s).Deals Fire DMG equal to #1[i]% of Lingsha's ATK to all enemies, and at the same time restores HP equal to #2[f1]% of Lingsha's ATK plus #3[i] for all allies. Fuyuan's action advances by #6[i]%.
+AoE
+Ultimate
+60/hit
+5
+110
+15 6
+0.9000 0.0800 90.0000 0.1500 2.0000 1.0000
+0.9600 0.0850 144.0000 0.1600 2.0000 1.0000
+1.0200 0.0900 184.5000 0.1700 2.0000 1.0000
+1.0800 0.0950 225.0000 0.1800 2.0000 1.0000
+1.1400 0.1000 252.0000 0.1900 2.0000 1.0000
+1.2000 0.1040 279.0000 0.2000 2.0000 1.0000
+1.2750 0.1080 299.2500 0.2125 2.0000 1.0000
+1.3500 0.1120 319.5000 0.2250 2.0000 1.0000
+1.4250 0.1160 339.7500 0.2375 2.0000 1.0000
+1.5000 0.1200 360.0000 0.2500 2.0000 1.0000
+1.5600 0.1240 380.2500 0.2600 2.0000 1.0000
+1.6200 0.1280 400.5000 0.2700 2.0000 1.0000
+1.6800 0.1320 420.7500 0.2800 2.0000 1.0000
+1.7400 0.1360 441.0000 0.2900 2.0000 1.0000
+1.8000 0.1400 461.2500 0.3000 2.0000 1.0000
+Mistdance Manifest
+3
+When using Skill, summons Fuyuan, with an initial SPD of #1[i] and an initial action count of #7[i].When taking action, Fuyuan launches follow-up attack, dealing Fire DMG equal to #2[i]% of Lingsha's ATK to all enemies. Additionally deals Fire DMG equal to #8[i]% of Lingsha's ATK to a single random enemy, and this DMG prioritizes targets that have both Toughness greater than 0 and Fire Weakness. Dispels #6[i] debuff(s) from all allies and restores HP equal to #3[f1]% of Lingsha's ATK plus #4[i].Fuyuan's action count can accumulate up to #5[i]. When the action count reaches 0 or when Lingsha is knocked down, Fuyuan disappears.While Fuyuan is on the field, using Skill can increase Fuyuan's action count by #7[i].
+AoE
+Talent
+30/hit
+0
+0
+15 8
+90.0000 0.3750 0.0800 90.0000 5.0000 1.0000 3.0000 0.3750
+90.0000 0.4125 0.0850 144.0000 5.0000 1.0000 3.0000 0.4125
+90.0000 0.4500 0.0900 184.5000 5.0000 1.0000 3.0000 0.4500
+90.0000 0.4875 0.0950 225.0000 5.0000 1.0000 3.0000 0.4875
+90.0000 0.5250 0.1000 252.0000 5.0000 1.0000 3.0000 0.5250
+90.0000 0.5625 0.1040 279.0000 5.0000 1.0000 3.0000 0.5625
+90.0000 0.6094 0.1080 299.2500 5.0000 1.0000 3.0000 0.6094
+90.0000 0.6562 0.1120 319.5000 5.0000 1.0000 3.0000 0.6562
+90.0000 0.7031 0.1160 339.7500 5.0000 1.0000 3.0000 0.7031
+90.0000 0.7500 0.1200 360.0000 5.0000 1.0000 3.0000 0.7500
+90.0000 0.7875 0.1240 380.2500 5.0000 1.0000 3.0000 0.7875
+90.0000 0.8250 0.1280 400.5000 5.0000 1.0000 3.0000 0.8250
+90.0000 0.8625 0.1320 420.7500 5.0000 1.0000 3.0000 0.8625
+90.0000 0.9000 0.1360 441.0000 5.0000 1.0000 3.0000 0.9000
+90.0000 0.9375 0.1400 461.2500 5.0000 1.0000 3.0000 0.9375
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+Single_Target
+
+30
+0
+0
+0 0
+Wisps of Aurora
+4
+After using Technique, immediately summons Fuyuan at the start of the next battle and inflicts "Befog" on all enemies, lasting for #1[i] turn(s).
+Support
+Technique
+0
+0
+0
+1 1
+2.0000
