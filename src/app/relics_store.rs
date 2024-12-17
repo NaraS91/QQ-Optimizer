@@ -6,7 +6,7 @@ use super::hsr::{
     units::UnitKind,
 };
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct RelicsStore {
     relics: Vec<Option<Relic>>,
     reusable_ids: VecDeque<usize>,

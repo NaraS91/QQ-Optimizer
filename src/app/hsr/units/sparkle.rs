@@ -94,9 +94,9 @@ pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
             },
         ))
     }
-    let trace1_data: Vec<ModifierData> = vec![ModifierData::new(
+    let trace3_data: Vec<ModifierData> = vec![ModifierData::new(
         ModifierTarget::Team,
-        Stat::Base(BaseStat::Def),
+        Stat::Base(BaseStat::Atk),
         BuffScaling::Multiplicative,
         |_, _, _, team, _, _| {
             let quantum_allies = team
@@ -123,8 +123,8 @@ pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
             true,
         )),
         ModifierOrDOT::Modifier(Modifier::new(
-            (unit.kind, Source::Trace(1)),
-            trace1_data,
+            (unit.kind, Source::Trace(3)),
+            trace3_data,
             true,
         )),
     ]

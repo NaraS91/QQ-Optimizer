@@ -9,7 +9,7 @@ use super::{ModifierOrDOT, Unit};
 
 pub fn modifiers(_unit: &Unit) -> Vec<ModifierOrDOT> {
     vec![ModifierOrDOT::Modifier(Modifier::new(
-        (UnitKind::Dr_Ratio, Source::Trace(4)),
+        (UnitKind::Dr_Ratio, Source::Trace(2)),
         vec![ModifierData::new(
             ModifierTarget::Enemy,
             Stat::Advanced(AdvancedStat::EffectRes),

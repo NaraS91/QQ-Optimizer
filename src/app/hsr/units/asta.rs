@@ -13,7 +13,7 @@ pub fn modifiers(_unit: &Unit) -> Vec<ModifierOrDOT> {
 
     vec![
         ModifierOrDOT::Modifier(Modifier::new(
-            (UnitKind::Asta, Source::Trace(4)),
+            (UnitKind::Asta, Source::Trace(2)),
             vec![ModifierData::new(
                 ModifierTarget::Team,
                 Stat::Advanced(AdvancedStat::ElemDmgBoost(Element::Fire)),

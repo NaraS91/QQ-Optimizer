@@ -4,9 +4,7 @@ use egui::{self, Margin, Rounding};
 use self::{optimize::Optimize, team::Team};
 
 use super::{
-    light_cones_store::{LightConesStore},
-    relics_store::{RelicsStore},
-    units_store::{UnitsStore},
+    light_cones_store::LightConesStore, relics_store::RelicsStore, units_store::UnitsStore,
 };
 
 mod menu;
@@ -36,6 +34,7 @@ impl Default for Optimizer {
 }
 
 pub fn new_page(
+    ctx: &egui::Context,
     ui: &mut egui::Ui,
     optimizer: &mut Box<Optimizer>,
     relics_store: &mut RelicsStore,
@@ -47,18 +46,24 @@ pub fn new_page(
         .rounding(Rounding::same(8.0))
         .inner_margin(Margin::same(20.0));
 
+    optimizer
+        .optimize
+        .set_main_unit_buffs(optimizer.team.get_active_modifiers());
+
     let menu_state = egui::CentralPanel::default()
         .frame(section_frame)
         .show_inside(ui, |ui| {
             let menu_response = menu::new(ui, optimizer);
 
             match &mut optimizer.menu_state {
-                Menu::Team => optimizer.team.show_ui(ui, relics_store, units_store),
-                Menu::Optimize => {
-                    optimizer
-                        .optimize
-                        .show_ui(ui, relics_store, units_store, light_cones_store)
-                }
+                Menu::Team => optimizer.team.show_ui(ctx, ui, relics_store, units_store),
+                Menu::Optimize => optimizer.optimize.show_ui(
+                    ctx,
+                    ui,
+                    relics_store,
+                    units_store,
+                    light_cones_store,
+                ),
             }
 
             menu_response.inner

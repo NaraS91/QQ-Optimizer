@@ -4,7 +4,8 @@ use crate::app::{
     hsr::{
         basics::Element,
         relics::{RelicPart, RelicStat},
-    }, ASSETS_LOADER,
+    },
+    ASSETS_LOADER,
 };
 
 #[derive(serde::Deserialize, serde::Serialize)]
@@ -29,7 +30,7 @@ impl RelicsLevelFilter {
     }
 }
 
-#[derive(serde::Deserialize, serde::Serialize)]
+#[derive(serde::Deserialize, serde::Serialize, Clone, Copy)]
 pub struct RelicsStatsFilter {
     pub head: u32,
     pub hands: u32,

@@ -1,0 +1,110 @@
+6
+Mara-Sunder Awl
+0
+Deals #1[i]% of Xueyi's ATK as Quantum DMG to a single target enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Iniquity Obliteration
+1
+Deals Quantum DMG equal to #1[i]% of Xueyi's ATK to a single enemy, and Quantum DMG equal to #2[i]% of Xueyi's ATK to any adjacent enemies.
+Blast
+Skill
+60 + 30/adjacent
+30
+0
+15 2
+0.7000 0.3500
+0.7700 0.3850
+0.8400 0.4200
+0.9100 0.4550
+0.9800 0.4900
+1.0500 0.5250
+1.1375 0.5687
+1.2250 0.6125
+1.3125 0.6562
+1.4000 0.7000
+1.4700 0.7350
+1.5400 0.7700
+1.6100 0.8050
+1.6800 0.8400
+1.7500 0.8750
+Divine Castigation
+2
+Deals Quantum DMG equal to #1[i]% of Xueyi's ATK to a single target enemy. This attack ignores Weakness Types and reduces the enemy's Toughness. When the enemy's Weakness is Broken, the Quantum Weakness Break effect is triggered.In this attack, the more Toughness is reduced, the higher the DMG will be dealt, up to a max of #3[f1]% increase.
+Single_Target
+Ultimate
+120
+5
+120
+15 3
+1.5000 0.0900 0.3600
+1.6000 0.0960 0.3840
+1.7000 0.1020 0.4080
+1.8000 0.1080 0.4320
+1.9000 0.1140 0.4560
+2.0000 0.1200 0.4800
+2.1250 0.1275 0.5100
+2.2500 0.1350 0.5400
+2.3750 0.1425 0.5700
+2.5000 0.1500 0.6000
+2.6000 0.1560 0.6240
+2.7000 0.1620 0.6480
+2.8000 0.1680 0.6720
+2.9000 0.1740 0.6960
+3.0000 0.1800 0.7200
+Karmic Perpetuation
+3
+When Xueyi reduces enemy Toughness with attacks, Karma will be stacked. The more Toughness is reduced, the more stacks of Karma are added, up to #1[i] stacks.When Xueyi's allies reduce enemy Toughness with attacks, Xueyi gains #3[i] stack(s) of Karma.When Karma reaches the max number of stacks, consumes all current Karma stacks and immediately launches a follow-up attack against an enemy target, dealing DMG for 3 times, with each time dealing Quantum DMG equal to #2[i]% of Xueyi's ATK to a single random enemy. This follow-up attack will not add Karma stacks.
+Bounce
+Talent
+15/hit
+2/hit
+0
+15 3
+8.0000 0.4500 1.0000
+8.0000 0.4950 1.0000
+8.0000 0.5400 1.0000
+8.0000 0.5850 1.0000
+8.0000 0.6300 1.0000
+8.0000 0.6750 1.0000
+8.0000 0.7312 1.0000
+8.0000 0.7875 1.0000
+8.0000 0.8438 1.0000
+8.0000 0.9000 1.0000
+8.0000 0.9450 1.0000
+8.0000 0.9900 1.0000
+8.0000 1.0350 1.0000
+8.0000 1.0800 1.0000
+8.0000 1.1250 1.0000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Summary Execution
+4
+Immediately attacks the enemy. After entering combat, deals #1[i]% of Xueyi's ATK as Quantum DMG to all enemies.
+
+Technique
+60
+0
+0
+1 1
+0.8000

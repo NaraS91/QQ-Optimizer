@@ -6,7 +6,7 @@ use super::hsr::{
     units::UnitKind,
 };
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct LightConesStore {
     light_cones: Vec<Option<LightCone>>,
     reusable_ids: VecDeque<usize>,

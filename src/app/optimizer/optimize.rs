@@ -1,5 +1,8 @@
-use std::time;
+use std::sync::mpsc::{channel, Receiver, Sender};
+use std::sync::Arc;
+use std::{thread, time};
 
+use eframe::glow::Context;
 use egui::{Margin, Ui};
 use enum_map::Enum;
 
@@ -16,7 +19,7 @@ use crate::app::{
         },
         units::{Modifier, Unit, UnitKind},
     },
-    light_cones_store::{LightConesStore},
+    light_cones_store::LightConesStore,
     relics_store::RelicsStore,
     units_store::UnitsStore,
     COLOR_PALLET,
@@ -25,6 +28,10 @@ use crate::app::{
 mod optimized_unit_card;
 mod relics_filter_card;
 mod requirements_card;
+
+pub struct ThreadMessage {
+    optimal_set: [Option<Relic>; 6],
+}
 
 #[derive(serde::Deserialize, serde::Serialize)]
 pub struct Optimize {
@@ -36,6 +43,11 @@ pub struct Optimize {
     relics_stat_filter: RelicsStatsFilter,
     requirements: Requirements,
     optimal_set: Option<[Option<Relic>; 6]>,
+
+    //ui state
+    is_optimizing: bool,
+    #[serde(skip_serializing, skip_deserializing)]
+    channels: Option<(Arc<Sender<ThreadMessage>>, Arc<Receiver<ThreadMessage>>)>,
 }
 
 impl Default for Optimize {
@@ -46,6 +58,7 @@ impl Default for Optimize {
 
 impl Optimize {
     pub fn new(unit_kind: UnitKind) -> Optimize {
+        let (tx, rx) = channel();
         Optimize {
             unit_kind: unit_kind,
             main_unit_buffs: Vec::new(),
@@ -54,11 +67,18 @@ impl Optimize {
             relics_stat_filter: RelicsStatsFilter::new(),
             requirements: Requirements::new(),
             optimal_set: None,
+            is_optimizing: false,
+            channels: Some((Arc::new(tx), Arc::new(rx))),
         }
+    }
+
+    pub fn set_main_unit_buffs(&mut self, buffs: Vec<(Unit, Modifier)>) {
+        self.main_unit_buffs = buffs;
     }
 
     pub fn show_ui(
         &mut self,
+        ctx: &egui::Context,
         ui: &mut egui::Ui,
         relics_store: &mut RelicsStore,
         units_store: &mut UnitsStore,
@@ -91,62 +111,93 @@ impl Optimize {
             .resizable(false)
             .show_separator_line(false)
             .show_inside(ui, |ui| {
-                self.show_in_bottom_panel(ui, relics_store, units_store, light_cones_store)
+                self.show_in_bottom_panel(ctx, ui, relics_store, units_store, light_cones_store)
             });
     }
 
     fn show_in_bottom_panel(
         &mut self,
+        ctx: &egui::Context,
         ui: &mut Ui,
-        relics_store: &mut RelicsStore,
+        relics_store: &RelicsStore,
         units_store: &mut UnitsStore,
         light_cones_store: &LightConesStore,
     ) {
-        if ui.button("Optimize!").clicked() {
-            self.optimize(ui, relics_store, units_store, light_cones_store)
+        if self.is_optimizing {
+            ui.add_enabled(!self.is_optimizing, egui::Button::new("Optimizing..."));
+            if let Ok(msg) = self.channels.as_ref().unwrap().1.try_recv() {
+                self.optimal_set = Some(msg.optimal_set);
+                self.is_optimizing = false;
+            }
+        } else {
+            if ui.button("Optimize!").clicked() {
+                self.is_optimizing = true;
+                let main_unit = units_store
+                    .get_unit(ctx, self.unit_kind)
+                    .expect("optimized unit should exist");
+                let base_team = main_unit
+                    .unique_data
+                    .team
+                    .map(|op| op.and_then(|unit_kind| units_store.get_unit(ctx, unit_kind)));
+                let relics_stat_filter = self.relics_stat_filter.clone();
+                let sender = self.channels.clone().unwrap().0;
+                let buffs = self.main_unit_buffs.clone();
+                let cloned_relic_store = relics_store.clone();
+                let cloned_lightcones_store = light_cones_store.clone();
+                let cloned_ctx = ctx.clone();
+                thread::spawn(move || {
+                    Self::optimize(
+                        cloned_ctx,
+                        main_unit.clone(),
+                        base_team,
+                        buffs,
+                        relics_stat_filter,
+                        &cloned_relic_store,
+                        &cloned_lightcones_store,
+                        sender,
+                    )
+                });
+            }
         }
     }
 
     fn optimize(
-        &mut self,
-        _ui: &mut Ui,
-        relics_store: &mut RelicsStore,
-        units_store: &mut UnitsStore,
+        ctx: egui::Context,
+        mut main_unit: Unit,
+        base_team: [Option<Unit>; 3],
+        buffs: Vec<(Unit, Modifier)>,
+        relics_stats_filter: RelicsStatsFilter,
+        relics_store: &RelicsStore,
         light_cones_store: &LightConesStore,
+        tx: Arc<Sender<ThreadMessage>>,
     ) {
         let mut relics = relics_store.get_all_by_parts();
         let mut optimal_set: [Option<Relic>; 6] = [None; 6];
         let mut max_dmg = 0.;
-        let mut main_unit = units_store
-            .get_unit(self.unit_kind)
-            .expect("optimized unit should exist");
         let optimization_target = &main_unit.kind.get_optimization_targets().unwrap()[0];
 
-        main_unit.start_optimization(light_cones_store);
+        main_unit.start_optimization(&light_cones_store);
         main_unit.reset_buffs();
-        let base_team = main_unit
-            .unique_data
-            .team
-            .map(|op| op.and_then(|unit_kind| units_store.get_unit(unit_kind)));
+
         let team = &[
             base_team[0].as_ref(),
             base_team[1].as_ref(),
             base_team[2].as_ref(),
         ];
-        for (buffer, modifier) in self.main_unit_buffs.iter().as_ref() {
+        for (buffer, modifier) in buffs.iter().as_ref() {
             main_unit.buff(
                 team,
                 modifier.clone(),
                 buffer,
-                light_cones_store,
-                relics_store,
+                &light_cones_store,
+                &relics_store,
             );
         }
 
-        relics[2] = Self::filter_parts(&relics[2], self.relics_stat_filter.body);
-        relics[3] = Self::filter_parts(&relics[3], self.relics_stat_filter.feet);
-        relics[4] = Self::filter_parts(&relics[4], self.relics_stat_filter.sphere);
-        relics[5] = Self::filter_parts(&relics[5], self.relics_stat_filter.rope);
+        relics[2] = Self::filter_parts(&relics[2], relics_stats_filter.body);
+        relics[3] = Self::filter_parts(&relics[3], relics_stats_filter.feet);
+        relics[4] = Self::filter_parts(&relics[4], relics_stats_filter.sphere);
+        relics[5] = Self::filter_parts(&relics[5], relics_stats_filter.rope);
 
         let _cavern_relics_by_set = (0..4)
             .map(|relic_part| {
@@ -234,7 +285,7 @@ impl Optimize {
                             main_unit.update_opt_relic(sphere);
                             relics[5].iter().for_each(|rope| {
                                 main_unit.update_opt_relic(rope);
-                                let (avg_dmg, _, _) = optimization_target.dmg(&main_unit, team, relics_store, light_cones_store);
+                                let (avg_dmg, _, _) = optimization_target.dmg(&main_unit, team, &relics_store, &light_cones_store);
 
                                 if avg_dmg > max_dmg {
                                     optimal_set = [Some(*head), Some(*hand), Some(*body), Some(*feet), Some(*sphere), Some(*rope)];
@@ -252,7 +303,10 @@ impl Optimize {
             });
         });
 
-        self.optimal_set = Some(optimal_set);
+        let _ = tx.send(ThreadMessage {
+            optimal_set: optimal_set,
+        });
+        ctx.request_repaint();
         main_unit.reset_buffs();
         main_unit.end_optimization();
     }

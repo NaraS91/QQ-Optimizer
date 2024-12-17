@@ -105,6 +105,7 @@ impl Default for QQOptimizer {
 impl QQOptimizer {
     /// Called once before the first frame.
     pub fn new(cc: &eframe::CreationContext<'_>) -> Self {
+        println!("hello?");
         // This is also where you can customize the look and feel of egui using
         // `cc.egui_ctx.set_visuals` and `cc.egui_ctx.set_fonts`.
 
@@ -190,6 +191,7 @@ impl eframe::App for QQOptimizer {
             .show(ctx, |ui| {
                 match &mut self.sub_page {
                     PageState::OptimizerTab(optimizer) => optimizer::new_page(
+                        ctx,
                         ui,
                         optimizer,
                         &mut self.relics_store,

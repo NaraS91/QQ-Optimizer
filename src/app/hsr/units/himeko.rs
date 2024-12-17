@@ -8,8 +8,8 @@ use super::{ModifierOrDOT, Unit};
 
 pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
     vec![ModifierOrDOT::Modifier(Modifier::new(
-        (unit.kind, Source::Dimension),
-        vec![ModifierData::new(
+        (unit.kind, Source::Technique),
+        vec![ModifierData::new_dimension(
             ModifierTarget::Enemies,
             Stat::Advanced(AdvancedStat::ElemDmgReceived(Element::Fire)),
             BuffScaling::Additive,

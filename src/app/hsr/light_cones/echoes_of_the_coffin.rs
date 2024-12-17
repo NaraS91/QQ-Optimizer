@@ -1,8 +1,5 @@
 use crate::app::hsr::{
-    units::{
-        BaseStat, BuffScaling, Modifier,
-        ModifierData, ModifierTarget, Source, Stat, Unit,
-    },
+    units::{BaseStat, BuffScaling, Modifier, ModifierData, ModifierTarget, Source, Stat, Unit},
     utils::value_with_lc_s,
 };
 

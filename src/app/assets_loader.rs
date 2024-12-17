@@ -1,17 +1,25 @@
-use egui::{Image};
+use egui::{
+    load::{Bytes, BytesPoll},
+    Image,
+};
+use enum_map::{Enum, EnumMap};
 
 use crate::app::hsr::units::UnitKind;
 
 use super::hsr::{
     light_cones::LightConeKind,
     relics::{RelicPart, RelicSet},
+    units::SkillData,
 };
+
+#[derive(Enum)]
 pub enum UnitImageFormat {
     Icon,
     IconScaled,
     SplashIcon,
 }
 
+#[derive(Enum)]
 pub enum LightConeImageFormat {
     Full,
     Icon,
@@ -21,6 +29,15 @@ pub enum LightConeImageFormat {
 pub struct AssetsLoader<'a> {
     pub loader_prefix: &'a str,
 }
+
+const ORIGINAL_UNIT_SIZE: EnumMap<UnitImageFormat, (f32, f32)> =
+    EnumMap::from_array([(160., 180.), (96., 112.), (376., 512.)]);
+
+const ORIGINAL_LIGHT_CONE_SIZE: EnumMap<LightConeImageFormat, (f32, f32)> =
+    EnumMap::from_array([(867., 1230.), (348., 408.), (86., 123.)]);
+const ORIGINAL_RELIC_SET_SIZE: (f32, f32) = (128., 128.);
+const RELIC_PIECE_SIZE: (f32, f32) = (256., 256.);
+const ROPE_SIZE: (f32, f32) = (512., 512.);
 
 impl AssetsLoader<'_> {
     pub fn get_unit_image(&self, unit_kind: UnitKind, format: UnitImageFormat) -> Image<'_> {
@@ -119,6 +136,36 @@ impl AssetsLoader<'_> {
             "{}/assets/relics/{}.webp",
             self.loader_prefix,
             set.file_name()
+        ))
+    }
+
+    pub fn get_unit_base_data(&self, ctx: &egui::Context, unit: UnitKind) -> Option<Vec<u8>> {
+        match ctx
+            .try_load_bytes(&format!(
+                "{}/assets/characters/data/{}",
+                self.loader_prefix,
+                unit.file_name()
+            ))
+            .unwrap()
+        {
+            BytesPoll::Ready {
+                bytes: Bytes::Static(bytes),
+                ..
+            } => Some(bytes.to_vec()),
+            BytesPoll::Ready {
+                bytes: Bytes::Shared(bytes),
+                ..
+            } => Some(bytes.to_vec()),
+            BytesPoll::Pending { .. } => None,
+        }
+    }
+
+    pub fn get_unit_ability(&self, unit: UnitKind, skill: &SkillData) -> Image<'_> {
+        Image::new(format!(
+            "{}/assets/characters/abilities/{}/{}.webp",
+            self.loader_prefix,
+            unit.file_name(),
+            skill.icon_path
         ))
     }
 }

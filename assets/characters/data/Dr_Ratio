@@ -1,0 +1,172 @@
+Dr. Ratio
+The Hunt
+5
+142.5600
+105.6000
+62.7000
+103.0000
+199.5840
+147.8400
+87.7800
+103.0000
+256.6080
+190.0800
+112.8600
+103.0000
+313.6320
+232.3200
+137.9400
+103.0000
+370.6560
+274.5600
+163.0200
+103.0000
+427.6800
+316.8000
+188.1000
+103.0000
+484.7040
+359.0400
+213.1800
+103.0000
+7.1280
+5.2800
+3.1350
+0.0000
+ATK 0.0600
+DEF 0.0600
+ATK 0.0600
+DEF 0.0600
+ATK 0.0600
+CRITRate 0.0600
+ATK 0.0600
+CRITRate 0.0600
+CRITRate 0.0600
+ATK 0.0600
+3
+Deduction
+5
+When dealing DMG to a target that has #1[i] or more debuff(s), for each debuff the target has, the DMG dealt by Dr. Ratio to this target increases by #2[i]%, up to a maximum increase of #3[i]%.
+3
+3.0000 0.1000 0.5000
+Inference
+6
+When Skill is used to attack an enemy target, there is a #1[i]% base chance to reduce the attacked target's Effect RES by #2[i]% for #3[i] turn(s).
+3
+1.0000 0.1000 2.0000
+Summation
+7
+When Dr. Ratio uses his Skill, for every debuff on the target, his CRIT Rate increases by #1[f1]% and CRIT DMG by #2[i]%. This effect can stack up to #3[i] time(s).
+3
+0.0250 0.0500 6.0000
+
+6
+Mind is Might
+0
+Deals Imaginary DMG equal to #1[i]% of Dr. Ratio's ATK to a single target enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Intellectual Midwifery
+1
+Deals Imaginary DMG equal to #1[i]% of Dr. Ratio's ATK to a single target enemy.
+Single_Target
+Skill
+60
+30
+0
+15 1
+0.7500
+0.8250
+0.9000
+0.9750
+1.0500
+1.1250
+1.2188
+1.3125
+1.4062
+1.5000
+1.5750
+1.6500
+1.7250
+1.8000
+1.8750
+Syllogistic Paradox
+2
+Deals Imaginary DMG equal to #1[i]% of Dr. Ratio's ATK to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches his Talent's follow-up attack for 1 time against this target.Wiseman's Folly can be triggered for up to #2[i] times and only affects the most recent target of Dr. Ratio's Ultimate. This trigger count resets after Dr. Ratio's Ultimate is used.
+Single_Target
+Ultimate
+90
+5
+140
+15 2
+1.4400 2.0000
+1.5360 2.0000
+1.6320 2.0000
+1.7280 2.0000
+1.8240 2.0000
+1.9200 2.0000
+2.0400 2.0000
+2.1600 2.0000
+2.2800 2.0000
+2.4000 2.0000
+2.4960 2.0000
+2.5920 2.0000
+2.6880 2.0000
+2.7840 2.0000
+2.8800 2.0000
+Cogito, Ergo Sum
+3
+When using his Skill, Dr. Ratio has a #2[i]% fixed chance of launching a follow-up attack against his target for 1 time, dealing Imaginary DMG equal to #1[i]% of Dr. Ratio's ATK. For each debuff the target enemy has, the fixed chance of launching follow-up attack increases by #3[i]%. If the target enemy is defeated before the follow-up attack triggers, the follow-up attack will be directed at a single random enemy instead.
+Single_Target
+Talent
+30
+5
+0
+15 3
+1.3500 0.4000 0.2000
+1.4850 0.4000 0.2000
+1.6200 0.4000 0.2000
+1.7550 0.4000 0.2000
+1.8900 0.4000 0.2000
+2.0250 0.4000 0.2000
+2.1938 0.4000 0.2000
+2.3625 0.4000 0.2000
+2.5312 0.4000 0.2000
+2.7000 0.4000 0.2000
+2.8350 0.4000 0.2000
+2.9700 0.4000 0.2000
+3.1050 0.4000 0.2000
+3.2400 0.4000 0.2000
+3.3750 0.4000 0.2000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Mold of Idolatry
+4
+After using Technique, creates a Special Dimension that Taunts nearby enemies, lasting for #1[i] second(s). After entering battle with enemies in this Special Dimension, there is a #2[i]% base chance to reduce each single enemy target's SPD by #3[i]% for #4[i] turn(s). Only 1 dimension created by allies can exist at the same time.
+Impair
+Technique
+0
+0
+0
+1 4
+10.0000 1.0000 0.1500 2.0000

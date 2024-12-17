@@ -1,0 +1,172 @@
+Dan Heng
+The Hunt
+4
+120.0000
+74.4000
+54.0000
+110.0000
+168.0000
+104.1600
+75.6000
+110.0000
+216.0000
+133.9200
+97.2000
+110.0000
+264.0000
+163.6800
+118.8000
+110.0000
+312.0000
+193.4400
+140.4000
+110.0000
+360.0000
+223.2000
+162.0000
+110.0000
+408.0000
+252.9600
+183.6000
+110.0000
+6.0000
+3.7200
+2.7000
+0.0000
+Wind 0.0480
+DEF 0.0480
+Wind 0.0480
+DEF 0.0480
+Wind 0.0480
+ATK 0.0480
+Wind 0.0480
+ATK 0.0480
+ATK 0.0480
+Wind 0.0480
+3
+High Gale
+5
+Basic ATK deals #1[i]% more DMG to Slowed enemies.
+1
+0.4000
+Faster Than Light
+6
+After launching an attack, there is a #1[i]% fixed chance to increase own SPD by #2[i]% for #3[i] turn(s).
+3
+0.5000 0.2000 2.0000
+Hidden Dragon
+7
+When current HP percentage is #1[i]% or lower, reduces the chance of being attacked by enemies.
+2
+0.5000 0.5000
+
+6
+Cloudlancer Art: North Wind
+0
+Deals Wind DMG equal to #1[i]% of Dan Heng's ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Cloudlancer Art: Torrent
+1
+Deals Wind DMG equal to #1[i]% of Dan Heng's ATK to a single enemy.When DMG dealt by Skill triggers CRIT Hit, there is a #4[i]% base chance to reduce the target's SPD by #2[i]%, lasting for #3[i] turn(s).
+Single_Target
+Skill
+60
+30
+0
+15 4
+1.3000 0.1200 2.0000 1.0000
+1.4300 0.1200 2.0000 1.0000
+1.5600 0.1200 2.0000 1.0000
+1.6900 0.1200 2.0000 1.0000
+1.8200 0.1200 2.0000 1.0000
+1.9500 0.1200 2.0000 1.0000
+2.1125 0.1200 2.0000 1.0000
+2.2750 0.1200 2.0000 1.0000
+2.4375 0.1200 2.0000 1.0000
+2.6000 0.1200 2.0000 1.0000
+2.7300 0.1200 2.0000 1.0000
+2.8600 0.1200 2.0000 1.0000
+2.9900 0.1200 2.0000 1.0000
+3.1200 0.1200 2.0000 1.0000
+3.2500 0.1200 2.0000 1.0000
+Ethereal Dream
+2
+Deals Wind DMG equal to #1[i]% of Dan Heng's ATK to a single target enemy. If the attacked enemy is Slowed, the multiplier for the DMG dealt by Ultimate increases by #2[i]%.
+Single_Target
+Ultimate
+90
+5
+100
+15 2
+2.4000 0.7200
+2.5600 0.7680
+2.7200 0.8160
+2.8800 0.8640
+3.0400 0.9120
+3.2000 0.9600
+3.4000 1.0200
+3.6000 1.0800
+3.8000 1.1400
+4.0000 1.2000
+4.1600 1.2480
+4.3200 1.2960
+4.4800 1.3440
+4.6400 1.3920
+4.8000 1.4400
+Superiority of Reach
+3
+When Dan Heng becomes the target of an ally's ability, his next attack's Wind RES PEN increases by #1[i]%. This effect can be triggered again after #2[i] turn(s).
+Enhance
+Talent
+0
+0
+0
+15 2
+0.1800 2.0000
+0.1980 2.0000
+0.2160 2.0000
+0.2340 2.0000
+0.2520 2.0000
+0.2700 2.0000
+0.2925 2.0000
+0.3150 2.0000
+0.3375 2.0000
+0.3600 2.0000
+0.3780 2.0000
+0.3960 2.0000
+0.4140 2.0000
+0.4320 2.0000
+0.4500 2.0000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Splitting Spearhead
+4
+After Dan Heng uses his Technique, his ATK increases by #1[i]% at the start of the next battle for #2[i] turn(s).
+Enhance
+Technique
+0
+0
+0
+1 2
+0.4000 3.0000

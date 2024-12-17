@@ -1,0 +1,172 @@
+Herta
+Erudition
+4
+129.6000
+79.2000
+54.0000
+100.0000
+181.4400
+110.8800
+75.6000
+100.0000
+233.2800
+142.5600
+97.2000
+100.0000
+285.1200
+174.2400
+118.8000
+100.0000
+336.9600
+205.9200
+140.4000
+100.0000
+388.8000
+237.6000
+162.0000
+100.0000
+440.6400
+269.2800
+183.6000
+100.0000
+6.4800
+3.9600
+2.7000
+0.0000
+Ice 0.0640
+Ice 0.0640
+DEF 0.0640
+CRITRate 0.0640
+Ice 0.0640
+Ice 0.0640
+DEF 0.0640
+DEF 0.0640
+CRITRate 0.0640
+Ice 0.0640
+3
+Icing
+5
+When Ultimate is used, deals #1[i]% more DMG to Frozen enemies.
+1
+0.2000
+Puppet
+6
+The chance to resist Crowd Control Debuffs increases by #1[i]%.
+1
+0.3500
+Efficiency
+7
+When Skill is used, the DMG Boost effect on target enemies increases by an extra #1[i]%.
+1
+0.2500
+
+6
+What Are You Looking At?
+0
+Deals Ice DMG equal to #1[i]% of Herta's ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+One-Time Offer
+1
+Deals Ice DMG equal to #1[i]% of Herta's ATK to all enemies. If the enemy's HP percentage is #2[i]% or higher, DMG dealt to this target increases by #3[i]%.
+AoE
+Skill
+30/hit
+30
+0
+15 3
+0.5000 0.5000 0.2000
+0.5500 0.5000 0.2000
+0.6000 0.5000 0.2000
+0.6500 0.5000 0.2000
+0.7000 0.5000 0.2000
+0.7500 0.5000 0.2000
+0.8125 0.5000 0.2000
+0.8750 0.5000 0.2000
+0.9375 0.5000 0.2000
+1.0000 0.5000 0.2000
+1.0500 0.5000 0.2000
+1.1000 0.5000 0.2000
+1.1500 0.5000 0.2000
+1.2000 0.5000 0.2000
+1.2500 0.5000 0.2000
+It's Magic, I Added Some Magic
+2
+Deals Ice DMG equal to #1[i]% of Herta's ATK to all enemies.
+AoE
+Ultimate
+60/hit
+5
+110
+15 1
+1.2000
+1.2800
+1.3600
+1.4400
+1.5200
+1.6000
+1.7000
+1.8000
+1.9000
+2.0000
+2.0800
+2.1600
+2.2400
+2.3200
+2.4000
+Fine, I'll Do It Myself
+3
+When an ally's attack causes an enemy's HP percentage to fall to #1[i]% or lower, Herta will launch a follow-up attack, dealing Ice DMG equal to #2[i]% of Herta's ATK to all enemies.
+AoE
+Talent
+15/hit
+5
+0
+15 2
+0.5000 0.2500
+0.5000 0.2650
+0.5000 0.2800
+0.5000 0.2950
+0.5000 0.3100
+0.5000 0.3250
+0.5000 0.3438
+0.5000 0.3625
+0.5000 0.3812
+0.5000 0.4000
+0.5000 0.4150
+0.5000 0.4300
+0.5000 0.4450
+0.5000 0.4600
+0.5000 0.4750
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+It Can Still Be Optimized
+4
+After using her Technique, Herta's ATK increases by #1[i]% for #2[i] turn(s) at the beginning of the next battle.
+Enhance
+Technique
+0
+0
+0
+1 2
+0.4000 3.0000

@@ -1,7 +1,7 @@
 use crate::app::hsr::{
     units::{
-        AdvancedStat, BuffScaling, ConfigType, Modifier, ModifierConfig,
-        ModifierData, ModifierTarget, Source, Stat, Unit,
+        AdvancedStat, BuffScaling, ConfigType, Modifier, ModifierConfig, ModifierData,
+        ModifierTarget, Source, Stat, Unit,
     },
     utils::{lc_superimposition, value_with_lc_s},
 };

@@ -1,7 +1,12 @@
-use egui::Margin;
+use std::{borrow::Borrow, io::Empty};
+
+use egui::{Context, Margin};
 
 use crate::app::{
-    hsr::units::UnitKind, relics_store::RelicsStore, units_store::UnitsStore, COLOR_PALLET,
+    hsr::units::{Modifier, Unit, UnitKind},
+    relics_store::RelicsStore,
+    units_store::UnitsStore,
+    COLOR_PALLET,
 };
 mod unit_card;
 use unit_card::UnitCard;
@@ -9,6 +14,7 @@ use unit_card::UnitCard;
 pub struct Team {
     unit_cards: [Box<UnitCard>; 3],
     main_unit: UnitKind,
+    supporting_units: [Box<Option<Unit>>; 3],
 }
 
 impl Default for Team {
@@ -26,6 +32,7 @@ impl Team {
                 Box::new(UnitCard::new("unit_3_card".to_owned(), 2)),
             ],
             main_unit: main_unit,
+            supporting_units: [Box::new(None), Box::new(None), Box::new(None)],
         }
     }
 
@@ -35,14 +42,14 @@ impl Team {
 
     pub fn show_ui(
         &mut self,
+        ctx: &egui::Context,
         ui: &mut egui::Ui,
         relics_store: &RelicsStore,
         units_store: &mut UnitsStore,
     ) {
-        let _main_unit = units_store
-            .get_unit(self.main_unit)
-            .as_ref()
-            .expect("store should always have the main unit");
+        // let _main_unit = units_store
+        //     .get_unit(ctx, self.main_unit)
+        //     .as_ref();
         let all_kinds = units_store.get_all_kinds();
 
         let width = ui.available_size().x;
@@ -66,6 +73,7 @@ impl Team {
             .show_separator_line(false)
             .show_inside(ui, |ui| {
                 self.unit_cards[0].show_ui(
+                    ctx,
                     ui,
                     &all_kinds,
                     self.main_unit,
@@ -91,6 +99,7 @@ impl Team {
             .show_separator_line(false)
             .show_inside(ui, |ui| {
                 self.unit_cards[2].show_ui(
+                    ctx,
                     ui,
                     &all_kinds,
                     self.main_unit,
@@ -113,6 +122,7 @@ impl Team {
             .frame(center_card)
             .show_inside(ui, |ui| {
                 self.unit_cards[1].show_ui(
+                    ctx,
                     ui,
                     &all_kinds,
                     self.main_unit,
@@ -120,5 +130,48 @@ impl Team {
                     units_store,
                 )
             });
+
+        self.update_supporting_units(ctx, units_store);
+    }
+
+    pub fn get_active_modifiers(&self) -> Vec<(Unit, Modifier)> {
+        let mut modifiers: Vec<(Unit, Modifier)> = Vec::new();
+        for i in 0..3 {
+            let unit_modifiers = self.unit_cards[i].get_active_modifiers();
+            if unit_modifiers.len() > 0 && self.supporting_units[i].is_some() {
+                modifiers.extend(
+                    unit_modifiers
+                        .iter()
+                        .map(|m| (self.supporting_units[i].clone().unwrap(), m.clone())),
+                );
+            }
+        }
+        modifiers
+    }
+
+    fn update_supporting_units(&mut self, ctx: &Context, units_store: &mut UnitsStore) {
+        let mut update_buffs = false;
+        let team = units_store
+            .get_unique_data(self.main_unit)
+            .expect("main unit should be here zzzzz")
+            .team;
+        for i in 0..3 {
+            if team[i] != Option::as_ref(&*self.supporting_units[i]).map(|u| u.kind) {
+                update_buffs = true;
+                if let Some(unit_kind) = team[i] {
+                    self.supporting_units[i] = Box::new(units_store.get_unit(ctx, unit_kind));
+                } else {
+                    self.supporting_units[i] = Box::new(None);
+                }
+            }
+        }
+
+        if update_buffs {
+            self.update_buffs();
+        }
+    }
+
+    fn update_buffs(&self) {
+        //TODO: update buffs as units have changes, maybe move buffs to not async place... idk think about it hf
     }
 }

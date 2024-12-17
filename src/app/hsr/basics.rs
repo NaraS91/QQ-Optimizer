@@ -1,3 +1,5 @@
+use std::str::FromStr;
+
 use enum_map::Enum;
 use serde::{Deserialize, Serialize};
 
@@ -12,7 +14,7 @@ pub enum Path {
     Abundance,
 }
 
-#[derive(Enum, Clone, Copy, Serialize, Deserialize, PartialEq, Eq)]
+#[derive(Enum, Clone, Copy, Serialize, Deserialize, PartialEq, Eq, Debug)]
 pub enum Element {
     Physical,
     Fire,
@@ -45,6 +47,22 @@ impl Element {
             Element::Wind => "Wind".to_owned(),
             Element::Quantum => "Quantum".to_owned(),
             Element::Imaginary => "Imaginary".to_owned(),
+        }
+    }
+}
+
+impl FromStr for Path {
+    type Err = String;
+    fn from_str(input: &str) -> Result<Path, Self::Err> {
+        match input {
+            "Destruction" => Ok(Path::Destruction),
+            "The Hunt" => Ok(Path::Hunt),
+            "Erudition" => Ok(Path::Erudition),
+            "Harmony" => Ok(Path::Harmony),
+            "Nihility" => Ok(Path::Nihility),
+            "Preservation" => Ok(Path::Preservation),
+            "Abundance" => Ok(Path::Abundance),
+            _ => Err(format!("oopsie, {} not found", input)),
         }
     }
 }

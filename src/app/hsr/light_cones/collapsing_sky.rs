@@ -2,7 +2,7 @@ use crate::app::hsr::{
     units::{
         AdvancedStat, BuffScaling, Modifier, ModifierData, ModifierTarget, Source, Stat, Unit,
     },
-    utils::{value_with_lc_s},
+    utils::value_with_lc_s,
 };
 
 pub fn modifiers(wearer: &Unit) -> Vec<Modifier> {

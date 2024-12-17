@@ -3,7 +3,7 @@ use crate::app::hsr::{
         AdvancedStat, BaseStat, BonusDMGFlag, BuffScaling, ConfigType, Modifier, ModifierConfig,
         ModifierData, ModifierTarget, Source, Stat, Unit,
     },
-    utils::{lc_superimposition},
+    utils::lc_superimposition,
 };
 
 pub fn modifiers(wearer: &Unit) -> Vec<Modifier> {

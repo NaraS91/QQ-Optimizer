@@ -96,12 +96,12 @@ pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
             true,
         )),
         ModifierOrDOT::Modifier(Modifier::new(
-            (unit.kind, Source::Trace(1)),
+            (unit.kind, Source::Trace(2)),
             trace2_data,
             true,
         )),
         ModifierOrDOT::Modifier(Modifier::new(
-            (unit.kind, Source::Trace(2)),
+            (unit.kind, Source::Trace(3)),
             trace3_data,
             true,
         )),

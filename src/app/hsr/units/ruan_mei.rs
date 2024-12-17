@@ -56,7 +56,7 @@ pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
             true,
         )),
         ModifierOrDOT::Modifier(Modifier::new(
-            (unit.kind, Source::Trace(1)),
+            (unit.kind, Source::Trace(3)),
             vec![ModifierData::new(
                 ModifierTarget::Allies,
                 Stat::Advanced(AdvancedStat::BreakEffect),

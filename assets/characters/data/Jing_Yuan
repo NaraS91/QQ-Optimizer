@@ -1,0 +1,172 @@
+Jing Yuan
+Erudition
+5
+158.4000
+95.0400
+66.0000
+99.0000
+221.7600
+133.0560
+92.4000
+99.0000
+285.1200
+171.0720
+118.8000
+99.0000
+348.4800
+209.0880
+145.2000
+99.0000
+411.8400
+247.1040
+171.6000
+99.0000
+475.2000
+285.1200
+198.0000
+99.0000
+538.5600
+323.1360
+224.4000
+99.0000
+7.9200
+4.7520
+3.3000
+0.0000
+CRITRate 0.0530
+DEF 0.0530
+ATK 0.0530
+ATK 0.0530
+CRITRate 0.0530
+CRITRate 0.0530
+DEF 0.0530
+ATK 0.0530
+ATK 0.0530
+ATK 0.0530
+3
+War Marshal
+5
+After the Skill is used, the CRIT Rate increases by #1[i]% for #2[i] turn(s).
+2
+0.1000 2.0000
+Savant Providence
+6
+At the start of the battle, immediately regenerates #1[i] Energy.
+1
+15.0000
+Battalia Crush
+7
+If the Lightning-Lord's Hits Per Action is greater or equal to #1[i] in the next turn, its CRIT DMG increases by #2[i]% for the next turn.
+2
+6.0000 0.2500
+
+6
+Glistening Light
+0
+Jing Yuan deals Lightning DMG equal to #1[i]% of his ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Rifting Zenith
+1
+Deals Lightning DMG equal to #1[i]% of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by #2[i] for the next turn.
+AoE
+Skill
+30/hit
+30
+0
+15 2
+0.5000 2.0000
+0.5500 2.0000
+0.6000 2.0000
+0.6500 2.0000
+0.7000 2.0000
+0.7500 2.0000
+0.8125 2.0000
+0.8750 2.0000
+0.9375 2.0000
+1.0000 2.0000
+1.0500 2.0000
+1.1000 2.0000
+1.1500 2.0000
+1.2000 2.0000
+1.2500 2.0000
+Lightbringer
+2
+Deals Lightning DMG equal to #1[i]% of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by #2[i] for the next turn.
+AoE
+Ultimate
+60/hit
+5
+130
+15 2
+1.2000 3.0000
+1.2800 3.0000
+1.3600 3.0000
+1.4400 3.0000
+1.5200 3.0000
+1.6000 3.0000
+1.7000 3.0000
+1.8000 3.0000
+1.9000 3.0000
+2.0000 3.0000
+2.0800 3.0000
+2.1600 3.0000
+2.2400 3.0000
+2.3200 3.0000
+2.4000 3.0000
+Prana Extirpated
+3
+Summons Lightning-Lord at the start of the battle. Lightning-Lord has #1[i] base SPD and #4[i] base Hits Per Action. When the Lightning-Lord takes action, its hits are considered as follow-up attacks, with each hit dealing Lightning DMG equal to #2[i]% of Jing Yuan's ATK to a random single enemy, and enemies adjacent to it also receive Lightning DMG equal to #5[i]% of the DMG dealt to the primary target enemy.The Lightning-Lord's Hits Per Action can reach a max of #6[i]. Every time Lightning-Lord's Hits Per Action increases by 1, its SPD increases by #3[i]. After the Lightning-Lord's action ends, its SPD and Hits Per Action return to their base values.When Jing Yuan is knocked down, the Lightning-Lord will disappear.When Jing Yuan is affected by Crowd Control debuff, the Lightning-Lord is unable to take action.
+Bounce
+Talent
+15/hit
+0/hit
+0
+15 6
+60.0000 0.3300 10.0000 3.0000 0.2500 10.0000
+60.0000 0.3630 10.0000 3.0000 0.2500 10.0000
+60.0000 0.3960 10.0000 3.0000 0.2500 10.0000
+60.0000 0.4290 10.0000 3.0000 0.2500 10.0000
+60.0000 0.4620 10.0000 3.0000 0.2500 10.0000
+60.0000 0.4950 10.0000 3.0000 0.2500 10.0000
+60.0000 0.5363 10.0000 3.0000 0.2500 10.0000
+60.0000 0.5775 10.0000 3.0000 0.2500 10.0000
+60.0000 0.6188 10.0000 3.0000 0.2500 10.0000
+60.0000 0.6600 10.0000 3.0000 0.2500 10.0000
+60.0000 0.6930 10.0000 3.0000 0.2500 10.0000
+60.0000 0.7260 10.0000 3.0000 0.2500 10.0000
+60.0000 0.7590 10.0000 3.0000 0.2500 10.0000
+60.0000 0.7920 10.0000 3.0000 0.2500 10.0000
+60.0000 0.8250 10.0000 3.0000 0.2500 10.0000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Spiritus Invocation
+4
+After the Technique is used, the Lightning-Lord's Hits Per Action in the first turn increases by #1[i] at the start of the next battle.
+Enhance
+Technique
+0
+0
+0
+1 1
+3.0000
