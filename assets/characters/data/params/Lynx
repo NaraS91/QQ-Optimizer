@@ -1,0 +1,110 @@
+6
+Ice Crampon Technique
+0
+Deals Quantum DMG equal to #1[i]% of this character's Max HP to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.2500
+0.3000
+0.3500
+0.4000
+0.4500
+0.5000
+0.5500
+0.6000
+0.6500
+Salted Camping Cans
+1
+Applies "Survival Response" to a single target ally and increases their Max HP by #1[f1]% of Lynx's Max HP plus #2[i]. If the target ally is a character on the Path of Destruction or Preservation, the chance of them being attacked by enemies will greatly increase. "Survival Response" lasts for #3[i] turn(s).Restores the target's HP by #4[f1]% of Lynx's Max HP plus #5[i].
+Restore
+Skill
+0
+30
+0
+15 6
+0.0500 50.0000 2.0000 0.0800 80.0000 5.0000
+0.0525 80.0000 2.0000 0.0850 128.0000 5.0000
+0.0550 102.5000 2.0000 0.0900 164.0000 5.0000
+0.0575 125.0000 2.0000 0.0950 200.0000 5.0000
+0.0600 140.0000 2.0000 0.1000 224.0000 5.0000
+0.0625 155.0000 2.0000 0.1040 248.0000 5.0000
+0.0656 166.2500 2.0000 0.1080 266.0000 5.0000
+0.0688 177.5000 2.0000 0.1120 284.0000 5.0000
+0.0719 188.7500 2.0000 0.1160 302.0000 5.0000
+0.0750 200.0000 2.0000 0.1200 320.0000 5.0000
+0.0775 211.2500 2.0000 0.1240 338.0000 5.0000
+0.0800 222.5000 2.0000 0.1280 356.0000 5.0000
+0.0825 233.7500 2.0000 0.1320 374.0000 5.0000
+0.0850 245.0000 2.0000 0.1360 392.0000 5.0000
+0.0875 256.2500 2.0000 0.1400 410.0000 5.0000
+Snowfield First Aid
+2
+Dispels #1[i] debuff(s) from all allies and immediately restores their respective HP by an amount equal to #2[f1]% of Lynx's Max HP plus #3[i].
+Restore
+Ultimate
+0
+5
+100
+15 3
+1.0000 0.0900 90.0000
+1.0000 0.0956 144.0000
+1.0000 0.1013 184.5000
+1.0000 0.1069 225.0000
+1.0000 0.1125 252.0000
+1.0000 0.1170 279.0000
+1.0000 0.1215 299.2500
+1.0000 0.1260 319.5000
+1.0000 0.1305 339.7500
+1.0000 0.1350 360.0000
+1.0000 0.1395 380.2500
+1.0000 0.1440 400.5000
+1.0000 0.1485 420.7500
+1.0000 0.1530 441.0000
+1.0000 0.1575 461.2500
+Outdoor Survival Experience
+3
+When using Lynx's Skill or Ultimate, applies continuous healing to the target ally for #1[i] turn(s), restoring the target ally's HP by an amount equal to #2[f1]% of Lynx's Max HP plus #3[i] at the start of each turn. If the target has "Survival Response," the continuous healing effect additionally restores HP by an amount equal to #4[f1]% of Lynx's Max HP plus #5[i].
+Restore
+Talent
+0
+0
+0
+15 5
+2.0000 0.0240 24.0000 0.0300 30.0000
+2.0000 0.0255 38.4000 0.0319 48.0000
+2.0000 0.0270 49.2000 0.0338 61.5000
+2.0000 0.0285 60.0000 0.0356 75.0000
+2.0000 0.0300 67.2000 0.0375 84.0000
+2.0000 0.0312 74.4000 0.0390 93.0000
+2.0000 0.0324 79.8000 0.0405 99.7500
+2.0000 0.0336 85.2000 0.0420 106.5000
+2.0000 0.0348 90.6000 0.0435 113.2500
+2.0000 0.0360 96.0000 0.0450 120.0000
+2.0000 0.0372 101.4000 0.0465 126.7500
+2.0000 0.0384 106.8000 0.0480 133.5000
+2.0000 0.0396 112.2000 0.0495 140.2500
+2.0000 0.0408 117.6000 0.0510 147.0000
+2.0000 0.0420 123.0000 0.0525 153.7500
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+Single_Target
+
+30
+0
+0
+0 0
+Chocolate Energy Bar
+4
+After Lynx uses her Technique, at the start of the next battle, all allies are granted her Talent's continuous healing effect, lasting for #1[i] turn(s).
+Restore
+Technique
+0
+0
+0
+1 1
+2.0000

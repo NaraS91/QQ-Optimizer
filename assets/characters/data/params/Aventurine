@@ -1,0 +1,110 @@
+6
+Straight Bet
+0
+Deals Imaginary DMG equal to #1[i]% of Aventurine's DEF to a single target enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Cornerstone Deluxe
+1
+Provides all allies with a Fortified Wager shield that can block DMG equal to #1[f1]% of Aventurine's DEF plus #2[i], lasting for #3[i] turn(s). When Fortified Wager is gained repeatedly, the Shield effect can stack, up to #4[i]% of the current Shield effect provided by the Skill.
+Defense
+Skill
+0
+30
+0
+15 4
+0.1600 80.0000 3.0000 2.0000
+0.1700 128.0000 3.0000 2.0000
+0.1800 164.0000 3.0000 2.0000
+0.1900 200.0000 3.0000 2.0000
+0.2000 224.0000 3.0000 2.0000
+0.2080 248.0000 3.0000 2.0000
+0.2160 266.0000 3.0000 2.0000
+0.2240 284.0000 3.0000 2.0000
+0.2320 302.0000 3.0000 2.0000
+0.2400 320.0000 3.0000 2.0000
+0.2480 338.0000 3.0000 2.0000
+0.2560 356.0000 3.0000 2.0000
+0.2640 374.0000 3.0000 2.0000
+0.2720 392.0000 3.0000 2.0000
+0.2800 410.0000 3.0000 2.0000
+Roulette Shark
+2
+Randomly gains 1 to #1[i] points of Blind Bet. Then, inflicts Unnerved on a single target enemy for #4[i] turn(s) and deals Imaginary DMG equal to #2[i]% of Aventurine's DEF to the single target enemy. When an ally hits an Unnerved enemy target, the CRIT DMG dealt increases by #3[f1]%.
+Single_Target
+Ultimate
+90
+5
+110
+15 4
+7.0000 1.6200 0.0900 3.0000
+7.0000 1.7280 0.0960 3.0000
+7.0000 1.8360 0.1020 3.0000
+7.0000 1.9440 0.1080 3.0000
+7.0000 2.0520 0.1140 3.0000
+7.0000 2.1600 0.1200 3.0000
+7.0000 2.2950 0.1275 3.0000
+7.0000 2.4300 0.1350 3.0000
+7.0000 2.5650 0.1425 3.0000
+7.0000 2.7000 0.1500 3.0000
+7.0000 2.8080 0.1560 3.0000
+7.0000 2.9160 0.1620 3.0000
+7.0000 3.0240 0.1680 3.0000
+7.0000 3.1320 0.1740 3.0000
+7.0000 3.2400 0.1800 3.0000
+Shot Loaded Right
+3
+For any single ally with Fortified Wager, their Effect RES increases by #4[f1]%, and when they get attacked, Aventurine gains 1 point of Blind Bet. When Aventurine has Fortified Wager, he can resist Crowd Control debuffs. This effect can trigger again after #5[i] turn(s). Aventurine additionally gains #1[i] point(s) of Blind Bet after getting attacked. Upon reaching 7 points of Blind Bet, Aventurine consumes the 7 points to launch a #2[i]-hit follow-up attack, with each hit dealing Imaginary DMG equal to #3[i]% of Aventurine's DEF to a single random enemy. Blind Bet is capped at 10 points.
+Bounce
+Talent
+10/hit
+1/hit
+0
+15 5
+1.0000 7.0000 0.1250 0.2500 2.0000
+1.0000 7.0000 0.1375 0.2750 2.0000
+1.0000 7.0000 0.1500 0.3000 2.0000
+1.0000 7.0000 0.1625 0.3250 2.0000
+1.0000 7.0000 0.1750 0.3500 2.0000
+1.0000 7.0000 0.1875 0.3750 2.0000
+1.0000 7.0000 0.2031 0.4062 2.0000
+1.0000 7.0000 0.2188 0.4375 2.0000
+1.0000 7.0000 0.2344 0.4688 2.0000
+1.0000 7.0000 0.2500 0.5000 2.0000
+1.0000 7.0000 0.2625 0.5250 2.0000
+1.0000 7.0000 0.2750 0.5500 2.0000
+1.0000 7.0000 0.2875 0.5750 2.0000
+1.0000 7.0000 0.3000 0.6000 2.0000
+1.0000 7.0000 0.3125 0.6250 2.0000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+The Red or the Black
+4
+After using the Technique, 1 of the following effects will be granted:There is a chance for DEF to increase by #1[i]%.There is a high chance for DEF to increase by #2[i]%.There is a small chance for DEF to increase by #3[i]%.When this Technique is used repeatedly, the acquired effect with the highest buff value is retained.When the next battle starts, increases all allies' DEF by the corresponding value, lasting for #4[i] turn(s).
+Defense
+Technique
+0
+0
+0
+1 4
+0.2400 0.3600 0.6000 3.0000

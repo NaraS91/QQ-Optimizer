@@ -1,0 +1,110 @@
+6
+Heart Afire
+0
+Deals Fire DMG equal to #1[i]% of Jiaoqiu's ATK to a single target enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Scorch Onslaught
+1
+Deals Fire DMG equal to #1[i]% of Jiaoqiu's ATK to a single target enemy and Fire DMG equal to #2[i]% of Jiaoqiu's ATK to adjacent targets, with a #3[i]% base chance to inflict 1 stack of Ashen Roast on the primary target.
+Blast
+Skill
+60 + 30/adjacent
+30
+0
+15 3
+0.7500 0.4500 1.0000
+0.8250 0.4950 1.0000
+0.9000 0.5400 1.0000
+0.9750 0.5850 1.0000
+1.0500 0.6300 1.0000
+1.1250 0.6750 1.0000
+1.2188 0.7312 1.0000
+1.3125 0.7875 1.0000
+1.4062 0.8438 1.0000
+1.5000 0.9000 1.0000
+1.5750 0.9450 1.0000
+1.6500 0.9900 1.0000
+1.7250 1.0350 1.0000
+1.8000 1.0800 1.0000
+1.8750 1.1250 1.0000
+Pyrograph Arcanum
+2
+Sets the number of "Ashen Roast" stacks on enemy targets to the highest number of "Ashen Roast" stacks present on the battlefield. Then, activates a Zone and deals Fire DMG equal to #1[i]% of Jiaoqiu's ATK to all enemies.While inside the Zone, enemy targets receive #3[f1]% increased Ultimate DMG, with a #2[i]% base chance of being inflicted with 1 stack of Ashen Roast when taking action. While the Zone exists, this effect can trigger up to #5[i] time(s). And for each enemy target, it can only trigger once per turn. This trigger count resets every time Jiaoqiu uses Ultimate.The Zone lasts for #4[i] turn(s), and its duration decreases by 1 at the start of this unit's every turn. If Jiaoqiu gets knocked down, the Zone will also be dispelled.
+AoE
+Ultimate
+60/hit
+5
+100
+15 5
+0.6000 0.5000 0.0900 3.0000 6.0000
+0.6400 0.5100 0.0960 3.0000 6.0000
+0.6800 0.5200 0.1020 3.0000 6.0000
+0.7200 0.5300 0.1080 3.0000 6.0000
+0.7600 0.5400 0.1140 3.0000 6.0000
+0.8000 0.5500 0.1200 3.0000 6.0000
+0.8500 0.5625 0.1275 3.0000 6.0000
+0.9000 0.5750 0.1350 3.0000 6.0000
+0.9500 0.5875 0.1425 3.0000 6.0000
+1.0000 0.6000 0.1500 3.0000 6.0000
+1.0400 0.6100 0.1560 3.0000 6.0000
+1.0800 0.6200 0.1620 3.0000 6.0000
+1.1200 0.6300 0.1680 3.0000 6.0000
+1.1600 0.6400 0.1740 3.0000 6.0000
+1.2000 0.6500 0.1800 3.0000 6.0000
+Quartet Finesse, Octave Finery
+3
+When Jiaoqiu hits an enemy with Basic ATK, Skill or Ultimate, there is a #1[i]% base chance to inflict 1 stack of Ashen Roast on them. At 1 stack, increases DMG received by the enemy by #2[f1]%. Then, each subsequent stack increases this by #3[f1]%.Ashen Roast is capped at #4[i] stack(s) and lasts for #5[i] turn(s).When an enemy target is afflicted with Ashen Roast, they are also considered as being Burned at the same time, taking Fire DoT equal to #6[i]% of Jiaoqiu's ATK at the start of each turn.
+Impair
+Talent
+0
+0
+0
+15 6
+1.0000 0.0750 0.0250 5.0000 2.0000 0.9000
+1.0000 0.0825 0.0275 5.0000 2.0000 0.9900
+1.0000 0.0900 0.0300 5.0000 2.0000 1.0800
+1.0000 0.0975 0.0325 5.0000 2.0000 1.1700
+1.0000 0.1050 0.0350 5.0000 2.0000 1.2600
+1.0000 0.1125 0.0375 5.0000 2.0000 1.3500
+1.0000 0.1219 0.0406 5.0000 2.0000 1.4625
+1.0000 0.1313 0.0437 5.0000 2.0000 1.5750
+1.0000 0.1406 0.0469 5.0000 2.0000 1.6875
+1.0000 0.1500 0.0500 5.0000 2.0000 1.8000
+1.0000 0.1575 0.0525 5.0000 2.0000 1.8900
+1.0000 0.1650 0.0550 5.0000 2.0000 1.9800
+1.0000 0.1725 0.0575 5.0000 2.0000 2.0700
+1.0000 0.1800 0.0600 5.0000 2.0000 2.1600
+1.0000 0.1875 0.0625 5.0000 2.0000 2.2500
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Fiery Queller
+4
+After using Technique, creates a Special Dimension that lasts for #2[i] second(s). After entering combat with enemies in this Special Dimension, deals Fire DMG equal to #1[i]% of Jiaoqiu's ATK to all enemies, with a #3[i]% base chance of applying 1 "Ashen Roast" stack. Only 1 dimension created by allies can exist at the same time.
+Impair
+Technique
+0
+0
+0
+1 3
+1.0000 15.0000 1.0000
