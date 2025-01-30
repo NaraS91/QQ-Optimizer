@@ -15,7 +15,7 @@ fn modifiers(wearer: &Unit) -> Vec<Modifier> {
                 Stat::Advanced(AdvancedStat::TotalDmgBoost(BonusDMGFlag::MAX)),
                 BuffScaling::Multiplicative,
                 |target, buffer, _, _, _, _| {
-                    if target.main_element == buffer.main_element {
+                    if target.element == buffer.element {
                         0.1
                     } else {
                         0.

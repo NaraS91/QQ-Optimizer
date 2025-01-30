@@ -3,7 +3,6 @@ use serde::{Deserialize, Serialize};
 use strum::IntoEnumIterator;
 
 use super::{
-    assets_loader::AssetsLoader,
     hsr::{
         relics::RelicPart,
         units::{ParsedUnitFile, UniqueData, Unit, UnitKind},
@@ -56,6 +55,7 @@ impl UnitsStore {
             if let Some(data) = unit_data {
                 self.parsed_data[kind] = Some(Unit::parse_character_info(data));
             } else {
+                println!("hmmm");
                 return None;
             }
         }
@@ -63,6 +63,14 @@ impl UnitsStore {
         let parsed_data = self.parsed_data[kind].as_ref().unwrap();
         self.unique_data[kind]
             .and_then(|unique_data| Some(Unit::from_data(kind, unique_data, parsed_data)))
+    }
+
+    pub fn get_all_possessed_unit_kinds(&self, ctx: &egui::Context) -> Vec<UnitKind> {
+        self.unique_data
+            .iter()
+            .filter(|(_, op)| op.is_some())
+            .map(|(uk, _)| uk)
+            .collect()
     }
 
     pub fn get_unique_data(&self, kind: UnitKind) -> Option<UniqueData> {

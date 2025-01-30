@@ -65,6 +65,10 @@ impl RelicsStore {
         [head, hands, body, feet, sphere, rope]
     }
 
+    pub fn get_all_as_ref(&self) -> Vec<&Relic> {
+        self.relics.iter().filter_map(|op| op.as_ref()).collect()
+    }
+
     pub fn update(&mut self, relic: Relic) -> bool {
         let id = relic.id;
         if self.next_new_id < id {

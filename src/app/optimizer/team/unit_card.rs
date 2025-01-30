@@ -1,16 +1,14 @@
 use crate::app::assets_loader::UnitImageFormat;
 use crate::app::hsr::units::{
-    BuffScaling, Modifier, ModifierData, ModifierOrDOT, SkillData, SkillKind, Source, UniqueData,
-    Unit,
+    BuffScaling, Modifier, ModifierData, ModifierOrDOT, SkillData, SkillKind, Source, Unit,
 };
-use crate::app::ASSETS_LOADER;
-use crate::app::{relics_store::RelicsStore, units_store::UnitsStore};
+use crate::app::units_store::{self, UnitsStore};
+use crate::app::{AppContext, ASSETS_LOADER};
 use egui::{vec2, ScrollArea, Ui};
 use egui::{CentralPanel, ComboBox, Frame, Label, Margin};
 use itertools::Itertools;
 
 use super::super::super::hsr::units::UnitKind;
-use strum::IntoEnumIterator;
 
 pub struct UnitCard {
     id: String,
@@ -44,19 +42,13 @@ impl UnitCard {
         ui: &mut egui::Ui,
         all_units: &Vec<UnitKind>,
         main_unit: UnitKind,
-        relics_store: &RelicsStore,
-        units_store: &mut UnitsStore,
+        app_ctx: &mut AppContext,
     ) {
         ui.vertical(|ui| {
-            self.selector.show_ui(
-                ui,
-                &self.id,
-                all_units,
-                main_unit,
-                relics_store,
-                units_store,
-            );
+            self.selector
+                .show_ui(ui, &self.id, all_units, main_unit, app_ctx);
 
+            let units_store = &mut app_ctx.units_store;
             if let Some(selected_unit_kind) = units_store
                 .get_unique_data(main_unit)
                 .as_ref()
@@ -70,7 +62,7 @@ impl UnitCard {
                         self.unit_buffs = Some(SupportingUnitBuffs::new(&selected_unit))
                     }
                 }
-                self.show_unit_details(ui, selected_unit_kind, units_store)
+                self.show_unit_details(ui, ctx, selected_unit_kind, units_store)
             }
         });
     }
@@ -94,8 +86,9 @@ impl UnitCard {
     }
 
     fn show_unit_details(
-        &self,
+        &mut self,
         ui: &mut Ui,
+        ctx: &egui::Context,
         selected_unit: UnitKind,
         units_store: &mut UnitsStore,
     ) {
@@ -188,9 +181,9 @@ impl UnitSelector {
         id: &String,
         all_units: &Vec<UnitKind>,
         main_unit: UnitKind,
-        _relics_store: &RelicsStore,
-        units_store: &mut UnitsStore,
+        app_ctx: &mut AppContext,
     ) {
+        let units_store = &mut app_ctx.units_store;
         let team = units_store
             .get_unique_data(main_unit)
             .as_ref()
@@ -209,7 +202,7 @@ impl UnitSelector {
             })
             .collect();
 
-        ComboBox::from_id_source(id)
+        ComboBox::from_id_salt(id)
             .width(ui.available_width())
             .selected_text(selected_unit.map_or_else(|| "None".to_owned(), |unit| unit.to_string()))
             .show_ui(ui, |ui| {

@@ -2,7 +2,7 @@ use super::{Menu, Optimizer};
 use crate::app::COLOR_PALLET;
 use egui::{InnerResponse, RichText, Rounding};
 
-pub fn new(ui: &mut egui::Ui, optimizer_sate: &Box<Optimizer>) -> InnerResponse<Option<Menu>> {
+pub fn new(ui: &mut egui::Ui, menu_state: Menu) -> InnerResponse<Option<Menu>> {
     let mini_menu_frame = egui::containers::Frame::default()
         .fill(COLOR_PALLET.card())
         .rounding(Rounding::same(5.0));
@@ -11,7 +11,7 @@ pub fn new(ui: &mut egui::Ui, optimizer_sate: &Box<Optimizer>) -> InnerResponse<
         .frame(mini_menu_frame)
         .show_inside(ui, |ui| {
             let team_button = egui::Button::new(RichText::new("Team").color(
-                if matches!(optimizer_sate.menu_state, Menu::Team) {
+                if matches!(menu_state, Menu::Team) {
                     COLOR_PALLET.highlighted_text
                 } else {
                     COLOR_PALLET.text
@@ -19,7 +19,7 @@ pub fn new(ui: &mut egui::Ui, optimizer_sate: &Box<Optimizer>) -> InnerResponse<
             ));
 
             let optimize_button = egui::Button::new(RichText::new("Optimize").color(
-                if matches!(optimizer_sate.menu_state, Menu::Optimize) {
+                if matches!(menu_state, Menu::Optimize) {
                     COLOR_PALLET.highlighted_text
                 } else {
                     COLOR_PALLET.text

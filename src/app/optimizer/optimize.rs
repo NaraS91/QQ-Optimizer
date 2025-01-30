@@ -2,9 +2,9 @@ use std::sync::mpsc::{channel, Receiver, Sender};
 use std::sync::Arc;
 use std::{thread, time};
 
-use eframe::glow::Context;
 use egui::{Margin, Ui};
 use enum_map::Enum;
+use strum::IntoEnumIterator;
 
 use self::{
     optimized_unit_card::OptimizedUnit,
@@ -21,7 +21,6 @@ use crate::app::{
     },
     light_cones_store::LightConesStore,
     relics_store::RelicsStore,
-    units_store::UnitsStore,
     COLOR_PALLET,
 };
 
@@ -80,9 +79,7 @@ impl Optimize {
         &mut self,
         ctx: &egui::Context,
         ui: &mut egui::Ui,
-        relics_store: &mut RelicsStore,
-        units_store: &mut UnitsStore,
-        light_cones_store: &LightConesStore,
+        app_ctx: &mut crate::app::AppContext,
     ) {
         let top_card = egui::containers::Frame::default().outer_margin(Margin {
             left: 0.,
@@ -95,9 +92,7 @@ impl Optimize {
             .frame(top_card)
             .resizable(false)
             .show_separator_line(false)
-            .show_inside(ui, |ui| {
-                self.show_in_top_panel(ui, relics_store, units_store, light_cones_store)
-            });
+            .show_inside(ui, |ui| self.show_in_top_panel(ui, app_ctx));
 
         let bottom_card = egui::containers::Frame::default().outer_margin(Margin {
             left: 0.,
@@ -110,54 +105,67 @@ impl Optimize {
             .frame(bottom_card)
             .resizable(false)
             .show_separator_line(false)
-            .show_inside(ui, |ui| {
-                self.show_in_bottom_panel(ctx, ui, relics_store, units_store, light_cones_store)
-            });
+            .show_inside(ui, |ui| self.show_in_bottom_panel(ctx, ui, app_ctx));
     }
 
     fn show_in_bottom_panel(
         &mut self,
         ctx: &egui::Context,
         ui: &mut Ui,
-        relics_store: &RelicsStore,
-        units_store: &mut UnitsStore,
-        light_cones_store: &LightConesStore,
+        app_ctx: &mut crate::app::AppContext,
     ) {
+        self.show_optimizing_button(ctx, ui, app_ctx);
+    }
+
+    fn show_optimizing_button(
+        &mut self,
+        ctx: &egui::Context,
+        ui: &mut Ui,
+        app_ctx: &mut crate::app::AppContext,
+    ) {
+        let main_unit_op = app_ctx.units_store.get_unit(ctx, self.unit_kind);
+        if main_unit_op.is_none() {
+            ui.add_enabled(false, egui::Button::new("Loading..."));
+            return;
+        }
+
         if self.is_optimizing {
             ui.add_enabled(!self.is_optimizing, egui::Button::new("Optimizing..."));
             if let Ok(msg) = self.channels.as_ref().unwrap().1.try_recv() {
                 self.optimal_set = Some(msg.optimal_set);
                 self.is_optimizing = false;
             }
-        } else {
-            if ui.button("Optimize!").clicked() {
-                self.is_optimizing = true;
-                let main_unit = units_store
-                    .get_unit(ctx, self.unit_kind)
-                    .expect("optimized unit should exist");
-                let base_team = main_unit
-                    .unique_data
-                    .team
-                    .map(|op| op.and_then(|unit_kind| units_store.get_unit(ctx, unit_kind)));
-                let relics_stat_filter = self.relics_stat_filter.clone();
-                let sender = self.channels.clone().unwrap().0;
-                let buffs = self.main_unit_buffs.clone();
-                let cloned_relic_store = relics_store.clone();
-                let cloned_lightcones_store = light_cones_store.clone();
-                let cloned_ctx = ctx.clone();
-                thread::spawn(move || {
-                    Self::optimize(
-                        cloned_ctx,
-                        main_unit.clone(),
-                        base_team,
-                        buffs,
-                        relics_stat_filter,
-                        &cloned_relic_store,
-                        &cloned_lightcones_store,
-                        sender,
-                    )
-                });
-            }
+            return;
+        }
+
+        if ui.button("Optimize!").clicked() {
+            self.is_optimizing = true;
+            let main_unit = app_ctx
+                .units_store
+                .get_unit(ctx, self.unit_kind)
+                .expect("Checked earlier");
+            let base_team = main_unit
+                .unique_data
+                .team
+                .map(|op| op.and_then(|unit_kind| app_ctx.units_store.get_unit(ctx, unit_kind)));
+            let relics_stat_filter = self.relics_stat_filter.clone();
+            let sender = self.channels.clone().unwrap().0;
+            let buffs = self.main_unit_buffs.clone();
+            let cloned_relic_store = app_ctx.relics_store.clone();
+            let cloned_lightcones_store = app_ctx.light_cones_store.clone();
+            let cloned_ctx = ctx.clone();
+            thread::spawn(move || {
+                Self::optimize(
+                    cloned_ctx,
+                    main_unit.clone(),
+                    base_team,
+                    buffs,
+                    relics_stat_filter,
+                    &cloned_relic_store,
+                    &cloned_lightcones_store,
+                    sender,
+                )
+            });
         }
     }
 
@@ -207,7 +215,7 @@ impl Optimize {
                         relics[relic_part]
                             .iter()
                             .filter_map(|relic| {
-                                if relic.set == RelicSet::Cavern(*set) {
+                                if relic.set == RelicSet::Cavern(set) {
                                     Some(*relic)
                                 } else {
                                     None
@@ -228,7 +236,7 @@ impl Optimize {
                         relics[relic_part]
                             .iter()
                             .filter_map(|relic| {
-                                if relic.set == RelicSet::Planar(*set) {
+                                if relic.set == RelicSet::Planar(set) {
                                     Some(*relic)
                                 } else {
                                     None
@@ -258,8 +266,8 @@ impl Optimize {
             }
         }
 
-        let _cavern_sets = CavernSet::iter().map(|cs| *cs).collect::<Vec<CavernSet>>();
-        let _planar_sets = PlanarSet::iter().map(|ps| *ps).collect::<Vec<PlanarSet>>();
+        let _cavern_sets = CavernSet::iter().map(|cs| cs).collect::<Vec<CavernSet>>();
+        let _planar_sets = PlanarSet::iter().map(|ps| ps).collect::<Vec<PlanarSet>>();
 
         let mut best_relic_sets: Vec<([Option<Relic>; 6], u32)> = Vec::new();
         let sets_num = 5;
@@ -389,13 +397,7 @@ impl Optimize {
             .collect()
     }
 
-    fn show_in_top_panel(
-        &mut self,
-        ui: &mut Ui,
-        relics_store: &mut RelicsStore,
-        units_store: &mut UnitsStore,
-        light_cones_store: &LightConesStore,
-    ) {
+    fn show_in_top_panel(&mut self, ui: &mut Ui, app_ctx: &mut crate::app::AppContext) {
         let width = ui.available_width();
         let card_width = width * 0.32;
         let card_spacing = width * 0.02;
@@ -416,10 +418,7 @@ impl Optimize {
             .resizable(false)
             .exact_width(card_width)
             .show_separator_line(false)
-            .show_inside(ui, |ui| {
-                self.unit_card
-                    .show_ui(ui, relics_store, units_store, light_cones_store)
-            });
+            .show_inside(ui, |ui| self.unit_card.show_ui(ui, app_ctx));
 
         let relics_reqs = egui::containers::Frame::default()
             .fill(COLOR_PALLET.card())

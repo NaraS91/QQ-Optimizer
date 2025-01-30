@@ -6,6 +6,7 @@ use log::debug;
 use serde::{Deserialize, Serialize};
 use std::{
     convert::identity,
+    hash::Hash,
     io::{BufRead, Lines},
     str::FromStr,
 };
@@ -148,6 +149,12 @@ pub enum UnitKind {
 impl ToString for UnitKind {
     fn to_string(&self) -> String {
         format!("{:?}", self).replace("_", " ")
+    }
+}
+
+impl Hash for UnitKind {
+    fn hash<H: std::hash::Hasher>(&self, state: &mut H) {
+        self.to_string().hash(state);
     }
 }
 
@@ -473,7 +480,7 @@ pub struct Unit {
     pub kind: UnitKind,
     pub path: Path,
     pub rarity: u8,
-    pub main_element: Element,
+    pub element: Element,
     pub trait_buffs: [(Stat, f32); 10],
     pub skills: Vec<SkillData>,
     base_stats: [[f32; BaseStat::LENGTH]; 7],
@@ -489,6 +496,12 @@ pub struct Unit {
     relic_opt_adv: enum_map::EnumMap<AdvancedStat, f32>,
     opt_base_stats: [f32; BaseStat::LENGTH],
     relic_set_modifiers: Vec<ModifierData>,
+}
+
+impl Hash for Unit {
+    fn hash<H: std::hash::Hasher>(&self, state: &mut H) {
+        self.kind.hash(state);
+    }
 }
 
 #[derive(Clone, Serialize, Deserialize)]
@@ -1078,6 +1091,7 @@ impl UniqueData {
 #[derive(Deserialize, Serialize)]
 pub struct ParsedUnitFile {
     path: Path,
+    element: Element,
     rarity: u8,
     base_stats: Vec<[f32; 4]>,
     base_stats_growth: [f32; 4],
@@ -1095,7 +1109,7 @@ impl Unit {
             kind: unit_kind,
             path: parsed_data.path,
             rarity: parsed_data.rarity,
-            main_element: Element::Quantum, //TODO: get element data
+            element: parsed_data.element,
             trait_buffs: parsed_data.trait_buffs.clone().try_into().unwrap(),
             base_stats: parsed_data.base_stats.clone().try_into().unwrap(),
             base_stats_growth: parsed_data.base_stats_growth,
@@ -1118,6 +1132,7 @@ impl Unit {
         let mut iter: Lines<&[u8]> = character_info.lines();
         iter.next(); // ignore first line with name
         let path = Path::from_str(&iter.next().unwrap().unwrap()).unwrap();
+        let element = Element::from_str(&iter.next().unwrap().unwrap()).unwrap();
         let rarity = u8::from_str_radix(&iter.next().unwrap().unwrap(), 10).unwrap();
         let mut base_stats: Vec<[f32; 4]> = Vec::new();
         for _ in 0..7 {
@@ -1197,6 +1212,7 @@ impl Unit {
 
         ParsedUnitFile {
             path,
+            element,
             rarity,
             base_stats,
             base_stats_growth,
@@ -1259,7 +1275,7 @@ impl Unit {
             kind: character,
             path: CHARACTER_INFO[index].1,
             rarity: CHARACTER_INFO[index].2.rarity,
-            main_element: Element::Quantum, //TODO: get element data
+            element: Element::Quantum, //TODO: get element data
             trait_buffs: CHARACTER_INFO[index].3,
             base_stats: CHARACTER_INFO[index].2.base,
             base_stats_growth: CHARACTER_INFO[index].2.growth,

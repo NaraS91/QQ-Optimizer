@@ -6,6 +6,7 @@ use super::{
 };
 use enum_map::Enum;
 use serde::{Deserialize, Serialize};
+use strum_macros::EnumIter;
 
 mod band_of_sizzling_thunder;
 mod belobog_of_the_architects;
@@ -171,7 +172,7 @@ impl RelicSet {
     }
 }
 
-#[derive(Clone, Copy, Serialize, Deserialize, PartialEq, Eq)]
+#[derive(Clone, Copy, Debug, Serialize, Deserialize, Enum, EnumIter, PartialEq, Eq)]
 pub enum RelicPart {
     Head,
     Hands,
@@ -217,7 +218,7 @@ impl RelicPart {
 }
 
 #[allow(non_camel_case_types)]
-#[derive(Clone, Copy, Serialize, Deserialize, Enum, Debug, PartialEq, Eq)]
+#[derive(Clone, Copy, Serialize, Deserialize, Enum, EnumIter, Debug, PartialEq, Eq)]
 pub enum CavernSet {
     Passerby_Of_Wandering_Cloud,
     Musketeer_Of_Wild_Wheat,
@@ -240,37 +241,13 @@ pub enum CavernSet {
 }
 
 impl CavernSet {
-    pub fn iter() -> Iter<'static, CavernSet> {
-        [
-            CavernSet::Passerby_Of_Wandering_Cloud,
-            CavernSet::Musketeer_Of_Wild_Wheat,
-            CavernSet::Knight_Of_Purity_Palace,
-            CavernSet::Hunter_Of_Glacial_Forest,
-            CavernSet::Champion_Of_Streetwise_Boxing,
-            CavernSet::Guard_Of_Wuthering_Snow,
-            CavernSet::Firesmith_Of_Lavaforging,
-            CavernSet::Genius_Of_Brilliant_Stars,
-            CavernSet::Band_Of_Sizzling_Thunder,
-            CavernSet::Eagle_Of_Twilight_Line,
-            CavernSet::Thief_Of_Shooting_Meteor,
-            CavernSet::Wastelander_Of_Banditry_Desert,
-            CavernSet::Longevous_Disciple,
-            CavernSet::Messenger_Traversing_Hackerspace,
-            CavernSet::The_Ashblazing_Grand_Duke,
-            CavernSet::Prisoner_In_Deep_Confinement,
-            CavernSet::Pioneer_Diver_Of_Dead_Waters,
-            CavernSet::Watchmaker_Master_Of_Dream_Machinations,
-        ]
-        .iter()
-    }
-
     pub fn file_name(&self) -> String {
         format!("{:?}", self).to_lowercase()
     }
 }
 
 #[allow(non_camel_case_types)]
-#[derive(Clone, Copy, Serialize, Deserialize, Enum, Debug, PartialEq, Eq)]
+#[derive(Clone, Copy, Serialize, Deserialize, Enum, EnumIter, Debug, PartialEq, Eq)]
 pub enum PlanarSet {
     Space_Sealing_Station,
     Fleet_Of_The_Ageless,
@@ -287,24 +264,6 @@ pub enum PlanarSet {
 }
 
 impl PlanarSet {
-    pub fn iter() -> Iter<'static, PlanarSet> {
-        [
-            PlanarSet::Space_Sealing_Station,
-            PlanarSet::Fleet_Of_The_Ageless,
-            PlanarSet::Pancosmic_Commercial_Enterprise,
-            PlanarSet::Belobog_Of_The_Architects,
-            PlanarSet::Celestial_Differentiator,
-            PlanarSet::Inert_Salsotto,
-            PlanarSet::Talia_Kingdom_Of_Banditry,
-            PlanarSet::Sprightly_Vonwacq,
-            PlanarSet::Rutilant_Arena,
-            PlanarSet::Broken_Keel,
-            PlanarSet::Firmament_Frontline_Glamoth,
-            PlanarSet::Penacony_Land_Of_The_Dreams,
-        ]
-        .iter()
-    }
-
     pub fn file_name(&self) -> String {
         format!("{:?}", self).to_lowercase()
     }

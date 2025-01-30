@@ -103,7 +103,7 @@ pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
                 .iter()
                 .filter(|unit_op| {
                     if let Some(unit) = unit_op {
-                        unit.main_element == Element::Quantum
+                        unit.element == Element::Quantum
                     } else {
                         false
                     }

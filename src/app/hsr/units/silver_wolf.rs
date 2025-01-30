@@ -15,7 +15,7 @@ pub fn modifiers(unit: &Unit) -> Vec<ModifierOrDOT> {
                     Stat::Advanced(AdvancedStat::TotalDmgBoost(BonusDMGFlag::MAX)),
                     BuffScaling::Additive,
                     |target, _buffer, _, team, _lc_store, _relic_store| {
-                        if target.is_weak_to(team[0].unwrap().main_element) {
+                        if target.is_weak_to(team[0].unwrap().element) {
                             -SKILL_PARAMS[0].3
                         } else {
                             0.

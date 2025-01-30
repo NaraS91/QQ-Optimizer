@@ -2,17 +2,23 @@ use std::fs;
 
 use assets_loader::AssetsLoader;
 use egui::{Color32, Margin, RichText};
+use optimizer::Optimizer;
+use relics_gallery::RelicsGallery;
 use serde::{Deserialize, Serialize};
+use units::Units;
 
 use self::{
     light_cones_store::LightConesStore, relics_store::RelicsStore, units_store::UnitsStore,
 };
 pub mod assets_loader;
+pub mod common;
 mod data_import;
 mod hsr;
 mod light_cones_store;
 mod optimizer;
+mod relics_gallery;
 mod relics_store;
+mod units;
 mod units_store;
 
 pub static COLOR_PALLET: ColorPallet = ColorPallet {
@@ -22,6 +28,8 @@ pub static COLOR_PALLET: ColorPallet = ColorPallet {
     section: Color32::from_rgb(42, 49, 60),
     text: Color32::from_rgb(238, 238, 238),
     highlighted_text: Color32::from_rgb(0, 173, 181),
+    button_background: Color32::from_rgb(0, 0, 0),
+    unselected_button_background: Color32::from_rgb(100, 100, 100),
 };
 
 const STORES_FROM_CONFIG: bool = false;
@@ -43,14 +51,17 @@ pub const ASSETS_LOADER: AssetsLoader<'static> = if cfg!(not(target_arch = "wasm
 pub struct QQOptimizer {
     label: String,
     menu_state: MenuState,
-    sub_page: PageState,
-    relics_store: RelicsStore,
-    units_store: UnitsStore,
-    light_cones_store: LightConesStore,
+    optimizer_tab: Optimizer,
+    units_tab: Units,
+    relics_tab: RelicsGallery,
+    context: AppContext,
 }
 
-enum PageState {
-    OptimizerTab(Box<optimizer::Optimizer>),
+#[derive(Default)]
+pub struct AppContext {
+    pub relics_store: RelicsStore,
+    pub units_store: UnitsStore,
+    pub light_cones_store: LightConesStore,
 }
 
 #[derive(Deserialize, Serialize)]
@@ -61,6 +72,8 @@ pub struct ColorPallet {
     section: Color32,
     text: Color32,
     highlighted_text: Color32,
+    button_background: Color32,
+    unselected_button_background: Color32,
 }
 
 impl ColorPallet {
@@ -82,11 +95,18 @@ impl ColorPallet {
     pub fn highlighted_text(&self) -> Color32 {
         self.highlighted_text
     }
+    pub fn button_background(&self) -> Color32 {
+        self.button_background
+    }
+    pub fn unselected_button_background(&self) -> Color32 {
+        self.unselected_button_background
+    }
 }
 
 enum MenuState {
     Units,
     Optimizer,
+    Relics,
 }
 
 impl Default for QQOptimizer {
@@ -94,10 +114,10 @@ impl Default for QQOptimizer {
         Self {
             label: "QQ optimizer".to_owned(),
             menu_state: MenuState::Units,
-            sub_page: PageState::OptimizerTab(Box::new(Default::default())),
-            relics_store: Default::default(),
-            units_store: Default::default(),
-            light_cones_store: Default::default(),
+            optimizer_tab: Default::default(),
+            units_tab: Default::default(),
+            context: AppContext::default(),
+            relics_tab: Default::default(),
         }
     }
 }
@@ -113,20 +133,22 @@ impl QQOptimizer {
         if let Some(storage) = cc.storage {
             let mut app = Self::default();
             if STORES_FROM_CONFIG {
-                app.relics_store = RelicsStore::new();
-                app.units_store = UnitsStore::new_empty();
-                app.light_cones_store = LightConesStore::new_empty();
+                app.context.relics_store = RelicsStore::new();
+                app.context.units_store = UnitsStore::new_empty();
+                app.context.light_cones_store = LightConesStore::new_empty();
                 let file_content = fs::read_to_string("./data/config.json").unwrap();
                 data_import::import(
                     &file_content,
-                    &mut app.relics_store,
-                    &mut app.light_cones_store,
-                    &mut app.units_store,
+                    &mut app.context.relics_store,
+                    &mut app.context.light_cones_store,
+                    &mut app.context.units_store,
                 )
             } else {
-                app.relics_store = eframe::get_value(storage, RELICS_STORE_KEY).unwrap_or_default();
-                app.units_store = eframe::get_value(storage, UNITS_STORE_KEY).unwrap_or_default();
-                app.light_cones_store =
+                app.context.relics_store =
+                    eframe::get_value(storage, RELICS_STORE_KEY).unwrap_or_default();
+                app.context.units_store =
+                    eframe::get_value(storage, UNITS_STORE_KEY).unwrap_or_default();
+                app.context.light_cones_store =
                     eframe::get_value(storage, LIGHT_CONES_STORE_KEY).unwrap_or_default();
             }
             return app;
@@ -139,9 +161,13 @@ impl QQOptimizer {
 impl eframe::App for QQOptimizer {
     /// Called by the frame work to save state before shutdown.
     fn save(&mut self, storage: &mut dyn eframe::Storage) {
-        eframe::set_value(storage, RELICS_STORE_KEY, &self.relics_store);
-        eframe::set_value(storage, UNITS_STORE_KEY, &self.units_store);
-        eframe::set_value(storage, LIGHT_CONES_STORE_KEY, &self.light_cones_store);
+        eframe::set_value(storage, RELICS_STORE_KEY, &self.context.relics_store);
+        eframe::set_value(storage, UNITS_STORE_KEY, &self.context.units_store);
+        eframe::set_value(
+            storage,
+            LIGHT_CONES_STORE_KEY,
+            &self.context.light_cones_store,
+        );
     }
 
     /// Called each time the UI needs repainting, which may be many times per second.
@@ -171,12 +197,23 @@ impl eframe::App for QQOptimizer {
                     },
                 ));
 
+                let relics_button = egui::Button::new(RichText::new("Relics").color(
+                    if matches!(self.menu_state, MenuState::Relics) {
+                        COLOR_PALLET.highlighted_text
+                    } else {
+                        COLOR_PALLET.text
+                    },
+                ));
+
                 let optimizer_button_r = ui.add(optimizer_button);
                 let units_button_r = ui.add(units_button);
+                let relics_button_r = ui.add(relics_button);
                 if optimizer_button_r.clicked() {
                     self.menu_state = MenuState::Optimizer;
                 } else if units_button_r.clicked() {
                     self.menu_state = MenuState::Units;
+                } else if relics_button_r.clicked() {
+                    self.menu_state = MenuState::Relics;
                 }
             });
         });
@@ -188,15 +225,10 @@ impl eframe::App for QQOptimizer {
         egui::CentralPanel::default()
             .frame(background_frame)
             .show(ctx, |ui| {
-                match &mut self.sub_page {
-                    PageState::OptimizerTab(optimizer) => optimizer::new_page(
-                        ctx,
-                        ui,
-                        optimizer,
-                        &mut self.relics_store,
-                        &mut self.units_store,
-                        &mut self.light_cones_store,
-                    ),
+                match &mut self.menu_state {
+                    MenuState::Optimizer => self.optimizer_tab.show_ui(ctx, ui, &mut self.context),
+                    MenuState::Units => self.units_tab.show_ui(ctx, ui, &mut self.context),
+                    MenuState::Relics => self.relics_tab.show_ui(ctx, ui, &mut self.context),
                 }
 
                 ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {

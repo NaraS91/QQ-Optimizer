@@ -1,11 +1,9 @@
 use egui::{Rounding, Ui};
 
 use crate::app::{
+    self,
     assets_loader::{LightConeImageFormat, UnitImageFormat},
     hsr::{relics::RelicPart, units::UnitKind},
-    light_cones_store::LightConesStore,
-    relics_store::RelicsStore,
-    units_store::UnitsStore,
     ASSETS_LOADER,
 };
 
@@ -19,14 +17,9 @@ impl OptimizedUnit {
         OptimizedUnit { unit: unit }
     }
 
-    pub fn show_ui(
-        &mut self,
-        ui: &mut egui::Ui,
-        relics_store: &mut RelicsStore,
-        units_store: &mut UnitsStore,
-        light_cones_store: &LightConesStore,
-    ) {
-        let unit_data = units_store
+    pub fn show_ui(&mut self, ui: &mut egui::Ui, app_ctx: &mut app::AppContext) {
+        let unit_data = app_ctx
+            .units_store
             .get_unique_data(self.unit)
             .expect("optimized unit should be in the store");
 
@@ -51,7 +44,7 @@ impl OptimizedUnit {
                     let mut found = false;
                     let mut scale = 1.0;
                     if let Some(relic_id) = unit_data.relics[i] {
-                        if let Some(relic) = relics_store.get_relic(relic_id) {
+                        if let Some(relic) = app_ctx.relics_store.get_relic(relic_id) {
                             if relic.part == RelicPart::Rope {
                                 scale = 0.125
                             } else {
@@ -77,12 +70,14 @@ impl OptimizedUnit {
                 }
             });
             ui.horizontal_wrapped(|ui| {
-                let lc = light_cones_store
+                let lc = app_ctx
+                    .light_cones_store
                     .get(unit_data.light_cone.unwrap_or(0))
                     .expect("TODO: placeholder");
 
                 let image = if let Some(lc_id) = unit_data.light_cone {
-                    light_cones_store
+                    app_ctx
+                        .light_cones_store
                         .get(lc_id)
                         .expect("equiped lc should be in the store");
 

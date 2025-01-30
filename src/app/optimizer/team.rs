@@ -4,9 +4,8 @@ use egui::{Context, Margin};
 
 use crate::app::{
     hsr::units::{Modifier, Unit, UnitKind},
-    relics_store::RelicsStore,
     units_store::UnitsStore,
-    COLOR_PALLET,
+    AppContext, COLOR_PALLET,
 };
 mod unit_card;
 use unit_card::UnitCard;
@@ -40,16 +39,11 @@ impl Team {
         self.main_unit = main_unit;
     }
 
-    pub fn show_ui(
-        &mut self,
-        ctx: &egui::Context,
-        ui: &mut egui::Ui,
-        relics_store: &RelicsStore,
-        units_store: &mut UnitsStore,
-    ) {
+    pub fn show_ui(&mut self, ctx: &egui::Context, ui: &mut egui::Ui, app_ctx: &mut AppContext) {
         // let _main_unit = units_store
         //     .get_unit(ctx, self.main_unit)
         //     .as_ref();
+        let units_store = &app_ctx.units_store;
         let all_kinds = units_store.get_all_kinds();
 
         let width = ui.available_size().x;
@@ -72,14 +66,7 @@ impl Team {
             .exact_width(card_width)
             .show_separator_line(false)
             .show_inside(ui, |ui| {
-                self.unit_cards[0].show_ui(
-                    ctx,
-                    ui,
-                    &all_kinds,
-                    self.main_unit,
-                    relics_store,
-                    units_store,
-                )
+                self.unit_cards[0].show_ui(ctx, ui, &all_kinds, self.main_unit, app_ctx)
             });
 
         let right_card = egui::containers::Frame::default()
@@ -98,14 +85,7 @@ impl Team {
             .exact_width(card_width)
             .show_separator_line(false)
             .show_inside(ui, |ui| {
-                self.unit_cards[2].show_ui(
-                    ctx,
-                    ui,
-                    &all_kinds,
-                    self.main_unit,
-                    relics_store,
-                    units_store,
-                )
+                self.unit_cards[2].show_ui(ctx, ui, &all_kinds, self.main_unit, app_ctx)
             });
 
         let center_card = egui::containers::Frame::default()
@@ -121,17 +101,10 @@ impl Team {
         egui::containers::CentralPanel::default()
             .frame(center_card)
             .show_inside(ui, |ui| {
-                self.unit_cards[1].show_ui(
-                    ctx,
-                    ui,
-                    &all_kinds,
-                    self.main_unit,
-                    relics_store,
-                    units_store,
-                )
+                self.unit_cards[1].show_ui(ctx, ui, &all_kinds, self.main_unit, app_ctx)
             });
 
-        self.update_supporting_units(ctx, units_store);
+        self.update_supporting_units(ctx, &mut app_ctx.units_store);
     }
 
     pub fn get_active_modifiers(&self) -> Vec<(Unit, Modifier)> {

@@ -2,8 +2,9 @@ use std::str::FromStr;
 
 use enum_map::Enum;
 use serde::{Deserialize, Serialize};
+use strum_macros::EnumIter;
 
-#[derive(Clone, Copy, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, Serialize, Deserialize, Enum, EnumIter)]
 pub enum Path {
     Destruction,
     Hunt,
@@ -14,7 +15,7 @@ pub enum Path {
     Abundance,
 }
 
-#[derive(Enum, Clone, Copy, Serialize, Deserialize, PartialEq, Eq, Debug)]
+#[derive(Enum, EnumIter, Clone, Copy, Serialize, Deserialize, PartialEq, Eq, Debug)]
 pub enum Element {
     Physical,
     Fire,
@@ -51,6 +52,22 @@ impl Element {
     }
 }
 
+impl FromStr for Element {
+    type Err = String;
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s.to_lowercase().as_str() {
+            "physical" => Ok(Element::Physical),
+            "fire" => Ok(Element::Fire),
+            "ice" => Ok(Element::Ice),
+            "lightning" => Ok(Element::Lightning),
+            "wind" => Ok(Element::Wind),
+            "quantum" => Ok(Element::Quantum),
+            "imaginary" => Ok(Element::Imaginary),
+            _ => Err(format!("oops, {} not recognized as an element", s)),
+        }
+    }
+}
+
 impl FromStr for Path {
     type Err = String;
     fn from_str(input: &str) -> Result<Path, Self::Err> {
@@ -63,6 +80,20 @@ impl FromStr for Path {
             "Preservation" => Ok(Path::Preservation),
             "Abundance" => Ok(Path::Abundance),
             _ => Err(format!("oopsie, {} not found", input)),
+        }
+    }
+}
+
+impl Path {
+    pub fn file_name(&self) -> String {
+        match self {
+            Path::Abundance => "abundance".to_owned(),
+            Path::Destruction => "destruction".to_owned(),
+            Path::Erudition => "erudition".to_owned(),
+            Path::Harmony => "harmony".to_owned(),
+            Path::Hunt => "hunt".to_owned(),
+            Path::Nihility => "nihility".to_owned(),
+            Path::Preservation => "preservation".to_owned(),
         }
     }
 }
