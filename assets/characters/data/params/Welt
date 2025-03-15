@@ -1,0 +1,110 @@
+6
+Gravity Suppression
+0
+Deals Imaginary DMG equal to #1[i]% of Welt's ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Edge of the Void
+1
+Deals Imaginary DMG equal to #1[i]% of Welt's ATK to a single enemy and further deals DMG 2 extra times, with each time dealing Imaginary DMG equal to #1[i]% of Welt's ATK to a random enemy. On hit, there is a #2[i]% base chance to reduce the enemy's SPD by #3[i]% for #4[i] turn(s).
+Bounce
+Skill
+30/hit
+10/hit
+0
+15 4
+0.3600 0.6500 0.1000 2.0000
+0.3960 0.6600 0.1000 2.0000
+0.4320 0.6700 0.1000 2.0000
+0.4680 0.6800 0.1000 2.0000
+0.5040 0.6900 0.1000 2.0000
+0.5400 0.7000 0.1000 2.0000
+0.5850 0.7125 0.1000 2.0000
+0.6300 0.7250 0.1000 2.0000
+0.6750 0.7375 0.1000 2.0000
+0.7200 0.7500 0.1000 2.0000
+0.7560 0.7600 0.1000 2.0000
+0.7920 0.7700 0.1000 2.0000
+0.8280 0.7800 0.1000 2.0000
+0.8640 0.7900 0.1000 2.0000
+0.9000 0.8000 0.1000 2.0000
+Synthetic Black Hole
+2
+Deals Imaginary DMG equal to #1[i]% of Welt's ATK to all enemies, with a #3[i]% base chance for enemies hit by this ability to be Imprisoned for 1 turn.Imprisoned enemies have their actions delayed by #2[f1]% and SPD reduced by #4[i]%.
+AoE
+Ultimate
+60/hit
+5
+120
+15 4
+0.9000 0.3200 1.0000 0.1000
+0.9600 0.3280 1.0000 0.1000
+1.0200 0.3360 1.0000 0.1000
+1.0800 0.3440 1.0000 0.1000
+1.1400 0.3520 1.0000 0.1000
+1.2000 0.3600 1.0000 0.1000
+1.2750 0.3700 1.0000 0.1000
+1.3500 0.3800 1.0000 0.1000
+1.4250 0.3900 1.0000 0.1000
+1.5000 0.4000 1.0000 0.1000
+1.5600 0.4080 1.0000 0.1000
+1.6200 0.4160 1.0000 0.1000
+1.6800 0.4240 1.0000 0.1000
+1.7400 0.4320 1.0000 0.1000
+1.8000 0.4400 1.0000 0.1000
+Time Distortion
+3
+When hitting an enemy that is already Slowed, Welt deals Additional Imaginary DMG equal to #1[i]% of his ATK to the enemy.
+Enhance
+Talent
+0
+0
+0
+15 1
+0.3000
+0.3300
+0.3600
+0.3900
+0.4200
+0.4500
+0.4875
+0.5250
+0.5625
+0.6000
+0.6300
+0.6600
+0.6900
+0.7200
+0.7500
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Gravitational Imprisonment
+4
+After using Welt's Technique, create a Special Dimension that lasts for #4[i] second(s). Enemies in this Special Dimension have their movement speed reduced by #5[i]%. After entering battle with enemies in the Special Dimension, there is a #1[i]% base chance to Imprison the enemies for 1 turn.Imprisoned enemies have their actions delayed by #2[i]% and SPD reduced by #3[i]%. Only 1 dimension created by allies can exist at the same time.
+Impair
+Technique
+0
+0
+0
+1 5
+1.0000 0.2000 0.1000 15.0000 0.5000

@@ -1,0 +1,110 @@
+6
+Swing Dance Etiquette
+0
+Deals Imaginary DMG equal to #1[i]% of the Trailblazer's ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Halftime to Make It Rain
+1
+Deals Imaginary DMG equal to #1[i]% of the Trailblazer's ATK to a single target enemy and additionally deals DMG for 4 times, with each time dealing Imaginary DMG equal to #1[i]% of the Trailblazer's ATK to a random enemy.
+Bounce
+Skill
+30 + 15/subsequent
+6/hit
+0
+15 2
+0.2500 2.0000
+0.2750 2.0000
+0.3000 2.0000
+0.3250 2.0000
+0.3500 2.0000
+0.3750 2.0000
+0.4062 2.0000
+0.4375 2.0000
+0.4688 2.0000
+0.5000 2.0000
+0.5250 2.0000
+0.5500 2.0000
+0.5750 2.0000
+0.6000 2.0000
+0.6250 2.0000
+All-Out Footlight Parade
+2
+Grants all allies the Backup Dancer effect, lasting for #1[i] turn(s). This duration decreases by 1 at the start of Trailblazer's every turn. Allies with the Backup Dancer effect have their Break Effect increased by #3[i]%. And when they attack enemy targets that are in the Weakness Broken state, the Toughness Reduction of the attack will be converted into 1 instance of Super Break DMG.
+Support
+Ultimate
+0
+5
+140
+15 3
+3.0000 1.0000 0.1500
+3.0000 1.0000 0.1650
+3.0000 1.0000 0.1800
+3.0000 1.0000 0.1950
+3.0000 1.0000 0.2100
+3.0000 1.0000 0.2250
+3.0000 1.0000 0.2437
+3.0000 1.0000 0.2625
+3.0000 1.0000 0.2812
+3.0000 1.0000 0.3000
+3.0000 1.0000 0.3150
+3.0000 1.0000 0.3300
+3.0000 1.0000 0.3450
+3.0000 1.0000 0.3600
+3.0000 1.0000 0.3750
+Full-on Aerial Dance
+3
+The Trailblazer immediately regenerates #1[f1] Energy when an enemy target's Weakness is Broken.
+Support
+Talent
+0
+0
+0
+15 1
+5.0000
+5.5000
+6.0000
+6.5000
+7.0000
+7.5000
+8.1250
+8.7500
+9.3750
+10.0000
+10.5000
+11.0000
+11.5000
+12.0000
+12.5000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Now! I'm the Band!
+4
+After the Technique is used, at the start of the next battle, all allies' Break Effect increases by #1[i]%, lasting for #2[i] turn(s).
+Support
+Technique
+0
+0
+0
+1 2
+0.3000 2.0000

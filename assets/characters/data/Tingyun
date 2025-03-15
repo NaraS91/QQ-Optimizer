@@ -1,0 +1,173 @@
+Tingyun
+Harmony
+Lightning
+4
+115.2000
+72.0000
+54.0000
+112.0000
+161.2800
+100.8000
+75.6000
+112.0000
+207.3600
+129.6000
+97.2000
+112.0000
+253.4400
+158.4000
+118.8000
+112.0000
+299.5200
+187.2000
+140.4000
+112.0000
+345.6000
+216.0000
+162.0000
+112.0000
+391.6800
+244.8000
+183.6000
+112.0000
+5.7600
+3.6000
+2.7000
+0.0000
+ATK 0.0600
+DEF 0.0600
+ATK 0.0600
+ATK 0.0600
+Lightning 0.0600
+Lightning 0.0600
+ATK 0.0600
+DEF 0.0600
+DEF 0.0600
+ATK 0.0600
+3
+Knell Subdual
+5
+DMG dealt by Basic ATK increases by #1[i]%.
+1
+0.4000
+Jubilant Passage
+6
+Tingyun immediately regenerates #1[i] Energy at the start of her turn.
+1
+5.0000
+Nourished Joviality
+7
+Tingyun's SPD increases by #1[i]% for 1 turn after using Skill.
+1
+0.2000
+
+6
+Dislodged
+0
+Tingyun deals Lightning DMG equal to #1[i]% of her ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Soothing Melody
+1
+Grants a single ally with Benediction to increase their ATK by #2[i]%, up to #4[i]% of Tingyun's current ATK.When the ally with Benediction attacks, they will deal Additional Lightning DMG equal to #1[i]% of that ally's ATK for 1 time.Benediction lasts for #3[i] turn(s) and is only effective on the most recent receiver of Tingyun's Skill.
+Support
+Skill
+0
+30
+0
+15 4
+0.2000 0.2500 3.0000 0.1500
+0.2200 0.2750 3.0000 0.1600
+0.2400 0.3000 3.0000 0.1700
+0.2600 0.3250 3.0000 0.1800
+0.2800 0.3500 3.0000 0.1900
+0.3000 0.3750 3.0000 0.2000
+0.3250 0.4062 3.0000 0.2125
+0.3500 0.4375 3.0000 0.2250
+0.3750 0.4688 3.0000 0.2375
+0.4000 0.5000 3.0000 0.2500
+0.4200 0.5250 3.0000 0.2600
+0.4400 0.5500 3.0000 0.2700
+0.4600 0.5750 3.0000 0.2800
+0.4800 0.6000 3.0000 0.2900
+0.5000 0.6250 3.0000 0.3000
+Amidst the Rejoicing Clouds
+2
+Regenerates #1[i] Energy for a single ally and increases the target's DMG by #3[i]% for #2[i] turn(s).
+Support
+Ultimate
+0
+5
+130
+15 3
+50.0000 2.0000 0.2000
+50.0000 2.0000 0.2300
+50.0000 2.0000 0.2600
+50.0000 2.0000 0.2900
+50.0000 2.0000 0.3200
+50.0000 2.0000 0.3500
+50.0000 2.0000 0.3875
+50.0000 2.0000 0.4250
+50.0000 2.0000 0.4625
+50.0000 2.0000 0.5000
+50.0000 2.0000 0.5300
+50.0000 2.0000 0.5600
+50.0000 2.0000 0.5900
+50.0000 2.0000 0.6200
+50.0000 2.0000 0.6500
+Violet Sparknado
+3
+When an enemy is attacked by Tingyun, the ally with Benediction immediately deals Additional Lightning DMG equal to #1[i]% of that ally's ATK to the same enemy.
+Enhance
+Talent
+0
+0
+0
+15 1
+0.3000
+0.3300
+0.3600
+0.3900
+0.4200
+0.4500
+0.4875
+0.5250
+0.5625
+0.6000
+0.6300
+0.6600
+0.6900
+0.7200
+0.7500
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Gentle Breeze
+4
+Tingyun immediately regenerates #1[i] Energy upon using her Technique.
+Support
+Technique
+0
+0
+0
+1 1
+50.0000

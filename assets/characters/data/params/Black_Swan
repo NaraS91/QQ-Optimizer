@@ -1,0 +1,110 @@
+6
+Percipience, Silent Dawn
+0
+Deals Wind DMG equal to #1[i]% of Black Swan's ATK to a single target enemy, with a #2[i]% base chance of inflicting 1 stack of Arcana on the target. Additionally, when attacking a target that suffers Wind Shear, Bleed, Burn, or Shock, there is respectively a #3[i]% base chance of inflicting 1 extra stack of Arcana on the target.
+Single_Target
+Basic ATK
+30
+20
+0
+9 3
+0.3000 0.5000 0.5000
+0.3600 0.5300 0.5300
+0.4200 0.5600 0.5600
+0.4800 0.5900 0.5900
+0.5400 0.6200 0.6200
+0.6000 0.6500 0.6500
+0.6600 0.6800 0.6800
+0.7200 0.7100 0.7100
+0.7800 0.7400 0.7400
+Decadence, False Twilight
+1
+Deals Wind DMG equal to #1[i]% of Black Swan's ATK to a single target enemy and any adjacent targets. At the same time, there is a #2[i]% base chance of inflicting 1 stack of Arcana on the target enemy and the adjacent targets. Additionally, there is a #3[i]% base chance of reducing the DEF of the target enemy and the adjacent targets by #4[f1]%, lasting for #5[i] turn(s).
+Blast
+Skill
+60 + 30/adjacent
+30
+0
+15 5
+0.4500 1.0000 1.0000 0.1480 3.0000
+0.4950 1.0000 1.0000 0.1540 3.0000
+0.5400 1.0000 1.0000 0.1600 3.0000
+0.5850 1.0000 1.0000 0.1660 3.0000
+0.6300 1.0000 1.0000 0.1720 3.0000
+0.6750 1.0000 1.0000 0.1780 3.0000
+0.7312 1.0000 1.0000 0.1855 3.0000
+0.7875 1.0000 1.0000 0.1930 3.0000
+0.8438 1.0000 1.0000 0.2005 3.0000
+0.9000 1.0000 1.0000 0.2080 3.0000
+0.9450 1.0000 1.0000 0.2140 3.0000
+0.9900 1.0000 1.0000 0.2200 3.0000
+1.0350 1.0000 1.0000 0.2260 3.0000
+1.0800 1.0000 1.0000 0.2320 3.0000
+1.1250 1.0000 1.0000 0.2380 3.0000
+Bliss of Otherworld's Embrace
+2
+Inflicts Epiphany on all enemies for #2[i] turn(s).While afflicted with Epiphany, enemies take #3[i]% increased DMG in their turn. Additionally, if enemies are also inflicted with Arcana, they are considered to be simultaneously afflicted with Wind Shear, Bleed, Burn, and Shock. After Arcana causes DMG at the start of each turn, its stacks are not reset. This non-reset effect of Arcana stacks can be triggered up to #4[i] time(s) for the duration of Epiphany. And the trigger count resets when Epiphany is applied again.Deals Wind DMG equal to #1[i]% of Black Swan's ATK to all enemies.
+AoE
+Ultimate
+60/hit
+5
+120
+15 4
+0.7200 2.0000 0.1500 1.0000
+0.7680 2.0000 0.1600 1.0000
+0.8160 2.0000 0.1700 1.0000
+0.8640 2.0000 0.1800 1.0000
+0.9120 2.0000 0.1900 1.0000
+0.9600 2.0000 0.2000 1.0000
+1.0200 2.0000 0.2125 1.0000
+1.0800 2.0000 0.2250 1.0000
+1.1400 2.0000 0.2375 1.0000
+1.2000 2.0000 0.2500 1.0000
+1.2480 2.0000 0.2600 1.0000
+1.2960 2.0000 0.2700 1.0000
+1.3440 2.0000 0.2800 1.0000
+1.3920 2.0000 0.2900 1.0000
+1.4400 2.0000 0.3000 1.0000
+Loom of Fate's Caprice
+3
+Every time an enemy target receives DoT at the start of each turn, there is a #2[i]% base chance for it to be inflicted with 1 stack of Arcana.While afflicted with Arcana, enemy targets receive Wind DoT equal to #1[i]% of Black Swan's ATK at the start of each turn. Each stack of Arcana increases this DMG multiplier by #3[f1]%. Then Arcana resets to 1 stack. Arcana can stack up to #8[i] times.Only when Arcana causes DMG at the start of an enemy target's turn, Black Swan triggers additional effects based on the number of Arcana stacks inflicted on the target:When there are #4[i] or more Arcana stacks, deals Wind DoT equal to #5[i]% of Black Swan's ATK to adjacent targets, with a #2[i]% base chance of inflicting 1 stack of Arcana on adjacent targets.When there are #6[i] or more Arcana stacks, enables the current DoT dealt this time to ignore #7[i]% of the target's and adjacent targets' DEF.
+Impair
+Talent
+0
+0
+0
+15 8
+0.9600 0.5000 0.0480 3.0000 0.7200 7.0000 0.2000 50.0000
+1.1184 0.5150 0.0559 3.0000 0.8388 7.0000 0.2000 50.0000
+1.2768 0.5300 0.0638 3.0000 0.9576 7.0000 0.2000 50.0000
+1.4352 0.5450 0.0718 3.0000 1.0764 7.0000 0.2000 50.0000
+1.5936 0.5600 0.0797 3.0000 1.1952 7.0000 0.2000 50.0000
+1.7520 0.5750 0.0876 3.0000 1.3140 7.0000 0.2000 50.0000
+1.8960 0.5938 0.0948 3.0000 1.4220 7.0000 0.2000 50.0000
+2.0400 0.6125 0.1020 3.0000 1.5300 7.0000 0.2000 50.0000
+2.2200 0.6312 0.1110 3.0000 1.6650 7.0000 0.2000 50.0000
+2.4000 0.6500 0.1200 3.0000 1.8000 7.0000 0.2000 50.0000
+2.5200 0.6650 0.1260 3.0000 1.8900 7.0000 0.2000 50.0000
+2.6400 0.6800 0.1320 3.0000 1.9800 7.0000 0.2000 50.0000
+2.7600 0.6950 0.1380 3.0000 2.0700 7.0000 0.2000 50.0000
+2.8800 0.7100 0.1440 3.0000 2.1600 7.0000 0.2000 50.0000
+3.0000 0.7250 0.1500 3.0000 2.2500 7.0000 0.2000 50.0000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+From Façade to Vérité
+4
+After this Technique is used, there is a #1[i]% base chance for each enemy to be inflicted with 1 stack of Arcana at the start of the next battle. For each successful application of Arcana on a target, inflicts another stack of Arcana on the same target. This process repeats until Arcana fails to be inflicted on this target. For each successive application of Arcana on a target, its base chance of success is equal to #2[i]% of the base chance of the previous successful infliction of Arcana on that target.
+Enhance
+Technique
+0
+0
+0
+1 2
+1.5000 0.5000

@@ -1,0 +1,173 @@
+Clara
+Destruction
+Physical
+5
+168.9600
+100.3200
+66.0000
+90.0000
+236.5440
+140.4480
+92.4000
+90.0000
+304.1280
+180.5760
+118.8000
+90.0000
+371.7120
+220.7040
+145.2000
+90.0000
+439.2960
+260.8320
+171.6000
+90.0000
+506.8800
+300.9600
+198.0000
+90.0000
+574.4640
+341.0880
+224.4000
+90.0000
+8.4480
+5.0160
+3.3000
+0.0000
+ATK 0.0400
+HP 0.0400
+ATK 0.0400
+Physical 0.0400
+ATK 0.0400
+Physical 0.0400
+ATK 0.0400
+Physical 0.0400
+ATK 0.0400
+HP 0.0400
+3
+Revenge
+5
+Increases Svarog's Counter DMG by #1[i]%.
+1
+0.3000
+Under Protection
+6
+The chance to resist Crowd Control Debuffs increases by #1[i]%.
+1
+0.3500
+Kinship
+7
+When attacked, this character has a #1[i]% fixed chance to remove a debuff placed on them.
+1
+0.3500
+
+6
+I Want to Help
+0
+Deals Physical DMG equal to #1[i]% of Clara's ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+Svarog Watches Over You
+1
+Deals Physical DMG equal to #1[i]% of Clara's ATK to all enemies, and additionally deals Physical DMG equal to #2[i]% of Clara's ATK to enemies marked by Svarog with a Mark of Counter.All Marks of Counter will be removed after this Skill is used.
+AoE
+Skill
+30/hit
+30
+0
+15 2
+0.6000 0.6000
+0.6600 0.6600
+0.7200 0.7200
+0.7800 0.7800
+0.8400 0.8400
+0.9000 0.9000
+0.9750 0.9750
+1.0500 1.0500
+1.1250 1.1250
+1.2000 1.2000
+1.2600 1.2600
+1.3200 1.3200
+1.3800 1.3800
+1.4400 1.4400
+1.5000 1.5000
+Promise, Not Command
+2
+After Clara uses Ultimate, DMG dealt to her is reduced by an extra #4[i]%, and she has greatly increased chances of being attacked by enemies for #3[i] turn(s).In addition, Svarog's Counter is enhanced. When an ally is attacked, Svarog immediately launches a Counter, and its DMG multiplier against the enemy increases by #2[i]%. Enemies adjacent to it take 50% of the DMG dealt to the primary target enemy. Enhanced Counter(s) can take effect #5[i] time(s).
+Enhance
+Ultimate
+0
+5
+110
+15 5
+5.0000 0.9600 2.0000 0.1500 2.0000
+5.0000 1.0240 2.0000 0.1600 2.0000
+5.0000 1.0880 2.0000 0.1700 2.0000
+5.0000 1.1520 2.0000 0.1800 2.0000
+5.0000 1.2160 2.0000 0.1900 2.0000
+5.0000 1.2800 2.0000 0.2000 2.0000
+5.0000 1.3600 2.0000 0.2125 2.0000
+5.0000 1.4400 2.0000 0.2250 2.0000
+5.0000 1.5200 2.0000 0.2375 2.0000
+5.0000 1.6000 2.0000 0.2500 2.0000
+5.0000 1.6640 2.0000 0.2600 2.0000
+5.0000 1.7280 2.0000 0.2700 2.0000
+5.0000 1.7920 2.0000 0.2800 2.0000
+5.0000 1.8560 2.0000 0.2900 2.0000
+5.0000 1.9200 2.0000 0.3000 2.0000
+Because We're Family
+3
+Under the protection of Svarog, DMG taken by Clara when hit by enemy attacks is reduced by #3[i]%. Svarog will mark enemies who attack Clara with his Mark of Counter and retaliate with a Counter, dealing Physical DMG equal to #2[i]% of Clara's ATK.
+Single_Target
+Talent
+30
+5
+0
+15 3
+1.0000 0.8000 0.1000
+1.0000 0.8800 0.1000
+1.0000 0.9600 0.1000
+1.0000 1.0400 0.1000
+1.0000 1.1200 0.1000
+1.0000 1.2000 0.1000
+1.0000 1.3000 0.1000
+1.0000 1.4000 0.1000
+1.0000 1.5000 0.1000
+1.0000 1.6000 0.1000
+1.0000 1.6800 0.1000
+1.0000 1.7600 0.1000
+1.0000 1.8400 0.1000
+1.0000 1.9200 0.1000
+1.0000 2.0000 0.1000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+A Small Price for Victory
+4
+Immediately attacks the enemy. Upon entering battle, the chance Clara will be attacked by enemies increases for #1[i] turn(s).
+
+Technique
+60
+0
+0
+1 2
+2.0000 5.0000

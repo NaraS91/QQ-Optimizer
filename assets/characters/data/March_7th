@@ -1,0 +1,173 @@
+March 7th
+Preservation
+Ice
+4
+144.0000
+69.6000
+78.0000
+101.0000
+201.6000
+97.4400
+109.2000
+101.0000
+259.2000
+125.2800
+140.4000
+101.0000
+316.8000
+153.1200
+171.6000
+101.0000
+374.4000
+180.9600
+202.8000
+101.0000
+432.0000
+208.8000
+234.0000
+101.0000
+489.6000
+236.6400
+265.2000
+101.0000
+7.2000
+3.4800
+3.9000
+0.0000
+Ice 0.0480
+DEF 0.0480
+Ice 0.0480
+DEF 0.0480
+EffectRES 0.0480
+Ice 0.0480
+Ice 0.0480
+EffectRES 0.0480
+DEF 0.0480
+Ice 0.0480
+3
+Ice Spell
+5
+Increases the Ultimate's base chance to Freeze enemies by #1[i]%.
+1
+0.1500
+Reinforce
+6
+The duration of the Shield generated from Skill is extended for #1[i] turn(s).
+1
+1.0000
+Purify
+7
+When using the Skill, removes 1 debuff from a target ally.
+0
+
+
+6
+Frigid Cold Arrow
+0
+Deals Ice DMG equal to #1[i]% of March 7th's ATK to a single enemy.
+Single_Target
+Basic ATK
+30
+20
+0
+9 1
+0.5000
+0.6000
+0.7000
+0.8000
+0.9000
+1.0000
+1.1000
+1.2000
+1.3000
+The Power of Cuteness
+1
+Provides a single ally with a Shield that can absorb DMG equal to #1[i]% of March 7th's DEF plus #4[i] for #2[i] turn(s).If the ally's current HP percentage is #3[i]% or higher, greatly increases the chance of enemies attacking that ally.
+Defense
+Skill
+0
+30
+0
+15 5
+0.3800 3.0000 0.3000 190.0000 5.0000
+0.4037 3.0000 0.3000 304.0000 5.0000
+0.4275 3.0000 0.3000 389.5000 5.0000
+0.4512 3.0000 0.3000 475.0000 5.0000
+0.4750 3.0000 0.3000 532.0000 5.0000
+0.4940 3.0000 0.3000 589.0000 5.0000
+0.5130 3.0000 0.3000 631.7500 5.0000
+0.5320 3.0000 0.3000 674.5000 5.0000
+0.5510 3.0000 0.3000 717.2500 5.0000
+0.5700 3.0000 0.3000 760.0000 5.0000
+0.5890 3.0000 0.3000 802.7500 5.0000
+0.6080 3.0000 0.3000 845.5000 5.0000
+0.6270 3.0000 0.3000 888.2500 5.0000
+0.6460 3.0000 0.3000 931.0000 5.0000
+0.6650 3.0000 0.3000 973.7500 5.0000
+Glacial Cascade
+2
+Deals Ice DMG equal to #1[i]% of March 7th's ATK to all enemies. Hit enemies have a #2[i]% base chance to be Frozen for #3[i] turn(s).While Frozen, enemies cannot take action and will receive Additional Ice DMG equal to #4[i]% of March 7th's ATK at the beginning of each turn.
+AoE
+Ultimate
+60/hit
+5
+120
+15 4
+0.9000 0.5000 1.0000 0.3000
+0.9600 0.5000 1.0000 0.3300
+1.0200 0.5000 1.0000 0.3600
+1.0800 0.5000 1.0000 0.3900
+1.1400 0.5000 1.0000 0.4200
+1.2000 0.5000 1.0000 0.4500
+1.2750 0.5000 1.0000 0.4875
+1.3500 0.5000 1.0000 0.5250
+1.4250 0.5000 1.0000 0.5625
+1.5000 0.5000 1.0000 0.6000
+1.5600 0.5000 1.0000 0.6300
+1.6200 0.5000 1.0000 0.6600
+1.6800 0.5000 1.0000 0.6900
+1.7400 0.5000 1.0000 0.7200
+1.8000 0.5000 1.0000 0.7500
+Girl Power
+3
+After a Shielded ally is attacked by an enemy, March 7th immediately Counters, dealing Ice DMG equal to #1[i]% of her ATK. This effect can be triggered #2[i] time(s) each turn.
+Single_Target
+Talent
+30
+10
+0
+15 2
+0.5000 2.0000
+0.5500 2.0000
+0.6000 2.0000
+0.6500 2.0000
+0.7000 2.0000
+0.7500 2.0000
+0.8125 2.0000
+0.8750 2.0000
+0.9375 2.0000
+1.0000 2.0000
+1.0500 2.0000
+1.1000 2.0000
+1.1500 2.0000
+1.2000 2.0000
+1.2500 2.0000
+Attack
+0
+Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.
+
+
+30
+0
+0
+0 0
+Freezing Beauty
+4
+Immediately attacks the enemy. After entering battle, there is a #1[i]% base chance to Freeze a random enemy for #2[i] turn(s).While Frozen, the enemy cannot take action and will take Additional Ice DMG equal to #3[i]% of March 7th's ATK at the beginning of each turn.
+
+Technique
+60
+0
+0
+1 3
+1.0000 1.0000 0.5000
