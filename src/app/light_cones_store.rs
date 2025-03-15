@@ -71,6 +71,13 @@ impl LightConesStore {
         }
     }
 
+    pub fn get_all_as_ref(&self) -> Vec<&LightCone> {
+        self.light_cones
+            .iter()
+            .filter_map(|op| op.as_ref())
+            .collect()
+    }
+
     pub fn unequip(&self, id: usize) {
         if self.exists(id) {
             self.light_cones[id].unwrap().equipped = None;

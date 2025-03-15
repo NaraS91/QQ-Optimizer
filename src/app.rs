@@ -2,6 +2,7 @@ use std::fs;
 
 use assets_loader::AssetsLoader;
 use egui::{Color32, Margin, RichText};
+use light_cone_gallery::LightConesGallery;
 use optimizer::Optimizer;
 use relics_gallery::RelicsGallery;
 use serde::{Deserialize, Serialize};
@@ -14,6 +15,7 @@ pub mod assets_loader;
 pub mod common;
 mod data_import;
 mod hsr;
+mod light_cone_gallery;
 mod light_cones_store;
 mod optimizer;
 mod relics_gallery;
@@ -54,6 +56,7 @@ pub struct QQOptimizer {
     optimizer_tab: Optimizer,
     units_tab: Units,
     relics_tab: RelicsGallery,
+    light_cones_tab: LightConesGallery,
     context: AppContext,
 }
 
@@ -107,6 +110,7 @@ enum MenuState {
     Units,
     Optimizer,
     Relics,
+    LightCones,
 }
 
 impl Default for QQOptimizer {
@@ -118,6 +122,7 @@ impl Default for QQOptimizer {
             units_tab: Default::default(),
             context: AppContext::default(),
             relics_tab: Default::default(),
+            light_cones_tab: Default::default(),
         }
     }
 }
@@ -205,15 +210,26 @@ impl eframe::App for QQOptimizer {
                     },
                 ));
 
+                let lcs_button = egui::Button::new(RichText::new("Light cones").color(
+                    if matches!(self.menu_state, MenuState::LightCones) {
+                        COLOR_PALLET.highlighted_text
+                    } else {
+                        COLOR_PALLET.text
+                    },
+                ));
+
                 let optimizer_button_r = ui.add(optimizer_button);
                 let units_button_r = ui.add(units_button);
                 let relics_button_r = ui.add(relics_button);
+                let lcs_button_r = ui.add(lcs_button);
                 if optimizer_button_r.clicked() {
                     self.menu_state = MenuState::Optimizer;
                 } else if units_button_r.clicked() {
                     self.menu_state = MenuState::Units;
                 } else if relics_button_r.clicked() {
                     self.menu_state = MenuState::Relics;
+                } else if lcs_button_r.clicked() {
+                    self.menu_state = MenuState::LightCones;
                 }
             });
         });
@@ -229,6 +245,9 @@ impl eframe::App for QQOptimizer {
                     MenuState::Optimizer => self.optimizer_tab.show_ui(ctx, ui, &mut self.context),
                     MenuState::Units => self.units_tab.show_ui(ctx, ui, &mut self.context),
                     MenuState::Relics => self.relics_tab.show_ui(ctx, ui, &mut self.context),
+                    MenuState::LightCones => {
+                        self.light_cones_tab.show_ui(ctx, ui, &mut self.context)
+                    }
                 }
 
                 ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {

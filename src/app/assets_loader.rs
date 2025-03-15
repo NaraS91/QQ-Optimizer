@@ -126,6 +126,30 @@ impl AssetsLoader<'_> {
         ))
     }
 
+    pub fn get_light_cone_texture(
+        &self,
+        ctx: &egui::Context,
+        kind: LightConeKind,
+        format: LightConeImageFormat,
+    ) -> Result<TexturePoll, LoadError> {
+        let format_dir = match format {
+            LightConeImageFormat::Icon => "icon",
+            LightConeImageFormat::Full => "full",
+            LightConeImageFormat::Resized => "resized",
+        };
+
+        ctx.try_load_texture(
+            &format!(
+                "{}/assets/light_cones/{}/{}.webp",
+                self.loader_prefix,
+                format_dir,
+                kind.file_name()
+            ),
+            Default::default(),
+            Default::default(),
+        )
+    }
+
     pub fn get_light_cone_placeholder(&self, format: LightConeImageFormat) -> Image<'_> {
         let format_dir = match format {
             LightConeImageFormat::Icon => "icon",

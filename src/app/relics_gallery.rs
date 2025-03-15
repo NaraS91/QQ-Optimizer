@@ -131,7 +131,7 @@ impl RelicsGallery {
         ui.vertical_centered(|ui| {
             ScrollArea::vertical().show(ui, |ui| {
                 let spacing = 20.;
-                let card_width = CharacterAvatar::get_default_size().x;
+                let card_width = RelicAvatar::get_default_size(RelicPart::Body).x;
                 let cards_num_in_row = (available_width / (card_width + spacing)) as usize;
                 let left_space =
                     available_width - cards_num_in_row as f32 * (card_width + spacing) + spacing;
